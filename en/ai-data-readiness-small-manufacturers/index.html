@@ -1,0 +1,199 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare (with Korea&#x27;s Policy Context)</title><meta name="description" content="Most small factories already collect data. Very few use it for AI. The gap is usually not the model; it is whether the data connects.">
+<meta name="author" content="성시원 (sianism)"><link rel="canonical" href="https://sungsiwon.github.io/en/ai-data-readiness-small-manufacturers/">
+<link rel="alternate" hreflang="en" href="https://sungsiwon.github.io/en/ai-data-readiness-small-manufacturers/">
+<link rel="alternate" hreflang="ko" href="https://sungsiwon.github.io/ko/ai-data-readiness-small-manufacturers/">
+<link rel="alternate" hreflang="x-default" href="https://sungsiwon.github.io/ko/ai-data-readiness-small-manufacturers/">
+<meta property="og:type" content="article"><meta property="og:title" content="Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare (with Korea&#x27;s Policy Context)">
+<meta property="og:description" content="Most small factories already collect data. Very few use it for AI. The gap is usually not the model; it is whether the data connects."><meta property="og:url" content="https://sungsiwon.github.io/en/ai-data-readiness-small-manufacturers/">
+<meta property="og:site_name" content="성시원 제조 AI 아카이브 · sianism archive">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://sungsiwon.github.io/assets/ai-data-readiness-small-manufacturers.jpg"><meta name="twitter:image" content="https://sungsiwon.github.io/assets/ai-data-readiness-small-manufacturers.jpg">
+<link rel="alternate" type="application/atom+xml" title="sianism archive" href="https://sungsiwon.github.io/feed.xml">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://sungsiwon.github.io/#person",
+   "name": "성시원",
+   "alternateName": "sianism",
+   "url": "https://sungsiwon.github.io/",
+   "jobTitle": "책임연구원 (서비스기획)",
+   "worksFor": {
+    "@type": "Organization",
+    "name": "INTERX (인터엑스)",
+    "url": "https://interxlab.com"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/siwon-sung-518329140",
+    "https://blog.naver.com/sangza40",
+    "https://sianism.tistory.com",
+    "https://brunch.co.kr/@sianism",
+    "https://medium.com/@sangza40",
+    "https://github.com/Sungsiwon"
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://sungsiwon.github.io/en/ai-data-readiness-small-manufacturers/#article",
+   "headline": "Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare (with Korea's Policy Context)",
+   "description": "Most small factories already collect data. Very few use it for AI. The gap is usually not the model; it is whether the data connects.",
+   "inLanguage": "en",
+   "datePublished": "2026-10-23",
+   "dateModified": "2026-10-23",
+   "author": {
+    "@id": "https://sungsiwon.github.io/#person"
+   },
+   "publisher": {
+    "@id": "https://sungsiwon.github.io/#person"
+   },
+   "image": "https://sungsiwon.github.io/assets/ai-data-readiness-small-manufacturers.jpg",
+   "mainEntityOfPage": "https://sungsiwon.github.io/en/ai-data-readiness-small-manufacturers/",
+   "keywords": [
+    "제조AI",
+    "AI도입",
+    "제조데이터",
+    "데이터품질",
+    "스마트공장",
+    "KAMP",
+    "ISO/IEC 25012"
+   ],
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "성시원 제조 AI 아카이브",
+    "url": "https://sungsiwon.github.io/"
+   },
+   "translationOfWork": {
+    "@id": "https://sungsiwon.github.io/ko/ai-data-readiness-small-manufacturers/#article"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://sungsiwon.github.io/en/ai-data-readiness-small-manufacturers/#faq",
+   "inLanguage": "en",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "We don't have much data. Can we still use AI?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Connection matters more than volume at the start. If you have lots of sensor readings but the pass/fail result for each part lives in a separate notebook, a model has nothing to learn from. That is why linking keys are on the list. A useful first test: pick one defective part and try to retrieve the process conditions under which it was made. If you can, you have the core of a dataset. If you cannot, you know exactly where the chain breaks."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do we need to buy new sensors first?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not necessarily. Start by listing where data already lives: PLCs, inspection-station PCs, MES or ERP, and spreadsheets or paper logs. Public examples show that mixed collection is normal. One machining (MCT) dataset description published on KAMP, the Korea AI Manufacturing Platform run under MSS, describes: - machine conditions collected from the PLC and temperature sensors every 5 seconds, - 3D and vision measurements collected automatically when each inspection finishes, and - tool-change intervals entered by operators after checking. The same document lists each variable with its unit, valid range, and the OK/NG rule used for pass/fail, which is a good model for the \"definitions\" item above."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do we judge whether our data is good enough?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The international standard ISO/IEC 25012 offers a ready-made checklist. It defines data quality through 15 characteristics. Five of them describe the data itself: accuracy, completeness, consistency, credibility, and currentness. On a shop floor these translate into plain questions: - Are the values correct? - Are there missing fields? - Do machines use the same units and formats? - Can we trust where the value came from? - Is it the value from the right moment?"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is there data we can practice on before ours is ready?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. KAMP offers free manufacturing AI datasets for small manufacturers. A list published on Korea's public data portal by the Korea Technology and Information Promotion Agency for SMEs (TIPA) shows 50 datasets as of December 31, 2024, organized by industry, purpose, and process. Even if you never train on them, they are useful templates for how to structure your own variables."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How big should the first project be?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Small: one line, one problem, one metric. Define the problem and target, check the five kinds of data for that problem, run a small proof of concept, and expand only if the effect holds. Record the baseline before you start, or you will not be able to show the effect later."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+<style>:root{color-scheme:light dark;--fg:#1d1d1f;--bg:#fff;--mut:#666;--line:#ddd;--acc:#0b5cad}
+@media(prefers-color-scheme:dark){:root{--fg:#e8e8e8;--bg:#141414;--mut:#a0a0a0;--line:#333;--acc:#6aa9ff}}
+*{box-sizing:border-box}body{margin:0;font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;color:var(--fg);background:var(--bg);word-break:keep-all;overflow-wrap:anywhere}
+main,header.site,footer{max-width:760px;margin:0 auto;padding:0 20px}header.site{padding-top:18px;font-size:15px;display:flex;justify-content:space-between;gap:12px}
+a{color:var(--acc)}h1{font-size:1.7em;line-height:1.35;margin:.8em 0 .4em}h2{font-size:1.3em;margin-top:2em}h3{font-size:1.1em;margin-top:1.6em}
+.meta{color:var(--mut);font-size:15px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:1.5em}.meta p{margin:.2em 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(127,127,127,.12)}
+figure{margin:1.5em 0}img{max-width:100%;height:auto;border-radius:6px}figcaption{color:var(--mut);font-size:14px;text-align:center}
+ul.posts{list-style:none;padding:0}ul.posts li{margin:0 0 1.1em}ul.posts time{color:var(--mut);font-size:14px;display:block}
+footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-10-23"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/ai-data-readiness-small-manufacturers/" hreflang="ko">한국어</a></header><main><article><h1>Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare (with Korea&#x27;s Policy Context)</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-10-23">2026-10-23</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>Also on: <a href="https://blog.naver.com/sangza40/224451245938" rel="noopener">Naver Blog</a> · <a href="https://www.linkedin.com/feed/update/urn:li:activity:7519262087043342336/" rel="noopener">LinkedIn</a> · <a href="https://sianism.tistory.com/entry/중소-제조기업-AI-도입-준비-꼭-챙길-데이터-5가지와-품질-점검-기준-체크리스트-표-FAQ-정리-2026" rel="noopener">Tistory</a> · <a href="https://careerly.co.kr/community?post=127650" rel="noopener">Careerly</a> · <a href="https://brunch.co.kr/@sianism/3" rel="noopener">Brunch</a></p><p>한국어 원문: <a href="/ko/ai-data-readiness-small-manufacturers/" hreflang="ko">중소 제조기업 AI 도입, 무엇부터 준비하나? 미리 챙길 데이터 5가지 (체크리스트 + FAQ)</a></p></div><p><em>Disclosure: I work at INTERX, a Korean manufacturing AI company (founded 2020). This article is my personal summary based on public sources such as Korean government surveys and international standards; it does not represent my employer's official position.</em></p>
+<p>If you run or support a small or mid-sized manufacturer and someone asks, "How do we start with AI?", the most useful answer is not a model name. It is this: <strong>pick one problem, then check whether five kinds of data exist for it and can be linked to the same product.</strong> Buying new sensors or software can come later.</p>
+<p>Here are the five:</p>
+<ul>
+<li><strong>The problem and its baseline.</strong> One line, one metric, and today's number for it (for example, the defect rate of a specific line over the last three months).</li>
+<li><strong>Process conditions.</strong> The values machines and sensors record: temperature, pressure, speed, load.</li>
+<li><strong>Quality outcomes.</strong> The "answers" AI will learn to predict: pass/fail, defect type, measured dimensions.</li>
+<li><strong>Linking keys.</strong> Lot or serial numbers, machine codes, and timestamps that tie a specific outcome to the conditions under which that part was made.</li>
+<li><strong>Definitions and shop-floor records.</strong> What each variable means, its unit and valid range, plus human-logged events such as tool changes, mold changes, or material switches.</li>
+</ul>
+<figure><img src="/assets/ai-data-readiness-small-manufacturers.jpg" alt="A worker arranges five boxes of data on a shelf while an AI helper picks them up and links them." width="1200" height="675" loading="lazy"><figcaption>Five kinds of data to prepare before AI: problem &amp; baseline, process conditions, quality outcomes, linking keys, definitions &amp; shop-floor records</figcaption></figure>
+
+<h2>Why data, and why now</h2>
+<p>Korea offers an unusually clear snapshot of the gap. In April 2025, the Ministry of SMEs and Startups (MSS) published its first Smart Manufacturing Innovation Survey. It covered small, medium, and mid-sized manufacturers that own a factory, using a sample of 5,000 firms interviewed in person between October 2024 and January 2025. Among the findings:</p>
+<ul>
+<li><strong>60.8%</strong> of firms collect manufacturing data, but only 52.1% of those actually analyze it.</li>
+<li>Among firms that have adopted a smart factory, 92.4% collect data and 74.0% of those analyze it.</li>
+<li>Only <strong>0.1%</strong> of firms have adopted manufacturing AI, and another 1.6% plan to.</li>
+<li>Just 0.8% have a dedicated department or staff for manufacturing data and AI.</li>
+<li>75.5% of the smart factories in place are at the basic level.</li>
+</ul>
+<p>In other words, collection is common, analysis is less common, and AI is rare. In my reading, the step that is most often missing in between is data preparation: making the data that already exists usable together.</p>
+<h2>The questions people actually ask</h2>
+<h3>"We don't have much data. Can we still use AI?"</h3>
+<p>Connection matters more than volume at the start. If you have lots of sensor readings but the pass/fail result for each part lives in a separate notebook, a model has nothing to learn from. That is why linking keys are on the list. A useful first test: pick one defective part and try to retrieve the process conditions under which it was made. If you can, you have the core of a dataset. If you cannot, you know exactly where the chain breaks.</p>
+<h3>"Do we need to buy new sensors first?"</h3>
+<p>Not necessarily. Start by listing where data already lives: PLCs, inspection-station PCs, MES or ERP, and spreadsheets or paper logs. Public examples show that mixed collection is normal. One machining (MCT) dataset description published on KAMP, the Korea AI Manufacturing Platform run under MSS, describes:</p>
+<ul>
+<li>machine conditions collected from the PLC and temperature sensors every 5 seconds,</li>
+<li>3D and vision measurements collected automatically when each inspection finishes, and</li>
+<li>tool-change intervals entered by operators after checking.</li>
+</ul>
+<p>The same document lists each variable with its unit, valid range, and the OK/NG rule used for pass/fail, which is a good model for the "definitions" item above.</p>
+<h3>"How do we judge whether our data is good enough?"</h3>
+<p>The international standard <strong>ISO/IEC 25012</strong> offers a ready-made checklist. It defines data quality through 15 characteristics. Five of them describe the data itself: accuracy, completeness, consistency, credibility, and currentness. On a shop floor these translate into plain questions:</p>
+<ul>
+<li>Are the values correct?</li>
+<li>Are there missing fields?</li>
+<li>Do machines use the same units and formats?</li>
+<li>Can we trust where the value came from?</li>
+<li>Is it the value from the right moment?</li>
+</ul>
+<h3>"Is there data we can practice on before ours is ready?"</h3>
+<p>Yes. KAMP offers free manufacturing AI datasets for small manufacturers. A list published on Korea's public data portal by the Korea Technology and Information Promotion Agency for SMEs (TIPA) shows 50 datasets as of December 31, 2024, organized by industry, purpose, and process. Even if you never train on them, they are useful templates for how to structure your own variables.</p>
+<h3>"How big should the first project be?"</h3>
+<p>Small: one line, one problem, one metric. Define the problem and target, check the five kinds of data for that problem, run a small proof of concept, and expand only if the effect holds. Record the baseline before you start, or you will not be able to show the effect later.</p>
+<h2>Korea's policy context</h2>
+<p>On October 24, 2025, MSS announced its <strong>AI-based Smart Manufacturing Innovation 3.0 Strategy</strong>. According to the ministry's briefing, the targets for 2030 include deploying 12,000 AI-centered smart factories and raising AI adoption among small manufacturers to 10%. Two of the listed tasks are directly about data: standardizing manufacturing data based on international standards, and securing 1,000 high-quality manufacturing datasets generated during smart factory projects. The ministry also plans a consolidated one-stop support platform called "Manufacturing AI 24."</p>
+<p>For readers outside Korea, the takeaway is that the policy debate has moved from "deploy more smart factories" to "make factory data usable for AI." That shift matches what the survey numbers suggest.</p>
+<h2>A five-line checklist to keep</h2>
+<ol>
+<li>Can we state one problem and its current number, with a date range?</li>
+<li>Do we know where each process value is recorded and how often?</li>
+<li>Is the outcome (pass/fail, defect type) written down, not just remembered?</li>
+<li>Can one defective part be linked to its process conditions?</li>
+<li>Could a newcomer read our variable list and understand every column?</li>
+</ol>
+<p>*The original post (in Korean), with a checklist table and six FAQs, is on my blog: <a href="https://blog.naver.com/sangza40/224451245938*">https://blog.naver.com/sangza40/224451245938*</a></p>
+<h2>Sources</h2>
+<ul>
+<li>Ministry of SMEs and Startups, "Results of the 2024 Smart Manufacturing Innovation Survey" (2025-04-28), Korea Policy Briefing (Korean): <a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156686561">https://www.korea.kr/briefing/pressReleaseView.do?newsId=156686561</a></li>
+<li>Ministry of SMEs and Startups, "AI-based Smart Manufacturing Innovation 3.0 Strategy" briefing (2025-10-24), Korea Policy Briefing (Korean): <a href="https://www.korea.kr/news/policyNewsView.do?newsId=156722205">https://www.korea.kr/news/policyNewsView.do?newsId=156722205</a></li>
+<li>TIPA, "Manufacturing AI datasets (50)" (as of 2024-12-31), Public Data Portal (Korean): <a href="https://www.data.go.kr/data/15089213/fileData.do">https://www.data.go.kr/data/15089213/fileData.do</a></li>
+<li>KAMP, Korea AI Manufacturing Platform: <a href="https://www.kamp-ai.kr/">https://www.kamp-ai.kr/</a></li>
+<li>KAMP, MCT machining and inspection dataset description (PDF, Korean): <a href="https://aisquare.kamp-ai.kr/upload_data/mainImg/95d6c6ca-96ee-4dfb-ad98-dbe0c6676420.pdf">https://aisquare.kamp-ai.kr/upload_data/mainImg/95d6c6ca-96ee-4dfb-ad98-dbe0c6676420.pdf</a></li>
+<li>ISO/IEC 25012:2008, Data quality model: <a href="https://www.iso.org/standard/35736.html">https://www.iso.org/standard/35736.html</a></li>
+<li>ISO 25000 portal, ISO/IEC 25012 characteristics: <a href="https://iso25000.com/index.php/en/iso-25000-standards/iso-25012">https://iso25000.com/index.php/en/iso-25000-standards/iso-25012</a></li>
+</ul>
+<p><em>I work at INTERX, a Korean manufacturing AI company (founded 2020). Views are my own.</em></p></article></main><footer><p>A personal manufacturing-AI knowledge archive run by an individual, 성시원 (sianism). Not a company site or a news outlet. Each post is kept here in Korean and English.</p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>

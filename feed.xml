@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>성시원 제조 AI 아카이브 (sianism archive)</title>
+<subtitle>A personal manufacturing-AI knowledge archive run by an individual, 성시원 (sianism). Not a company site or a news outlet. Each post is kept here in Korean and English.</subtitle>
+<link href="https://sungsiwon.github.io/feed.xml" rel="self"/>
+<link href="https://sungsiwon.github.io/"/>
+<id>https://sungsiwon.github.io/</id>
+<updated>2026-10-23T00:00:00+09:00</updated>
+<author><name>성시원 (sianism)</name><uri>https://sungsiwon.github.io/</uri></author>
+<entry xml:lang="ko"><title>중소 제조기업 AI 도입, 무엇부터 준비하나? 미리 챙길 데이터 5가지 (체크리스트 + FAQ)</title><link href="https://sungsiwon.github.io/ko/ai-data-readiness-small-manufacturers/"/><id>https://sungsiwon.github.io/ko/ai-data-readiness-small-manufacturers/</id><published>2026-10-23T00:00:00+09:00</published><updated>2026-10-23T00:00:00+09:00</updated><summary>중소 제조기업이 AI 도입 전에 준비할 데이터는 ① 문제와 기준선, ② 공정 조건, ③ 품질 결과, ④ 둘을 잇는 연결 키, ⑤ 데이터 정의서와 현장 기록 다섯 가지입니다.</summary></entry>
+<entry xml:lang="en"><title>Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare (with Korea&#x27;s Policy Context)</title><link href="https://sungsiwon.github.io/en/ai-data-readiness-small-manufacturers/"/><id>https://sungsiwon.github.io/en/ai-data-readiness-small-manufacturers/</id><published>2026-10-23T00:00:00+09:00</published><updated>2026-10-23T00:00:00+09:00</updated><summary>Most small factories already collect data. Very few use it for AI. The gap is usually not the model; it is whether the data connects.</summary></entry>
+<entry xml:lang="ko"><title>AI 자율제조 vs 스마트팩토리 vs MES, 뭐가 다를까? (자주 묻는 질문 정리)</title><link href="https://sungsiwon.github.io/ko/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/"/><id>https://sungsiwon.github.io/ko/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/</id><published>2026-10-21T00:00:00+09:00</published><updated>2026-10-21T00:00:00+09:00</updated><summary>세 가지는 서로 대체하는 개념이 아니라 층위가 다른 개념입니다. MES는 &#x27;기록하고 관리하는 시스템&#x27;, 스마트팩토리는 &#x27;연결하고 보여주는 공장&#x27;, AI 자율제조는 &#x27;AI가 판단하고 제어까지 하는 공장&#x27;입니다.</summary></entry>
+<entry xml:lang="en"><title>AI Autonomous Manufacturing vs Smart Factory vs MES: an FAQ (with Korea&#x27;s policy context)</title><link href="https://sungsiwon.github.io/en/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/"/><id>https://sungsiwon.github.io/en/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/</id><published>2026-10-21T00:00:00+09:00</published><updated>2026-10-21T00:00:00+09:00</updated><summary>Three terms that get used interchangeably but sit at different layers: a system that records, a factory that connects, and a factory where AI decides.</summary></entry>
+</feed>
