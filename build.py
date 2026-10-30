@@ -29,7 +29,12 @@ POSTS = [  # newest first
             "desc": "General models know a little about everything. Factories need models that understand their vocabulary, cite their documents, and know when to defer to people.",
             "summary": "How a manufacturing-specific LLM differs from a general-purpose LLM and from a manufacturing foundation model (MFM): RAG, domain-adaptive pretraining, hallucination risk (NIST AI 600-1), and Korea's AI Factory and KETI MFM projects."},
      "keywords": ["제조특화LLM", "산업특화AI", "제조AI", "LLM", "RAG", "파운데이션모델", "MFM", "manufacturing LLM"],
-     "channels": {}},  # channel URLs added after Naver etc. go live
+     "channels": {"naver": "https://blog.naver.com/sangza40/224458746984",
+                  "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7521745967805579264/",
+                  "tistory": "https://sianism.tistory.com/15",
+                  "careerly": "https://careerly.co.kr/community?post=127688",
+                  "brunch": "https://brunch.co.kr/@sianism/4",
+                  "medium": "https://medium.com/@sangza40/what-is-a-manufacturing-specific-llm-1e6153db1444"}},
     {"slug": "ai-data-readiness-small-manufacturers", "date": "2026-10-23",
      "ko": {"title": "중소 제조기업 AI 도입, 무엇부터 준비하나? 미리 챙길 데이터 5가지 (체크리스트 + FAQ)",
             "desc": "중소 제조기업이 AI 도입 전에 준비할 데이터는 ① 문제와 기준선, ② 공정 조건, ③ 품질 결과, ④ 둘을 잇는 연결 키, ⑤ 데이터 정의서와 현장 기록 다섯 가지입니다.",
