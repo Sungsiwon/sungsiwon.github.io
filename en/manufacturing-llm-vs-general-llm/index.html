@@ -1,0 +1,188 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is a Manufacturing-Specific LLM? How It Differs from a General-Purpose LLM (and What Korea Is Building)</title><meta name="description" content="General models know a little about everything. Factories need models that understand their vocabulary, cite their documents, and know when to defer to people.">
+<meta name="author" content="성시원 (sianism)"><link rel="canonical" href="https://sungsiwon.github.io/en/manufacturing-llm-vs-general-llm/">
+<link rel="alternate" hreflang="en" href="https://sungsiwon.github.io/en/manufacturing-llm-vs-general-llm/">
+<link rel="alternate" hreflang="ko" href="https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/">
+<link rel="alternate" hreflang="x-default" href="https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/">
+<meta property="og:type" content="article"><meta property="og:title" content="What Is a Manufacturing-Specific LLM? How It Differs from a General-Purpose LLM (and What Korea Is Building)">
+<meta property="og:description" content="General models know a little about everything. Factories need models that understand their vocabulary, cite their documents, and know when to defer to people."><meta property="og:url" content="https://sungsiwon.github.io/en/manufacturing-llm-vs-general-llm/">
+<meta property="og:site_name" content="성시원 제조 AI 아카이브 · sianism archive">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://sungsiwon.github.io/assets/manufacturing-llm-vs-general-llm.jpg"><meta name="twitter:image" content="https://sungsiwon.github.io/assets/manufacturing-llm-vs-general-llm.jpg">
+<link rel="alternate" type="application/atom+xml" title="sianism archive" href="https://sungsiwon.github.io/feed.xml">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://sungsiwon.github.io/#person",
+   "name": "성시원",
+   "alternateName": "sianism",
+   "url": "https://sungsiwon.github.io/",
+   "jobTitle": "책임연구원 (서비스기획)",
+   "worksFor": {
+    "@type": "Organization",
+    "name": "INTERX (인터엑스)",
+    "url": "https://interxlab.com"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/siwon-sung-518329140",
+    "https://blog.naver.com/sangza40",
+    "https://sianism.tistory.com",
+    "https://brunch.co.kr/@sianism",
+    "https://medium.com/@sangza40",
+    "https://github.com/Sungsiwon"
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://sungsiwon.github.io/en/manufacturing-llm-vs-general-llm/#article",
+   "headline": "What Is a Manufacturing-Specific LLM? How It Differs from a General-Purpose LLM (and What Korea Is Building)",
+   "description": "General models know a little about everything. Factories need models that understand their vocabulary, cite their documents, and know when to defer to people.",
+   "inLanguage": "en",
+   "datePublished": "2026-10-30",
+   "dateModified": "2026-10-30",
+   "author": {
+    "@id": "https://sungsiwon.github.io/#person"
+   },
+   "publisher": {
+    "@id": "https://sungsiwon.github.io/#person"
+   },
+   "image": "https://sungsiwon.github.io/assets/manufacturing-llm-vs-general-llm.jpg",
+   "mainEntityOfPage": "https://sungsiwon.github.io/en/manufacturing-llm-vs-general-llm/",
+   "keywords": [
+    "제조특화LLM",
+    "산업특화AI",
+    "제조AI",
+    "LLM",
+    "RAG",
+    "파운데이션모델",
+    "MFM",
+    "manufacturing LLM"
+   ],
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "성시원 제조 AI 아카이브",
+    "url": "https://sungsiwon.github.io/"
+   },
+   "translationOfWork": {
+    "@id": "https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/#article"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://sungsiwon.github.io/en/manufacturing-llm-vs-general-llm/#faq",
+   "inLanguage": "en",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Why not just use a general-purpose model?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For many everyday tasks, you can. The gap shows up with knowledge the model has never seen: internal work standards, equipment-specific codes, the plant's own pass/fail criteria. A 2024 survey paper, Large Language Models for Manufacturing (Li et al., arXiv:2410.21418), names this as a core challenge. Manufacturing involves highly specialized data, terminology, and regulatory frameworks. The authors point to training on domain-specific data, and to combining LLMs with expert systems and manual review, as ways to improve accuracy and reliability."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do you specialize a model?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There are two main routes, and they are often combined. - Retrieval-augmented generation (RAG). Introduced by Lewis et al. at NeurIPS 2020, RAG lets a model retrieve relevant passages from a document index and use them when generating an answer. The paper reported that RAG produced more factual and specific language than a generation-only baseline. It also showed that the model's knowledge can be updated simply by swapping the index, without retraining. That property matters in plants where manuals and procedures change often. - Domain-adaptive pretraining. In Don't Stop Pretraining (Gururangan et al., ACL 2020), a second phase of pretraining on in-domain text improved performance across four domains and eight classification tasks. This route teaches the model the vocabulary and style of a field itself. In practice, a plant might use retrieval to ground answers in current documents, and adaptation to make the model fluent in its jargon."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is a manufacturing LLM the same as a manufacturing foundation model?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No, and the distinction is useful. The Korea Electronics Technology Institute (KETI), a government-funded research institute, described its manufacturing foundation model work in October 2025 as follows: - An MFM is pretrained on large volumes of data generated in manufacturing processes, so that it internalizes domain knowledge. - Because it learns mainly from equipment and sensor time series and machine-vision images, it has a fundamentally different structure from text-trained general LLMs. A simple way to hold the two apart: document-centered work leans toward LLMs, and equipment- and quality-data work leans toward MFMs."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the biggest risk?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Answers that are confidently wrong. The U.S. National Institute of Standards and Technology lists \"confabulation\" as a key risk in its Generative AI Profile (NIST AI 600-1, July 2024). NIST defines it as the production of confidently stated but erroneous or false content, colloquially known as hallucinations. For high-stakes tasks such as work instructions or quality decisions, it is safer to show the source document with each answer and keep a person responsible for the final call."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Where should a plant start?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "My personal suggestion, based on the sources above: start with document tasks where a person checks the output anyway. Searching manuals and work standards, or drafting reports, are good examples. Measure accuracy there before widening the scope."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+<style>:root{color-scheme:light dark;--fg:#1d1d1f;--bg:#fff;--mut:#666;--line:#ddd;--acc:#0b5cad}
+@media(prefers-color-scheme:dark){:root{--fg:#e8e8e8;--bg:#141414;--mut:#a0a0a0;--line:#333;--acc:#6aa9ff}}
+*{box-sizing:border-box}body{margin:0;font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;color:var(--fg);background:var(--bg);word-break:keep-all;overflow-wrap:anywhere}
+main,header.site,footer{max-width:760px;margin:0 auto;padding:0 20px}header.site{padding-top:18px;font-size:15px;display:flex;justify-content:space-between;gap:12px}
+a{color:var(--acc)}h1{font-size:1.7em;line-height:1.35;margin:.8em 0 .4em}h2{font-size:1.3em;margin-top:2em}h3{font-size:1.1em;margin-top:1.6em}
+.meta{color:var(--mut);font-size:15px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:1.5em}.meta p{margin:.2em 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(127,127,127,.12)}
+figure{margin:1.5em 0}img{max-width:100%;height:auto;border-radius:6px}figcaption{color:var(--mut);font-size:14px;text-align:center}
+ul.posts{list-style:none;padding:0}ul.posts li{margin:0 0 1.1em}ul.posts time{color:var(--mut);font-size:14px;display:block}
+footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-10-30"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/manufacturing-llm-vs-general-llm/" hreflang="ko">한국어</a></header><main><article><h1>What Is a Manufacturing-Specific LLM? How It Differs from a General-Purpose LLM (and What Korea Is Building)</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-10-30">2026-10-30</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>한국어 원문: <a href="/ko/manufacturing-llm-vs-general-llm/" hreflang="ko">제조 특화 LLM이란? 범용 LLM과 무엇이 다른가 (비교표 + FAQ, 국내 공공 사례)</a></p></div><p><em>Disclosure: I work at INTERX, a Korean manufacturing AI company (founded 2020). This article is my personal summary based on public sources such as research papers and Korean government and research-institute announcements; it does not represent my employer's official position.</em></p>
+<p>A <strong>manufacturing-specific LLM</strong> is a language model adapted for factory work, either by training a general model further on manufacturing documents and terminology, or by connecting it to a company's own documents so it can look things up before it answers. If a general-purpose LLM is a model that <em>knows broadly</em>, a manufacturing-specific LLM is one that <em>understands shop-floor language and can point to its sources</em>.</p>
+<p>There is no single industry definition yet, so it helps to separate three things that often get blurred together:</p>
+<ul>
+<li><strong>General-purpose LLM:</strong> trained on broad text from many sources; strong at summarizing, translating, drafting, and general Q&amp;A.</li>
+<li><strong>Manufacturing-specific LLM:</strong> a general LLM plus manufacturing text (work standards, equipment manuals, quality reports) through further training, retrieval, or both.</li>
+<li><strong>Manufacturing foundation model (MFM):</strong> a model trained mainly on plant data such as sensor time series and machine-vision images, rather than on text.</li>
+</ul>
+<figure><img src="/assets/manufacturing-llm-vs-general-llm.jpg" alt="Left: a speech-bubble character surrounded by icons from many fields. Right: a speech-bubble character in a hard hat checking factory documents with a magnifying glass." width="1200" height="675" loading="lazy"><figcaption>A general LLM that knows broadly, and a manufacturing LLM that understands shop-floor language and checks its sources</figcaption></figure>
+
+<h2>The questions people actually ask</h2>
+<h3>Why not just use a general-purpose model?</h3>
+<p>For many everyday tasks, you can. The gap shows up with knowledge the model has never seen: internal work standards, equipment-specific codes, the plant's own pass/fail criteria. A 2024 survey paper, <em>Large Language Models for Manufacturing</em> (Li et al., arXiv:2410.21418), names this as a core challenge. Manufacturing involves highly specialized data, terminology, and regulatory frameworks. The authors point to training on domain-specific data, and to combining LLMs with expert systems and manual review, as ways to improve accuracy and reliability.</p>
+<h3>How do you specialize a model?</h3>
+<p>There are two main routes, and they are often combined.</p>
+<ul>
+<li><strong>Retrieval-augmented generation (RAG).</strong> Introduced by Lewis et al. at NeurIPS 2020, RAG lets a model retrieve relevant passages from a document index and use them when generating an answer. The paper reported that RAG produced more factual and specific language than a generation-only baseline. It also showed that the model's knowledge can be updated simply by swapping the index, without retraining. That property matters in plants where manuals and procedures change often.</li>
+<li><strong>Domain-adaptive pretraining.</strong> In <em>Don't Stop Pretraining</em> (Gururangan et al., ACL 2020), a second phase of pretraining on in-domain text improved performance across four domains and eight classification tasks. This route teaches the model the vocabulary and style of a field itself.</li>
+</ul>
+<p>In practice, a plant might use retrieval to ground answers in current documents, and adaptation to make the model fluent in its jargon.</p>
+<h3>Is a manufacturing LLM the same as a manufacturing foundation model?</h3>
+<p>No, and the distinction is useful. The Korea Electronics Technology Institute (KETI), a government-funded research institute, described its manufacturing foundation model work in October 2025 as follows:</p>
+<ul>
+<li>An MFM is pretrained on large volumes of data generated in manufacturing processes, so that it internalizes domain knowledge.</li>
+<li>Because it learns mainly from equipment and sensor time series and machine-vision images, it has a fundamentally different structure from text-trained general LLMs.</li>
+</ul>
+<p>A simple way to hold the two apart: document-centered work leans toward LLMs, and equipment- and quality-data work leans toward MFMs.</p>
+<h3>What is the biggest risk?</h3>
+<p>Answers that are confidently wrong. The U.S. National Institute of Standards and Technology lists "confabulation" as a key risk in its Generative AI Profile (NIST AI 600-1, July 2024). NIST defines it as the production of confidently stated but erroneous or false content, colloquially known as hallucinations. For high-stakes tasks such as work instructions or quality decisions, it is safer to show the source document with each answer and keep a person responsible for the final call.</p>
+<h3>Where should a plant start?</h3>
+<p>My personal suggestion, based on the sources above: start with document tasks where a person checks the output anyway. Searching manuals and work standards, or drafting reports, are good examples. Measure accuracy there before widening the scope.</p>
+<h2>Korea's policy context</h2>
+<p>Korea has made manufacturing foundation models an explicit public project.</p>
+<ul>
+<li><strong>May 2025:</strong> The Ministry of Trade, Industry and Energy (MOTIE) renamed and expanded its "AI Autonomous Manufacturing" program as "AI Factory." It said that through an AI Factory Alliance it would build a manufacturing AI foundation model applicable across manufacturing sites. As early as 2027, it plans to release parts of it as open source, so individual companies can build AI systems specialized for their own processes.</li>
+<li><strong>October 2025:</strong> KETI announced the start of a MOTIE-funded project to develop core technologies for an MFM-based software-defined manufacturing platform. The project runs from August 2025 to February 2028 with a budget of KRW 29.2 billion. KETI plans to validate the results on testbeds in automotive, refining and petrochemicals, and semiconductor-equipment processes.</li>
+<li><strong>October 2025:</strong> In its AI-based Smart Manufacturing Innovation 3.0 Strategy briefing, the Ministry of SMEs and Startups noted that global manufacturers are deploying company-tailored and sector-specific "vertical AI." It said it would expand support for problem-solving, specialized AI in small manufacturers.</li>
+</ul>
+<p>For readers outside Korea, the point is that "industry-specific AI" there is not only a vendor category. It is a named policy direction with public funding, timelines, and research institutes attached.</p>
+<h2>Three differences to remember</h2>
+<ol>
+<li><strong>What it has read.</strong> General LLMs read broadly; manufacturing LLMs add plant documents and terminology; MFMs learn from sensor and image data.</li>
+<li><strong>How it stays current.</strong> A general model's knowledge is fixed until retraining; retrieval lets a manufacturing LLM update by changing documents.</li>
+<li><strong>How it should be used.</strong> In a factory, answers should come with sources, and people should keep the final decision on high-stakes work.</li>
+</ol>
+<p><em>The original post (in Korean), with a comparison table and six FAQs: <a href="https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/">sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm</a></em></p>
+<h2>Sources</h2>
+<ul>
+<li>MOTIE, "AI autonomous manufacturing program overhauled; AI Factory to 100+ per year" (2025-05-26), Korea Policy Briefing (Korean): <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148943684">https://www.korea.kr/news/policyNewsView.do?newsId=148943684</a></li>
+<li>KETI, "KETI begins joint development of a manufacturing-specific AI foundation model" (2025-10-14, Korean): <a href="https://www.keti.re.kr/m/researcher/dept/press.php?at=view&amp;idx=147643">https://www.keti.re.kr/m/researcher/dept/press.php?at=view&amp;idx=147643</a></li>
+<li>Ministry of SMEs and Startups, "AI-based Smart Manufacturing Innovation 3.0 Strategy" briefing (2025-10-24, Korean): <a href="https://www.korea.kr/news/policyNewsView.do?newsId=156722205">https://www.korea.kr/news/policyNewsView.do?newsId=156722205</a></li>
+<li>Li et al., "Large Language Models for Manufacturing," arXiv:2410.21418 (2024): <a href="https://arxiv.org/abs/2410.21418">https://arxiv.org/abs/2410.21418</a></li>
+<li>Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," NeurIPS 2020: <a href="https://arxiv.org/abs/2005.11401">https://arxiv.org/abs/2005.11401</a></li>
+<li>Gururangan et al., "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks," ACL 2020: <a href="https://aclanthology.org/2020.acl-main.740/">https://aclanthology.org/2020.acl-main.740/</a></li>
+<li>NIST AI 600-1, Generative AI Profile (2024-07-26): <a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence">https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence</a></li>
+</ul>
+<p><em>I work at INTERX, a Korean manufacturing AI company (founded 2020). Views are my own.</em></p></article></main><footer><p>A personal manufacturing-AI knowledge archive run by an individual, 성시원 (sianism). Not a company site or a news outlet. Each post is kept here in Korean and English.</p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>

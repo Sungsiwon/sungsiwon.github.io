@@ -6,6 +6,8 @@ Each post exists in Korean (ko) and English (en); the Korean page is the origina
 
 ## Posts
 
+- [제조 특화 LLM이란? 범용 LLM과 무엇이 다른가 (비교표 + FAQ, 국내 공공 사례)](https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/) (2026-10-30, 한국어): 제조 특화 LLM과 범용 LLM·제조 파운데이션 모델(MFM)의 차이 비교표와 FAQ 6문항(RAG, 도메인 적응 학습, 산업부 AI 팩토리·KETI MFM 과제, NIST AI 600-1 환각 위험).
+- [What Is a Manufacturing-Specific LLM? How It Differs from a General-Purpose LLM (and What Korea Is Building)](https://sungsiwon.github.io/en/manufacturing-llm-vs-general-llm/) (2026-10-30, English): How a manufacturing-specific LLM differs from a general-purpose LLM and from a manufacturing foundation model (MFM): RAG, domain-adaptive pretraining, hallucination risk (NIST AI 600-1), and Korea's AI Factory and KETI MFM projects.
 - [중소 제조기업 AI 도입, 무엇부터 준비하나? 미리 챙길 데이터 5가지 (체크리스트 + FAQ)](https://sungsiwon.github.io/ko/ai-data-readiness-small-manufacturers/) (2026-10-23, 한국어): 중소 제조기업이 AI 도입 전에 준비할 데이터 5가지 체크리스트와 데이터 품질(ISO/IEC 25012)·KAMP 데이터셋·정부 지원 FAQ 6문항.
 - [Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare (with Korea's Policy Context)](https://sungsiwon.github.io/en/ai-data-readiness-small-manufacturers/) (2026-10-23, English): Five kinds of data a small manufacturer should prepare before AI, with Korea's 2025 smart manufacturing survey, ISO/IEC 25012 and KAMP datasets.
 - [AI 자율제조 vs 스마트팩토리 vs MES, 뭐가 다를까? (자주 묻는 질문 정리)](https://sungsiwon.github.io/ko/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/) (2026-10-21, 한국어): MES·스마트팩토리·AI 자율제조의 차이를 비교표와 FAQ 6문항으로 정리(산업부 AI 자율제조 전략 1.0, ISA-95, 스마트공장 수준).

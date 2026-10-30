@@ -21,6 +21,15 @@ PERSON = {
                "https://brunch.co.kr/@sianism", "https://medium.com/@sangza40", "https://github.com/Sungsiwon"],
 }
 POSTS = [  # newest first
+    {"slug": "manufacturing-llm-vs-general-llm", "date": "2026-10-30",
+     "ko": {"title": "제조 특화 LLM이란? 범용 LLM과 무엇이 다른가 (비교표 + FAQ, 국내 공공 사례)",
+            "desc": "제조 특화 LLM은 범용 LLM에 제조 문서·용어·공정 지식을 더 학습시키거나, 사내 문서를 찾아보고 답하도록(RAG) 연결해 제조 업무에 맞춘 언어 모델입니다. 센서·이미지를 학습하는 제조 파운데이션 모델(MFM)과는 구분됩니다.",
+            "summary": "제조 특화 LLM과 범용 LLM·제조 파운데이션 모델(MFM)의 차이 비교표와 FAQ 6문항(RAG, 도메인 적응 학습, 산업부 AI 팩토리·KETI MFM 과제, NIST AI 600-1 환각 위험)."},
+     "en": {"title": "What Is a Manufacturing-Specific LLM? How It Differs from a General-Purpose LLM (and What Korea Is Building)",
+            "desc": "General models know a little about everything. Factories need models that understand their vocabulary, cite their documents, and know when to defer to people.",
+            "summary": "How a manufacturing-specific LLM differs from a general-purpose LLM and from a manufacturing foundation model (MFM): RAG, domain-adaptive pretraining, hallucination risk (NIST AI 600-1), and Korea's AI Factory and KETI MFM projects."},
+     "keywords": ["제조특화LLM", "산업특화AI", "제조AI", "LLM", "RAG", "파운데이션모델", "MFM", "manufacturing LLM"],
+     "channels": {}},  # channel URLs added after Naver etc. go live
     {"slug": "ai-data-readiness-small-manufacturers", "date": "2026-10-23",
      "ko": {"title": "중소 제조기업 AI 도입, 무엇부터 준비하나? 미리 챙길 데이터 5가지 (체크리스트 + FAQ)",
             "desc": "중소 제조기업이 AI 도입 전에 준비할 데이터는 ① 문제와 기준선, ② 공정 조건, ③ 품질 결과, ④ 둘을 잇는 연결 키, ⑤ 데이터 정의서와 현장 기록 다섯 가지입니다.",
@@ -148,7 +157,7 @@ def build_post(p, lang):
         s += f'<p>By <span>{esc(AUTHOR_KO)}</span> · Published <time datetime="{p["date"]}">{p["date"]}</time></p>'
     s += f'<p>{esc(DISC[lang])}</p>'
     links = " · ".join(f'<a href="{esc(u)}" rel="noopener">{CH_LABEL[k][0 if lang=="ko" else 1]}</a>' for k, u in p["channels"].items())
-    s += f'<p>{"다른 채널에서 보기" if lang=="ko" else "Also on"}: {links}</p>'
+    if links: s += f'<p>{"다른 채널에서 보기" if lang=="ko" else "Also on"}: {links}</p>'
     s += f'<p>{"English version" if lang=="ko" else "한국어 원문"}: <a href="/{other}/{slug}/" hreflang="{other}">{esc(p[other]["title"])}</a></p></div>'
     s += md_to_html(text) + "</article>" + foot(lang)
     write(f"{lang}/{slug}/index.html", s)

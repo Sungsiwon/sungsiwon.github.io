@@ -1,0 +1,214 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제조 특화 LLM이란? 범용 LLM과 무엇이 다른가 (비교표 + FAQ, 국내 공공 사례)</title><meta name="description" content="제조 특화 LLM은 범용 LLM에 제조 문서·용어·공정 지식을 더 학습시키거나, 사내 문서를 찾아보고 답하도록(RAG) 연결해 제조 업무에 맞춘 언어 모델입니다. 센서·이미지를 학습하는 제조 파운데이션 모델(MFM)과는 구분됩니다.">
+<meta name="author" content="성시원 (sianism)"><link rel="canonical" href="https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/">
+<link rel="alternate" hreflang="ko" href="https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/">
+<link rel="alternate" hreflang="en" href="https://sungsiwon.github.io/en/manufacturing-llm-vs-general-llm/">
+<link rel="alternate" hreflang="x-default" href="https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/">
+<meta property="og:type" content="article"><meta property="og:title" content="제조 특화 LLM이란? 범용 LLM과 무엇이 다른가 (비교표 + FAQ, 국내 공공 사례)">
+<meta property="og:description" content="제조 특화 LLM은 범용 LLM에 제조 문서·용어·공정 지식을 더 학습시키거나, 사내 문서를 찾아보고 답하도록(RAG) 연결해 제조 업무에 맞춘 언어 모델입니다. 센서·이미지를 학습하는 제조 파운데이션 모델(MFM)과는 구분됩니다."><meta property="og:url" content="https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/">
+<meta property="og:site_name" content="성시원 제조 AI 아카이브 · sianism archive">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://sungsiwon.github.io/assets/manufacturing-llm-vs-general-llm.jpg"><meta name="twitter:image" content="https://sungsiwon.github.io/assets/manufacturing-llm-vs-general-llm.jpg">
+<link rel="alternate" type="application/atom+xml" title="sianism archive" href="https://sungsiwon.github.io/feed.xml">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://sungsiwon.github.io/#person",
+   "name": "성시원",
+   "alternateName": "sianism",
+   "url": "https://sungsiwon.github.io/",
+   "jobTitle": "책임연구원 (서비스기획)",
+   "worksFor": {
+    "@type": "Organization",
+    "name": "INTERX (인터엑스)",
+    "url": "https://interxlab.com"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/siwon-sung-518329140",
+    "https://blog.naver.com/sangza40",
+    "https://sianism.tistory.com",
+    "https://brunch.co.kr/@sianism",
+    "https://medium.com/@sangza40",
+    "https://github.com/Sungsiwon"
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/#article",
+   "headline": "제조 특화 LLM이란? 범용 LLM과 무엇이 다른가 (비교표 + FAQ, 국내 공공 사례)",
+   "description": "제조 특화 LLM은 범용 LLM에 제조 문서·용어·공정 지식을 더 학습시키거나, 사내 문서를 찾아보고 답하도록(RAG) 연결해 제조 업무에 맞춘 언어 모델입니다. 센서·이미지를 학습하는 제조 파운데이션 모델(MFM)과는 구분됩니다.",
+   "inLanguage": "ko",
+   "datePublished": "2026-10-30",
+   "dateModified": "2026-10-30",
+   "author": {
+    "@id": "https://sungsiwon.github.io/#person"
+   },
+   "publisher": {
+    "@id": "https://sungsiwon.github.io/#person"
+   },
+   "image": "https://sungsiwon.github.io/assets/manufacturing-llm-vs-general-llm.jpg",
+   "mainEntityOfPage": "https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/",
+   "keywords": [
+    "제조특화LLM",
+    "산업특화AI",
+    "제조AI",
+    "LLM",
+    "RAG",
+    "파운데이션모델",
+    "MFM",
+    "manufacturing LLM"
+   ],
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "성시원 제조 AI 아카이브",
+    "url": "https://sungsiwon.github.io/"
+   },
+   "workTranslation": {
+    "@id": "https://sungsiwon.github.io/en/manufacturing-llm-vs-general-llm/#article"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/#faq",
+   "inLanguage": "ko",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "제조 특화 LLM, 한 문장으로 무엇인가요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "제조 현장의 문서와 용어를 이해하도록 맞춘 언어 모델입니다. 2024년 미국 조지아대 연구진 등이 낸 서베이 논문 「Large Language Models for Manufacturing」은 제조 분야가 고도로 전문적인 용어와 규정을 다루기 때문에 LLM 적용이 어렵다고 짚고, 제조 도메인 데이터로 학습시키는 것과 전문가 시스템·사람 검토를 결합하는 것을 보완책으로 제시합니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "범용 LLM으로는 안 되나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "상당 부분은 됩니다. 차이는 '우리 공장의 말과 기준'을 아느냐, 답에 근거를 댈 수 있느냐에서 납니다. 범용 LLM은 일반적인 설명과 요약에 강하지만, 사내 작업표준이나 설비 고유 코드, 품질 판정 기준 같은 내부 지식은 학습한 적이 없습니다. 그래서 제조 업무에서는 범용 모델을 그대로 쓰기보다 아래 Q3의 방법으로 '특화'하는 경우가 많습니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "어떻게 특화하나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "크게 두 갈래입니다. 문서를 찾아보고 답하게 하는 방법(RAG)과, 제조 데이터로 모델을 더 학습시키는 방법입니다. - 검색 증강 생성(RAG): 2020년 NeurIPS 논문(Lewis 외)에서 제안된 방식으로, 모델이 답하기 전에 문서 색인에서 관련 문서를 찾아 근거로 씁니다. 논문은 이 방식이 순수 생성 모델보다 더 사실에 맞고 구체적인 답을 내며, 문서 색인을 바꾸는 것만으로 지식을 갱신할 수 있음을 보였습니다. 매뉴얼·작업표준이 자주 바뀌는 현장에 맞는 방식입니다. - 도메인 적응 학습: 2020년 ACL 논문 「Don't Stop Pretraining」(Gururangan 외)은 4개 분야, 8개 과제 실험에서 해당 분야 텍스트로 한 번 더 사전학습(domain-adaptive pretraining)하면 성능이 오른다는 결과를 보고했습니다. 제조 용어·문체에 모델 자체를 익숙하게 만드는 방법입니다. 실제로는 둘을 함께 쓰는 경우도 많습니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "제조 특화 LLM과 '제조 파운데이션 모델(MFM)'은 같은 건가요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "다릅니다. LLM은 텍스트를, MFM은 주로 설비·센서·이미지 같은 현장 데이터를 학습합니다. 한국전자기술연구원(KETI)은 2025년 10월 보도자료에서 제조 특화 AI 파운데이션 모델(MFM)을 \"제조 공정에서 발생하는 대규모 데이터를 사전 학습하여 제조 도메인 지식을 내재화한 AI 모델\"로 설명하고, 시계열·머신비전 데이터를 중심으로 학습하기 때문에 \"대규모 텍스트를 학습하는 범용 언어모델(LLM)과는 본질적으로 다른 구조와 특성\"을 지닌다고 밝혔습니다. '산업 특화 AI'를 이야기할 때는 두 가지를 구분해 두면 혼란이 줄어듭니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "국내에는 어떤 공공 사례가 있나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "산업통상자원부가 제조 AI 파운데이션 모델 개발을 공식 과제로 추진하고 있습니다. - 산업부는 2025년 5월 26일 'AI 자율제조' 사업을 'AI 팩토리'로 개편하면서, AI 팩토리 얼라이언스를 통해 모든 제조현장에 범용으로 적용할 수 있는 제조 AI 파운데이션 모델을 만들고, 이르면 2027년부터 일부를 제조기업에 오픈소스로 제공해 기업이 자사 공정에 특화된 AI 시스템을 구축하도록 지원하겠다고 밝혔습니다. - KETI는 2025년 10월 산업부·한국산업기술기획평가원 지원 과제 「AI 팩토리 고도화를 위한 MFM 기반 SDM 플랫폼 핵심기술 개발」(2025.8.1~2028.2.29, 예산 292억 원)에 착수했다고 밝혔습니다. 개발한 모델과 플랫폼은 자동차, 정유·석유화학, 반도체 장비 공정 테스트베드에서 검증할 계획입니다. - 중소벤처기업부의 2025년 10월 'AI 기반 스마트제조혁신 3.0 전략' 브리핑도 글로벌 제조기업들이 \"기업 맞춤형 AI, 분야별 버티컬 AI\"를 현장에 적용하고 있다고 배경을 설명하고, 중소기업에는 '문제해결형 특화 AI' 도입 지원을 확대하겠다고 밝혔습니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "도입할 때 가장 주의할 점은?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "그럴듯한 오답(환각)과 사내 데이터 보안입니다. 사람이 최종 확인하는 절차를 함께 설계해야 합니다. 미국 국립표준기술연구소(NIST)는 2024년 7월 발표한 생성형 AI 위험관리 프로파일(NIST AI 600-1)에서 생성형 AI의 주요 위험으로 '컨퍼뷸레이션(confabulation)', 즉 흔히 환각이라 부르는 \"자신 있게 서술된 오류·허위 내용\"을 꼽았습니다. 작업 지시나 품질 판정처럼 결과가 큰 업무에는 근거 문서 표시와 사람 검토를 기본으로 두는 것이 안전합니다."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+<style>:root{color-scheme:light dark;--fg:#1d1d1f;--bg:#fff;--mut:#666;--line:#ddd;--acc:#0b5cad}
+@media(prefers-color-scheme:dark){:root{--fg:#e8e8e8;--bg:#141414;--mut:#a0a0a0;--line:#333;--acc:#6aa9ff}}
+*{box-sizing:border-box}body{margin:0;font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;color:var(--fg);background:var(--bg);word-break:keep-all;overflow-wrap:anywhere}
+main,header.site,footer{max-width:760px;margin:0 auto;padding:0 20px}header.site{padding-top:18px;font-size:15px;display:flex;justify-content:space-between;gap:12px}
+a{color:var(--acc)}h1{font-size:1.7em;line-height:1.35;margin:.8em 0 .4em}h2{font-size:1.3em;margin-top:2em}h3{font-size:1.1em;margin-top:1.6em}
+.meta{color:var(--mut);font-size:15px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:1.5em}.meta p{margin:.2em 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(127,127,127,.12)}
+figure{margin:1.5em 0}img{max-width:100%;height:auto;border-radius:6px}figcaption{color:var(--mut);font-size:14px;text-align:center}
+ul.posts{list-style:none;padding:0}ul.posts li{margin:0 0 1.1em}ul.posts time{color:var(--mut);font-size:14px;display:block}
+footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-10-30"></head><body><header class="site"><a href="/">홈 · 성시원 제조 AI 아카이브</a><a href="/en/manufacturing-llm-vs-general-llm/" hreflang="en">English</a></header><main><article><h1>제조 특화 LLM이란? 범용 LLM과 무엇이 다른가 (비교표 + FAQ, 국내 공공 사례)</h1><div class="meta"><p>글쓴이 <span>성시원 (sianism)</span> · 게시일 <time datetime="2026-10-30">2026-10-30</time></p><p>저는 제조 AI 기업 인터엑스에서 일하고 있고, 이 글은 개인 정리입니다.</p><p>English version: <a href="/en/manufacturing-llm-vs-general-llm/" hreflang="en">What Is a Manufacturing-Specific LLM? How It Differs from a General-Purpose LLM (and What Korea Is Building)</a></p></div><p>저는 2020년 설립된 제조 AI 기업 인터엑스(INTERX)에서 일하고 있습니다. 이 글은 정부 발표·연구기관 자료·논문 등 공개 자료를 바탕으로 개인적으로 정리한 내용이며, 회사 공식 입장과는 다를 수 있습니다.</p>
+<p>제조 특화 LLM은 <strong>범용 LLM에 제조 분야의 문서·용어·공정 지식을 더 학습시키거나, 사내 문서를 찾아보고 답하도록 연결해 제조 업무에 맞춘 언어 모델</strong>을 말합니다. 범용 LLM이 '넓게 아는 모델'이라면, 제조 특화 LLM은 '현장의 용어를 알아듣고 근거 문서를 대며 답하는 모델'에 가깝습니다.</p>
+<h2>한눈에 비교</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>구분</th>
+<th>범용 LLM</th>
+<th>제조 특화 LLM</th>
+<th>제조 특화 파운데이션 모델(MFM)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주로 학습한 데이터</td>
+<td>웹·책 등 폭넓은 텍스트</td>
+<td>범용 텍스트 + 제조 문서·용어(작업표준, 설비 매뉴얼, 품질 보고서 등)</td>
+<td>설비·센서 시계열, 머신비전 이미지 등 현장 데이터</td>
+</tr>
+<tr>
+<td>잘하는 일</td>
+<td>요약, 번역, 글쓰기, 일반 질의응답</td>
+<td>제조 용어가 섞인 문서 검색·요약, 작업 지침 안내, 보고서 초안</td>
+<td>공정 최적화 등 현장용 AI 기능</td>
+</tr>
+<tr>
+<td>지식 업데이트</td>
+<td>재학습 전까지 고정</td>
+<td>문서 검색(RAG)을 붙이면 문서 교체로 갱신 가능</td>
+<td>현장 데이터 추가 학습</td>
+</tr>
+<tr>
+<td>주의할 점</td>
+<td>우리 공장 용어·기준을 모름, 그럴듯한 오답</td>
+<td>학습·검색 문서의 품질과 보안 관리</td>
+<td>데이터 확보·표준화 부담</td>
+</tr>
+</tbody>
+</table></div>
+<p>※ 표는 아래 논문·공개 자료를 바탕으로 한 개인 정리입니다. '제조 특화 LLM'에 대한 업계 공통 정의는 아직 없고, MFM 열은 KETI 설명을 따랐습니다.</p>
+<figure><img src="/assets/manufacturing-llm-vs-general-llm.jpg" alt="왼쪽에는 여러 분야 아이콘에 둘러싸인 말풍선 캐릭터, 오른쪽에는 안전모를 쓰고 공장 문서를 돋보기로 확인하는 말풍선 캐릭터" width="1200" height="675" loading="lazy"><figcaption>넓게 아는 범용 LLM과, 현장 용어를 알아듣고 근거를 확인하는 제조 특화 LLM</figcaption></figure>
+
+<h2>Q1. 제조 특화 LLM, 한 문장으로 무엇인가요?</h2>
+<p><strong>제조 현장의 문서와 용어를 이해하도록 맞춘 언어 모델입니다.</strong><br />
+2024년 미국 조지아대 연구진 등이 낸 서베이 논문 「Large Language Models for Manufacturing」은 제조 분야가 고도로 전문적인 용어와 규정을 다루기 때문에 LLM 적용이 어렵다고 짚고, 제조 도메인 데이터로 학습시키는 것과 전문가 시스템·사람 검토를 결합하는 것을 보완책으로 제시합니다.</p>
+<h2>Q2. 범용 LLM으로는 안 되나요?</h2>
+<p><strong>상당 부분은 됩니다. 차이는 '우리 공장의 말과 기준'을 아느냐, 답에 근거를 댈 수 있느냐에서 납니다.</strong><br />
+범용 LLM은 일반적인 설명과 요약에 강하지만, 사내 작업표준이나 설비 고유 코드, 품질 판정 기준 같은 내부 지식은 학습한 적이 없습니다. 그래서 제조 업무에서는 범용 모델을 그대로 쓰기보다 아래 Q3의 방법으로 '특화'하는 경우가 많습니다.</p>
+<h2>Q3. 어떻게 특화하나요?</h2>
+<p><strong>크게 두 갈래입니다. 문서를 찾아보고 답하게 하는 방법(RAG)과, 제조 데이터로 모델을 더 학습시키는 방법입니다.</strong><br />
+- <strong>검색 증강 생성(RAG):</strong> 2020년 NeurIPS 논문(Lewis 외)에서 제안된 방식으로, 모델이 답하기 전에 문서 색인에서 관련 문서를 찾아 근거로 씁니다. 논문은 이 방식이 순수 생성 모델보다 더 사실에 맞고 구체적인 답을 내며, 문서 색인을 바꾸는 것만으로 지식을 갱신할 수 있음을 보였습니다. 매뉴얼·작업표준이 자주 바뀌는 현장에 맞는 방식입니다.<br />
+- <strong>도메인 적응 학습:</strong> 2020년 ACL 논문 「Don't Stop Pretraining」(Gururangan 외)은 4개 분야, 8개 과제 실험에서 해당 분야 텍스트로 한 번 더 사전학습(domain-adaptive pretraining)하면 성능이 오른다는 결과를 보고했습니다. 제조 용어·문체에 모델 자체를 익숙하게 만드는 방법입니다.<br />
+실제로는 둘을 함께 쓰는 경우도 많습니다.</p>
+<h2>Q4. 제조 특화 LLM과 '제조 파운데이션 모델(MFM)'은 같은 건가요?</h2>
+<p><strong>다릅니다. LLM은 텍스트를, MFM은 주로 설비·센서·이미지 같은 현장 데이터를 학습합니다.</strong><br />
+한국전자기술연구원(KETI)은 2025년 10월 보도자료에서 제조 특화 AI 파운데이션 모델(MFM)을 "제조 공정에서 발생하는 대규모 데이터를 사전 학습하여 제조 도메인 지식을 내재화한 AI 모델"로 설명하고, 시계열·머신비전 데이터를 중심으로 학습하기 때문에 "대규모 텍스트를 학습하는 범용 언어모델(LLM)과는 본질적으로 다른 구조와 특성"을 지닌다고 밝혔습니다. '산업 특화 AI'를 이야기할 때는 두 가지를 구분해 두면 혼란이 줄어듭니다.</p>
+<h2>Q5. 국내에는 어떤 공공 사례가 있나요?</h2>
+<p><strong>산업통상자원부가 제조 AI 파운데이션 모델 개발을 공식 과제로 추진하고 있습니다.</strong><br />
+- 산업부는 2025년 5월 26일 'AI 자율제조' 사업을 'AI 팩토리'로 개편하면서, AI 팩토리 얼라이언스를 통해 모든 제조현장에 범용으로 적용할 수 있는 제조 AI 파운데이션 모델을 만들고, 이르면 2027년부터 일부를 제조기업에 오픈소스로 제공해 기업이 자사 공정에 특화된 AI 시스템을 구축하도록 지원하겠다고 밝혔습니다.<br />
+- KETI는 2025년 10월 산업부·한국산업기술기획평가원 지원 과제 「AI 팩토리 고도화를 위한 MFM 기반 SDM 플랫폼 핵심기술 개발」(2025.8.1~2028.2.29, 예산 292억 원)에 착수했다고 밝혔습니다. 개발한 모델과 플랫폼은 자동차, 정유·석유화학, 반도체 장비 공정 테스트베드에서 검증할 계획입니다.<br />
+- 중소벤처기업부의 2025년 10월 'AI 기반 스마트제조혁신 3.0 전략' 브리핑도 글로벌 제조기업들이 "기업 맞춤형 AI, 분야별 버티컬 AI"를 현장에 적용하고 있다고 배경을 설명하고, 중소기업에는 '문제해결형 특화 AI' 도입 지원을 확대하겠다고 밝혔습니다.</p>
+<h2>Q6. 도입할 때 가장 주의할 점은?</h2>
+<p><strong>그럴듯한 오답(환각)과 사내 데이터 보안입니다. 사람이 최종 확인하는 절차를 함께 설계해야 합니다.</strong><br />
+미국 국립표준기술연구소(NIST)는 2024년 7월 발표한 생성형 AI 위험관리 프로파일(NIST AI 600-1)에서 생성형 AI의 주요 위험으로 '컨퍼뷸레이션(confabulation)', 즉 흔히 환각이라 부르는 "자신 있게 서술된 오류·허위 내용"을 꼽았습니다. 작업 지시나 품질 판정처럼 결과가 큰 업무에는 근거 문서 표시와 사람 검토를 기본으로 두는 것이 안전합니다.</p>
+<h2>참고 자료</h2>
+<ul>
+<li>산업통상자원부, 「AI 자율제조 지원사업 대폭 개편…AI 팩토리 연100개 이상으로」(2025-05-26), 정책브리핑: <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148943684">https://www.korea.kr/news/policyNewsView.do?newsId=148943684</a></li>
+<li>한국전자기술연구원(KETI), 「KETI, 국내 대표 산학연 협력으로 '제조 특화 AI 파운데이션 모델' 공동개발 착수」(2025-10-14): <a href="https://www.keti.re.kr/m/researcher/dept/press.php?at=view&amp;idx=147643">https://www.keti.re.kr/m/researcher/dept/press.php?at=view&amp;idx=147643</a></li>
+<li>중소벤처기업부, 「AI기반 스마트 제조혁신 3.0 전략발표」 브리핑(2025-10-24), 정책브리핑: <a href="https://www.korea.kr/news/policyNewsView.do?newsId=156722205">https://www.korea.kr/news/policyNewsView.do?newsId=156722205</a></li>
+<li>Li et al., "Large Language Models for Manufacturing" (arXiv:2410.21418, 2024): <a href="https://arxiv.org/abs/2410.21418">https://arxiv.org/abs/2410.21418</a></li>
+<li>Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks" (NeurIPS 2020, arXiv:2005.11401): <a href="https://arxiv.org/abs/2005.11401">https://arxiv.org/abs/2005.11401</a></li>
+<li>Gururangan et al., "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks" (ACL 2020): <a href="https://aclanthology.org/2020.acl-main.740/">https://aclanthology.org/2020.acl-main.740/</a></li>
+<li>NIST, AI 600-1 "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile"(2024-07-26): <a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence">https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence</a></li>
+</ul>
+<p><em>필자는 인터엑스 재직 중이며, 이 글은 공개 자료에 기반한 개인 정리입니다.</em></p></article></main><footer><p>성시원(sianism)이 개인적으로 운영하는 제조 AI 지식 아카이브입니다. 회사 사이트나 언론 매체가 아니며, 각 글의 한국어·영어 원문을 모아 둡니다.</p><p>저는 제조 AI 기업 인터엑스에서 일하고 있고, 이 글은 개인 정리입니다.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>
