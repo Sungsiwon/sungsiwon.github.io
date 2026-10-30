@@ -75,7 +75,7 @@ def esc(s): return html.escape(s, quote=True)
 def url(lang, slug): return f"{SITE}/{lang}/{slug}/"
 
 def md_to_html(text):
-    text = re.sub(r'(?<![(<"=])(https?://[^\s<>)]+)', r'<\1>', text)  # autolink bare URLs
+    text = re.sub(r'(?<![(<"=])(https?://[^\s<>)*]+)', r'<\1>', text)  # autolink bare URLs
     h = markdown.markdown(text, extensions=["tables", "nl2br", "sane_lists"])
     return h.replace("<table>", '<div class="tbl"><table>').replace("</table>", "</table></div>")
 
