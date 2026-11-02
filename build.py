@@ -21,6 +21,15 @@ PERSON = {
                "https://brunch.co.kr/@sianism", "https://medium.com/@sangza40", "https://github.com/Sungsiwon"],
 }
 POSTS = [  # newest first
+    {"slug": "injection-molding-defect-ai", "date": "2026-11-03",
+     "ko": {"title": "사출성형 불량, AI는 어떻게 원인을 찾을까? 공정 데이터·센서·비전 3가지 접근 정리 (비교표 + FAQ 6문항)",
+            "desc": "AI가 사출성형 불량의 원인을 찾는 방법은 공정 조건과 품질 결과의 관계를 학습하는 품질 예측 모델, 금형 내 압력 같은 센서 신호의 이상 탐지, 카메라 이미지로 불량을 찾는 비전 검사 세 갈래입니다. 원인 분석에 가까워지려면 설명 가능한 AI(XAI)와 현장 검증이 함께 필요합니다.",
+            "summary": "사출 불량 원인 분석에 쓰이는 AI 접근 3가지(공정 조건→품질 예측, 센서 시계열 이상 탐지, 비전 검사) 비교표와 FAQ 6문항(XAI 원인 판단 비교 연구, 금형 내 압력·쿠션량, 플래시 불량 분할, 뿌리기술 '사출·프레스', 산업부 산업 AI 10대 과제)."},
+     "en": {"title": "How AI Finds the Root Cause of Injection Molding Defects: Three Data Approaches and One Warning",
+            "desc": "Process-to-quality models, sensor anomaly detection, and vision inspection each answer a different question. Explainable AI connects them to a cause, but not without a check on the shop floor.",
+            "summary": "How AI approaches injection molding defect root cause analysis: process-to-quality models with explainable AI (SHAP vs ICE), anomaly detection on cavity pressure and melt cushion, vision inspection of flash defects, and Korea's root-technology and industrial AI policy context."},
+     "keywords": ["사출성형", "사출불량", "제조AI", "불량원인분석", "품질예측", "이상탐지", "비전검사", "설명가능한AI", "injection molding AI"],
+     "channels": {}},  # channel URLs added after Naver etc. go live
     {"slug": "manufacturing-llm-vs-general-llm", "date": "2026-10-30",
      "ko": {"title": "제조 특화 LLM이란? 범용 LLM과 무엇이 다른가 (비교표 + FAQ, 국내 공공 사례)",
             "desc": "제조 특화 LLM은 범용 LLM에 제조 문서·용어·공정 지식을 더 학습시키거나, 사내 문서를 찾아보고 답하도록(RAG) 연결해 제조 업무에 맞춘 언어 모델입니다. 센서·이미지를 학습하는 제조 파운데이션 모델(MFM)과는 구분됩니다.",

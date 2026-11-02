@@ -6,6 +6,8 @@ Each post exists in Korean (ko) and English (en); the Korean page is the origina
 
 ## Posts
 
+- [사출성형 불량, AI는 어떻게 원인을 찾을까? 공정 데이터·센서·비전 3가지 접근 정리 (비교표 + FAQ 6문항)](https://sungsiwon.github.io/ko/injection-molding-defect-ai/) (2026-11-03, 한국어): 사출 불량 원인 분석에 쓰이는 AI 접근 3가지(공정 조건→품질 예측, 센서 시계열 이상 탐지, 비전 검사) 비교표와 FAQ 6문항(XAI 원인 판단 비교 연구, 금형 내 압력·쿠션량, 플래시 불량 분할, 뿌리기술 '사출·프레스', 산업부 산업 AI 10대 과제).
+- [How AI Finds the Root Cause of Injection Molding Defects: Three Data Approaches and One Warning](https://sungsiwon.github.io/en/injection-molding-defect-ai/) (2026-11-03, English): How AI approaches injection molding defect root cause analysis: process-to-quality models with explainable AI (SHAP vs ICE), anomaly detection on cavity pressure and melt cushion, vision inspection of flash defects, and Korea's root-technology and industrial AI policy context.
 - [제조 특화 LLM이란? 범용 LLM과 무엇이 다른가 (비교표 + FAQ, 국내 공공 사례)](https://sungsiwon.github.io/ko/manufacturing-llm-vs-general-llm/) (2026-10-30, 한국어): 제조 특화 LLM과 범용 LLM·제조 파운데이션 모델(MFM)의 차이 비교표와 FAQ 6문항(RAG, 도메인 적응 학습, 산업부 AI 팩토리·KETI MFM 과제, NIST AI 600-1 환각 위험).
 - [What Is a Manufacturing-Specific LLM? How It Differs from a General-Purpose LLM (and What Korea Is Building)](https://sungsiwon.github.io/en/manufacturing-llm-vs-general-llm/) (2026-10-30, English): How a manufacturing-specific LLM differs from a general-purpose LLM and from a manufacturing foundation model (MFM): RAG, domain-adaptive pretraining, hallucination risk (NIST AI 600-1), and Korea's AI Factory and KETI MFM projects.
 - [중소 제조기업 AI 도입, 무엇부터 준비하나? 미리 챙길 데이터 5가지 (체크리스트 + FAQ)](https://sungsiwon.github.io/ko/ai-data-readiness-small-manufacturers/) (2026-10-23, 한국어): 중소 제조기업이 AI 도입 전에 준비할 데이터 5가지 체크리스트와 데이터 품질(ISO/IEC 25012)·KAMP 데이터셋·정부 지원 FAQ 6문항.

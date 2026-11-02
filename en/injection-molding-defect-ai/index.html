@@ -1,0 +1,147 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How AI Finds the Root Cause of Injection Molding Defects: Three Data Approaches and One Warning</title><meta name="description" content="Process-to-quality models, sensor anomaly detection, and vision inspection each answer a different question. Explainable AI connects them to a cause, but not without a check on the shop floor.">
+<meta name="author" content="성시원 (sianism)"><link rel="canonical" href="https://sungsiwon.github.io/en/injection-molding-defect-ai/">
+<link rel="alternate" hreflang="en" href="https://sungsiwon.github.io/en/injection-molding-defect-ai/">
+<link rel="alternate" hreflang="ko" href="https://sungsiwon.github.io/ko/injection-molding-defect-ai/">
+<link rel="alternate" hreflang="x-default" href="https://sungsiwon.github.io/ko/injection-molding-defect-ai/">
+<meta property="og:type" content="article"><meta property="og:title" content="How AI Finds the Root Cause of Injection Molding Defects: Three Data Approaches and One Warning">
+<meta property="og:description" content="Process-to-quality models, sensor anomaly detection, and vision inspection each answer a different question. Explainable AI connects them to a cause, but not without a check on the shop floor."><meta property="og:url" content="https://sungsiwon.github.io/en/injection-molding-defect-ai/">
+<meta property="og:site_name" content="성시원 제조 AI 아카이브 · sianism archive">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://sungsiwon.github.io/assets/injection-molding-defect-ai.jpg"><meta name="twitter:image" content="https://sungsiwon.github.io/assets/injection-molding-defect-ai.jpg">
+<link rel="alternate" type="application/atom+xml" title="sianism archive" href="https://sungsiwon.github.io/feed.xml">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://sungsiwon.github.io/#person",
+   "name": "성시원",
+   "alternateName": "sianism",
+   "url": "https://sungsiwon.github.io/",
+   "jobTitle": "책임연구원 (서비스기획)",
+   "worksFor": {
+    "@type": "Organization",
+    "name": "INTERX (인터엑스)",
+    "url": "https://interxlab.com"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/siwon-sung-518329140",
+    "https://blog.naver.com/sangza40",
+    "https://sianism.tistory.com",
+    "https://brunch.co.kr/@sianism",
+    "https://medium.com/@sangza40",
+    "https://github.com/Sungsiwon"
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://sungsiwon.github.io/en/injection-molding-defect-ai/#article",
+   "headline": "How AI Finds the Root Cause of Injection Molding Defects: Three Data Approaches and One Warning",
+   "description": "Process-to-quality models, sensor anomaly detection, and vision inspection each answer a different question. Explainable AI connects them to a cause, but not without a check on the shop floor.",
+   "inLanguage": "en",
+   "datePublished": "2026-11-03",
+   "dateModified": "2026-11-03",
+   "author": {
+    "@id": "https://sungsiwon.github.io/#person"
+   },
+   "publisher": {
+    "@id": "https://sungsiwon.github.io/#person"
+   },
+   "image": "https://sungsiwon.github.io/assets/injection-molding-defect-ai.jpg",
+   "mainEntityOfPage": "https://sungsiwon.github.io/en/injection-molding-defect-ai/",
+   "keywords": [
+    "사출성형",
+    "사출불량",
+    "제조AI",
+    "불량원인분석",
+    "품질예측",
+    "이상탐지",
+    "비전검사",
+    "설명가능한AI",
+    "injection molding AI"
+   ],
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "성시원 제조 AI 아카이브",
+    "url": "https://sungsiwon.github.io/"
+   },
+   "translationOfWork": {
+    "@id": "https://sungsiwon.github.io/ko/injection-molding-defect-ai/#article"
+   }
+  }
+ ]
+}</script>
+<style>:root{color-scheme:light dark;--fg:#1d1d1f;--bg:#fff;--mut:#666;--line:#ddd;--acc:#0b5cad}
+@media(prefers-color-scheme:dark){:root{--fg:#e8e8e8;--bg:#141414;--mut:#a0a0a0;--line:#333;--acc:#6aa9ff}}
+*{box-sizing:border-box}body{margin:0;font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;color:var(--fg);background:var(--bg);word-break:keep-all;overflow-wrap:anywhere}
+main,header.site,footer{max-width:760px;margin:0 auto;padding:0 20px}header.site{padding-top:18px;font-size:15px;display:flex;justify-content:space-between;gap:12px}
+a{color:var(--acc)}h1{font-size:1.7em;line-height:1.35;margin:.8em 0 .4em}h2{font-size:1.3em;margin-top:2em}h3{font-size:1.1em;margin-top:1.6em}
+.meta{color:var(--mut);font-size:15px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:1.5em}.meta p{margin:.2em 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(127,127,127,.12)}
+figure{margin:1.5em 0}img{max-width:100%;height:auto;border-radius:6px}figcaption{color:var(--mut);font-size:14px;text-align:center}
+ul.posts{list-style:none;padding:0}ul.posts li{margin:0 0 1.1em}ul.posts time{color:var(--mut);font-size:14px;display:block}
+footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-11-03"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/injection-molding-defect-ai/" hreflang="ko">한국어</a></header><main><article><h1>How AI Finds the Root Cause of Injection Molding Defects: Three Data Approaches and One Warning</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-11-03">2026-11-03</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>한국어 원문: <a href="/ko/injection-molding-defect-ai/" hreflang="ko">사출성형 불량, AI는 어떻게 원인을 찾을까? 공정 데이터·센서·비전 3가지 접근 정리 (비교표 + FAQ 6문항)</a></p></div><p><em>Disclosure: I work at INTERX, a Korean manufacturing AI company. This article is my personal summary of public sources (peer-reviewed papers and Korean government documents) and does not represent my employer's official position.</em></p>
+<p>Injection molding looks simple from the outside: melt plastic, fill a mold, hold pressure, cool, eject. The difficulty is in the details. A 2022 review in <em>The International Journal of Advanced Manufacturing Technology</em> identifies warpage and shrinkage as the most common quality problems in plastic injection molding, and explains that the effects of process parameters such as mold temperature, melt temperature, injection rate, injection pressure, holding pressure, and holding and cooling time are coupled with each other. That coupling is why parameter setting has relied so heavily on the long experience of skilled operators.</p>
+<p>It is also why "AI for defect root cause analysis" is a reasonable idea and why it needs careful reading. Below is how the published research breaks the problem down.</p>
+<figure><img src="/assets/injection-molding-defect-ai.jpg" alt="Cartoon of a molding machine with a sensor graph, a camera, and a magnifying glass, connected by dotted lines to a small robot with a clipboard." width="1280" height="720" loading="lazy"><figcaption>Three clues for finding the cause of a molding defect: sensor signals, vision inspection, and process settings</figcaption></figure>
+
+<h2>The short answer</h2>
+<p>AI approaches to injection molding defects fall into three groups, defined by the data they use:</p>
+<ul>
+<li><strong>Process-to-quality models</strong> learn the relationship between machine settings and measured quality. They answer: <em>with these settings, will the part be good?</em></li>
+<li><strong>Sensor anomaly detection</strong> learns what a normal cycle looks like in signals such as cavity pressure or melt cushion. It answers: <em>is this shot different from usual?</em></li>
+<li><strong>Vision inspection</strong> finds defects in images of the part. It answers: <em>where is the defect, and what does it look like?</em></li>
+</ul>
+<p>None of these, on its own, tells you <em>why</em>. Getting closer to a cause requires an interpretation layer, usually called explainable AI (XAI), and then a confirmation step on the machine.</p>
+<h2>Approach 1: Process-to-quality models, plus explainability</h2>
+<p>The idea is to collect, for each cycle, the settings and actual values from the machine together with a quality result (pass/fail, weight, dimensions), then train a model that maps one to the other.</p>
+<p>A 2025 study in the <em>Journal of Manufacturing Processes</em>, "Explainable AI for Correct Root Cause Analysis of Product Quality in Injection Moulding," is a useful example because it tests the interpretation step directly. The researchers varied six settings (cooling time, injection speed, melt temperature, mold temperature, packing pressure, and packing time) across 77 combinations, repeating each 20 times for 1,540 cycles. Machine data and part weights were joined using cycle numbers marked on the parts.</p>
+<p>Two findings matter for practitioners:</p>
+<ul>
+<li>The settings interacted. Melt temperature, for instance, changed how much packing pressure and packing time affected part weight.</li>
+<li>The choice of explanation method changed the "root cause." One method (ICE) pointed to packing time as the main cause no matter which setting had actually been changed. Another (SHAP) pointed to the setting that had really been changed.</li>
+</ul>
+<p>In other words, a model can predict well and still lead an operator to adjust the wrong knob if the explanation method ignores interactions.</p>
+<h2>Approach 2: Anomaly detection on sensor time series</h2>
+<p>Instead of predicting quality from settings, this approach watches the signals each cycle produces.</p>
+<ul>
+<li>A 2022 paper in <em>Sensors</em>, "Machine Learning in Injection Molding: An Industry 4.0 Method of Quality Prediction," classified part quality using features extracted from in-mold pressure curves. A decision tree classifier reached average accuracy above 90 percent even with only one to three training samples per class. It was one mold under controlled settings, so the result should not be generalized carelessly, but it shows how informative cavity pressure can be.</li>
+<li>A 2024 paper in <em>IEEE Access</em> combined an LSTM autoencoder with a statistical process control chart to monitor melt cushion. The autoencoder's reconstruction error set extra thresholds alongside the usual control limits, so the system could flag not only values outside the limits but also gradual upward and downward trends that classic control-chart rules can miss.</li>
+</ul>
+<p>Anomaly detection does not name a cause either, but it tells you <em>when</em> something started drifting and <em>which</em> signal moved, which is where most root cause investigations begin.</p>
+<h2>Approach 3: Vision inspection</h2>
+<p>Cameras see the result rather than the process. A 2024 study in <em>The International Journal of Advanced Manufacturing Technology</em> proposed a semi-supervised training strategy for a U-Net to segment flash defects on molded parts at the pixel level, reporting 89.40 percent mIoU and 94.95 percent recall. It used defect-free samples to reduce the need for labeled data and released an open dataset of flash defects. The authors frame the output as decision support for adjusting molding machine parameters, which is the honest way to describe vision inspection: precise about <em>what</em> and <em>where</em>, silent about <em>why</em> unless linked to process data.</p>
+<h2>How they fit together</h2>
+<p>A practical sequence looks like this:</p>
+<ol>
+<li><strong>Detect</strong>: flag cycles whose sensor signals leave the normal pattern.</li>
+<li><strong>Predict</strong>: model how settings relate to quality for the defect you care about.</li>
+<li><strong>Interpret</strong>: use an explanation method that accounts for interactions to rank likely causes.</li>
+<li><strong>Verify</strong>: change the suspected setting deliberately and confirm the effect, then feed the result back as data.</li>
+</ol>
+<p>Vision inspection supplies the quality labels and defect locations that steps 2 and 3 depend on.</p>
+<h2>Korea's policy context</h2>
+<p>In South Korea, injection molding sits inside industrial policy. A December 2021 amendment to the enforcement decree of Korea's Root Industry Act expanded the list of "root technologies" from six to fourteen, adding injection molding and press forming among the new categories (effective December 16, 2021). Then, on January 22, 2025, the Ministry of Trade, Industry and Energy announced ten priority tasks for spreading industrial AI. In the accompanying expert recommendations, the predictive maintenance and quality management task listed data quality and integration difficulties as key problems and named explainable AI among the technologies expected to develop.</p>
+<p>That combination, a foundational process plus a stated policy interest in explainability, is a big part of why root cause analysis for molding defects gets so much attention in Korea right now.</p>
+<h2>What to take away</h2>
+<ul>
+<li>Start with one costly defect and make sure settings, sensor values, and inspection results are linked by cycle.</li>
+<li>Treat AI output as a ranked list of candidate causes, not a verdict.</li>
+<li>Check how your explanation method handles interactions between settings.</li>
+<li>Confirm on the machine before you change the standard recipe.</li>
+</ul>
+<p><em>The original Korean FAQ (six questions, with a comparison table): <a href="https://sungsiwon.github.io/ko/injection-molding-defect-ai/">sungsiwon.github.io/ko/injection-molding-defect-ai</a></em></p>
+<h2>Sources</h2>
+<ul>
+<li>Zhao N. et al., "Recent progress in minimizing the warpage and shrinkage deformations by the optimization of process parameters in plastic injection molding: a review," <em>The International Journal of Advanced Manufacturing Technology</em> (2022): <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8831005/">https://pmc.ncbi.nlm.nih.gov/articles/PMC8831005/</a></li>
+<li>Muaz M. et al., "Explainable AI for Correct Root Cause Analysis of Product Quality in Injection Moulding," <em>Journal of Manufacturing Processes</em> (2025), preprint: <a href="https://arxiv.org/abs/2505.01445">https://arxiv.org/abs/2505.01445</a></li>
+<li>Párizs R. D. et al., "Machine Learning in Injection Molding: An Industry 4.0 Method of Quality Prediction," <em>Sensors</em> 22(7), 2704 (published 2022-03-31): <a href="https://www.mdpi.com/1424-8220/22/7/2704">https://www.mdpi.com/1424-8220/22/7/2704</a></li>
+<li>Tayalati F. et al., "Hybrid Approach Integrating Deep Learning-Autoencoder With Statistical Process Control Chart for Anomaly Detection: Case Study in Injection Molding Process," <em>IEEE Access</em> (2024): <a href="https://doi.org/10.1109/ACCESS.2024.3425582">https://doi.org/10.1109/ACCESS.2024.3425582</a></li>
+<li>Yu Z. et al., "Semi-supervised auxiliary learning for surface defect detection and segmentation of injection-molded products from small image datasets," <em>The International Journal of Advanced Manufacturing Technology</em> (published 2024-03-04): <a href="https://link.springer.com/article/10.1007/s00170-024-13275-7">https://link.springer.com/article/10.1007/s00170-024-13275-7</a></li>
+<li>Ministry of Trade, Industry and Energy, press release on ten priority tasks for industrial AI (2025-01-22, Korean): <a href="https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/170072/view">https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/170072/view</a></li>
+<li>Yonhap News, report on the expansion of root technologies from 6 to 14 (2021-12-14, Korean): <a href="https://www.yna.co.kr/view/AKR20211213151400003">https://www.yna.co.kr/view/AKR20211213151400003</a></li>
+</ul>
+<p><em>I work at INTERX, a Korean manufacturing AI company. Views are my own.</em></p></article></main><footer><p>A personal manufacturing-AI knowledge archive run by an individual, 성시원 (sianism). Not a company site or a news outlet. Each post is kept here in Korean and English.</p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>
