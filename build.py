@@ -7,6 +7,12 @@ from datetime import datetime
 import markdown
 
 SITE = "https://sungsiwon.github.io"
+GA4_MEASUREMENT_ID = "G-XH4D791WR7"
+GA4_SNIPPET = (
+    f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA4_MEASUREMENT_ID}"></script>'
+    f"<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}"
+    f"gtag('js',new Date());gtag('config','{GA4_MEASUREMENT_ID}');</script>"
+)
 AUTHOR_KO = "성시원 (sianism)"
 DISC = {"ko": "저는 제조 AI 기업 인터엑스에서 일하고 있고, 이 글은 개인 정리입니다.",
         "en": "I work at INTERX, a manufacturing AI company, and this post is my personal summary."}
@@ -139,6 +145,7 @@ def faqs(text):
 
 def head(lang, title, desc, canonical, alts=None, og_type="website", image=None, jsonld=None, extra=""):
     h = [f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8">',
+         GA4_SNIPPET,
          '<meta name="viewport" content="width=device-width,initial-scale=1">',
          f'<title>{esc(title)}</title><meta name="description" content="{esc(desc)}">',
          f'<meta name="author" content="{esc(AUTHOR_KO)}"><link rel="canonical" href="{canonical}">']
