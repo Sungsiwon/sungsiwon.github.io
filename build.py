@@ -29,7 +29,12 @@ POSTS = [  # newest first
             "desc": "When defects are rare, accuracy hides the misses. Ask for miss rates, false-reject rates, and proof on your own line.",
             "summary": "Seven criteria for choosing an AI visual inspection system: defect definitions, miss/false-reject rates, held-out line validation, data burden, takt time, change handling, and explainable operations, with research from Hütten 2024, Carvalho 2023, Liu 2023, and Korea MSS 2024 survey."},
      "keywords": ["비전검사", "AI비전검사", "품질검사", "제조AI", "불량검출", "머신비전", "이상탐지", "smart factory", "visual inspection AI"],
-     "channels": {}},  # channel URLs added after Naver etc. go live
+     "channels": {"naver": "https://blog.naver.com/sangza40/224471114283",
+                  "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7525669435840446464/",
+                  "tistory": "https://sianism.tistory.com/entry/AI-%EB%B9%84%EC%A0%84-%EA%B2%80%EC%82%AC-%EC%86%94%EB%A3%A8%EC%85%98-%EC%84%A0%ED%83%9D-%EA%B8%B0%EC%A4%80-7%EA%B0%80%EC%A7%80-%EC%A0%95%ED%99%95%EB%8F%84-%EB%8C%80%EC%8B%A0-%EB%AF%B8%EA%B2%80%EB%A5%A0%C2%B7%EA%B3%BC%EA%B2%80%EB%A5%A0-%EA%B2%80%EC%A6%9D-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%98%84%EC%9E%A5-%EC%A1%B0%EA%B1%B4%EA%B9%8C%EC%A7%80-%EB%B9%84%EA%B5%90%ED%91%9C-%ED%85%9C%ED%94%8C%EB%A6%BF%EC%9C%BC%EB%A1%9C-%EC%A0%95%EB%A6%AC-2026",
+                  "careerly": "https://careerly.co.kr/community?post=127780",
+                  "brunch": "https://brunch.co.kr/@sianism/7",
+                  "medium": "https://medium.com/@sangza40/how-to-choose-an-ai-visual-inspection-system-for-manufacturing-7-criteria-that-matter-more-than-c7c2191cada6"}},
     {"slug": "manufacturing-digital-twin-checklist", "date": "2026-11-06",
      "ko": {"title": "제조 디지털 트윈 도입 체크리스트 10가지: 무엇부터 준비할까 (국제 표준 ISO 23247 기준 + FAQ 6문항)",
             "desc": "제조 디지털 트윈은 3D 화면이 아니라 목적에 맞는 디지털 표현이 데이터로 연결돼 실제와 동기화되는 것입니다. ISO 23247·ISO/IEC 30173·NIST 안내를 바탕으로 도입 전 점검할 10가지와 FAQ 6문항.",
