@@ -21,6 +21,15 @@ PERSON = {
                "https://brunch.co.kr/@sianism", "https://medium.com/@sangza40", "https://github.com/Sungsiwon"],
 }
 POSTS = [  # newest first
+    {"slug": "ai-vision-inspection-criteria", "date": "2026-11-10",
+     "ko": {"title": "AI 비전 검사 솔루션, 무엇을 기준으로 고를까? 지표·검증·현장 조건 7가지 기준 (비교표 템플릿 + FAQ 6문항)",
+            "desc": "AI 비전 품질검사 솔루션을 고를 때는 정확도 몇 %보다 우리 라인 데이터로, 학습에 쓰지 않은 이미지로, 불량 놓침(미검)과 과검을 따로 확인하는 것이 먼저입니다. 공개 연구 기준 7가지 비교표 템플릿과 FAQ 6문항.",
+            "summary": "AI 비전 검사 솔루션 선정 기준 7가지(불량 정의·미검/과검 지표·검증 방식·데이터 부담·속도·변화 대응·운영) 비교표 템플릿과 FAQ 6문항. Hütten 외 2024 서베이, Carvalho 외 2023 벤치마크, Liu 외 2023 이상 탐지, 중기부 2024 실태조사."},
+     "en": {"title": "How to Choose an AI Visual Inspection System for Manufacturing: 7 Criteria That Matter More Than \"99% Accuracy\"",
+            "desc": "When defects are rare, accuracy hides the misses. Ask for miss rates, false-reject rates, and proof on your own line.",
+            "summary": "Seven criteria for choosing an AI visual inspection system: defect definitions, miss/false-reject rates, held-out line validation, data burden, takt time, change handling, and explainable operations, with research from Hütten 2024, Carvalho 2023, Liu 2023, and Korea MSS 2024 survey."},
+     "keywords": ["비전검사", "AI비전검사", "품질검사", "제조AI", "불량검출", "머신비전", "이상탐지", "smart factory", "visual inspection AI"],
+     "channels": {}},  # channel URLs added after Naver etc. go live
     {"slug": "injection-molding-defect-ai", "date": "2026-11-03",
      "ko": {"title": "사출성형 불량, AI는 어떻게 원인을 찾을까? 공정 데이터·센서·비전 3가지 접근 정리 (비교표 + FAQ 6문항)",
             "desc": "AI가 사출성형 불량의 원인을 찾는 방법은 공정 조건과 품질 결과의 관계를 학습하는 품질 예측 모델, 금형 내 압력 같은 센서 신호의 이상 탐지, 카메라 이미지로 불량을 찾는 비전 검사 세 갈래입니다. 원인 분석에 가까워지려면 설명 가능한 AI(XAI)와 현장 검증이 함께 필요합니다.",
