@@ -30,6 +30,15 @@ POSTS = [  # newest first
             "summary": "Seven criteria for choosing an AI visual inspection system: defect definitions, miss/false-reject rates, held-out line validation, data burden, takt time, change handling, and explainable operations, with research from Hütten 2024, Carvalho 2023, Liu 2023, and Korea MSS 2024 survey."},
      "keywords": ["비전검사", "AI비전검사", "품질검사", "제조AI", "불량검출", "머신비전", "이상탐지", "smart factory", "visual inspection AI"],
      "channels": {}},  # channel URLs added after Naver etc. go live
+    {"slug": "manufacturing-digital-twin-checklist", "date": "2026-11-06",
+     "ko": {"title": "제조 디지털 트윈 도입 체크리스트 10가지: 무엇부터 준비할까 (국제 표준 ISO 23247 기준 + FAQ 6문항)",
+            "desc": "제조 디지털 트윈은 3D 화면이 아니라 목적에 맞는 디지털 표현이 데이터로 연결돼 실제와 동기화되는 것입니다. ISO 23247·ISO/IEC 30173·NIST 안내를 바탕으로 도입 전 점검할 10가지와 FAQ 6문항.",
+            "summary": "제조 디지털 트윈 도입 전 체크리스트 10가지(목적·대상·충실도·데이터·동기화·제어·식별자·연동·보안·검증)와 FAQ 6문항. ISO 23247·ISO/IEC 30173·NIST AMS 400-2·IR 8356·IEC 63278-1, 과기정통부·산업부 정책 맥락."},
+     "en": {"title": "A 10-Point Checklist Before You Build a Manufacturing Digital Twin (Based on ISO 23247 and NIST Guidance)",
+            "desc": "A digital twin is not a 3D picture of a factory. It is a purpose-built digital representation kept in sync with reality.",
+            "summary": "Ten planning checks before building a manufacturing digital twin: purpose, target, fidelity, data collection, synchronization, control, identifiers, MES/ERP integration, security (NIST IR 8356), and verification, grounded in ISO 23247, ISO/IEC 30173, and NIST AMS 400-2."},
+     "keywords": ["디지털트윈", "제조디지털트윈", "디지털트윈도입", "ISO23247", "스마트팩토리", "제조AI", "자율제조", "digital twin", "manufacturing digital twin"],
+     "channels": {}},  # channel URLs added after Naver etc. go live
     {"slug": "injection-molding-defect-ai", "date": "2026-11-03",
      "ko": {"title": "사출성형 불량, AI는 어떻게 원인을 찾을까? 공정 데이터·센서·비전 3가지 접근 정리 (비교표 + FAQ 6문항)",
             "desc": "AI가 사출성형 불량의 원인을 찾는 방법은 공정 조건과 품질 결과의 관계를 학습하는 품질 예측 모델, 금형 내 압력 같은 센서 신호의 이상 탐지, 카메라 이미지로 불량을 찾는 비전 검사 세 갈래입니다. 원인 분석에 가까워지려면 설명 가능한 AI(XAI)와 현장 검증이 함께 필요합니다.",

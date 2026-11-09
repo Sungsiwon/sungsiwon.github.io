@@ -1,0 +1,177 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A 10-Point Checklist Before You Build a Manufacturing Digital Twin (Based on ISO 23247 and NIST Guidance)</title><meta name="description" content="A digital twin is not a 3D picture of a factory. It is a purpose-built digital representation kept in sync with reality.">
+<meta name="author" content="성시원 (sianism)"><link rel="canonical" href="https://sungsiwon.github.io/en/manufacturing-digital-twin-checklist/">
+<link rel="alternate" hreflang="en" href="https://sungsiwon.github.io/en/manufacturing-digital-twin-checklist/">
+<link rel="alternate" hreflang="ko" href="https://sungsiwon.github.io/ko/manufacturing-digital-twin-checklist/">
+<link rel="alternate" hreflang="x-default" href="https://sungsiwon.github.io/ko/manufacturing-digital-twin-checklist/">
+<meta property="og:type" content="article"><meta property="og:title" content="A 10-Point Checklist Before You Build a Manufacturing Digital Twin (Based on ISO 23247 and NIST Guidance)">
+<meta property="og:description" content="A digital twin is not a 3D picture of a factory. It is a purpose-built digital representation kept in sync with reality."><meta property="og:url" content="https://sungsiwon.github.io/en/manufacturing-digital-twin-checklist/">
+<meta property="og:site_name" content="성시원 제조 AI 아카이브 · sianism archive">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://sungsiwon.github.io/assets/manufacturing-digital-twin-checklist.jpg"><meta name="twitter:image" content="https://sungsiwon.github.io/assets/manufacturing-digital-twin-checklist.jpg">
+<link rel="alternate" type="application/atom+xml" title="sianism archive" href="https://sungsiwon.github.io/feed.xml">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://sungsiwon.github.io/#person",
+   "name": "성시원",
+   "alternateName": "sianism",
+   "url": "https://sungsiwon.github.io/",
+   "jobTitle": "책임연구원 (서비스기획)",
+   "worksFor": {
+    "@type": "Organization",
+    "name": "INTERX (인터엑스)",
+    "url": "https://interxlab.com"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/siwon-sung-518329140",
+    "https://blog.naver.com/sangza40",
+    "https://sianism.tistory.com",
+    "https://brunch.co.kr/@sianism",
+    "https://medium.com/@sangza40",
+    "https://github.com/Sungsiwon"
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://sungsiwon.github.io/en/manufacturing-digital-twin-checklist/#article",
+   "headline": "A 10-Point Checklist Before You Build a Manufacturing Digital Twin (Based on ISO 23247 and NIST Guidance)",
+   "description": "A digital twin is not a 3D picture of a factory. It is a purpose-built digital representation kept in sync with reality.",
+   "inLanguage": "en",
+   "datePublished": "2026-11-06",
+   "dateModified": "2026-11-06",
+   "author": {
+    "@id": "https://sungsiwon.github.io/#person"
+   },
+   "publisher": {
+    "@id": "https://sungsiwon.github.io/#person"
+   },
+   "image": "https://sungsiwon.github.io/assets/manufacturing-digital-twin-checklist.jpg",
+   "mainEntityOfPage": "https://sungsiwon.github.io/en/manufacturing-digital-twin-checklist/",
+   "keywords": [
+    "디지털트윈",
+    "제조디지털트윈",
+    "디지털트윈도입",
+    "ISO23247",
+    "스마트팩토리",
+    "제조AI",
+    "자율제조",
+    "digital twin",
+    "manufacturing digital twin"
+   ],
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "성시원 제조 AI 아카이브",
+    "url": "https://sungsiwon.github.io/"
+   },
+   "translationOfWork": {
+    "@id": "https://sungsiwon.github.io/ko/manufacturing-digital-twin-checklist/#article"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://sungsiwon.github.io/en/manufacturing-digital-twin-checklist/#faq",
+   "inLanguage": "en",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Planning: what and why",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "1. One use case. NIST's Use Case Scenarios for Digital Twin Implementation Based on ISO 23247 (NIST AMS 400-2, May 2021) states plainly that no single digital twin can provide all the solutions for a manufacturing system. It lists typical applications (analytics, real-time control, equipment health, scheduling and routing, virtual commissioning, predictive maintenance, product twins) and works through three of them in detail: machine health, scheduling and routing, and virtual commissioning. Pick one. 2. The target. Decide which element you are twinning. ISO/IEC 30173 distinguishes component, asset, system, and process twins, and the right choice depends on the use case. 3. Fidelity. \"Fit for purpose\" means as detailed as the use case needs, and no more. A machine-health twin may not need geometry at all; a virtual commissioning twin may need a lot."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Data: how it stays connected",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "4. Data collection. The first step in NIST's procedure for applying ISO 23247 is selecting data standards, sensor interfaces, and processing tools for collecting data from the shop floor. 5. Synchronization rate. ISO/IEC 30173 speaks of an \"appropriate\" rate, and NIST describes it as a rate defined by the application. Real-time, per-cycle, and daily are all legitimate answers, depending on the decision the twin supports. 6. Read-only or control. The ISO 23247 reference architecture has a dedicated data collection and device control domain, and ISO/IEC 30173 defines the control loop in which the digital entity sends data back to modify the physical entity's behavior. Decide early whether your twin only observes or also acts. 7. Representation and identifiers. Per NIST's summary of ISO 23247-3, existing standards should be used to represent manufacturing elements whenever possible, and each element should use an enterprise-unique identifier if possible. For asset data, the Asset Administration Shell structure is now an IEC standard (IEC 63278-1, published December 2023)."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Operation: how you trust it",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "8. Integration with existing systems. In the ISO 23247 reference architecture, the user domain includes not just people but enterprise applications such as MES and ERP, and other digital twins. Plan the interfaces up front. 9. Security and trust. NIST IR 8356, Security and Trust Considerations for Digital Twin Technology (February 14, 2025), identifies five features that need special cybersecurity attention: massive instrumentation of objects (usually via IoT), centralization of measurements, visualization of object operation, remote control of objects, and standards that allow universal access and control. If you answered \"control\" in item 6, this item gets heavier. 10. Verification and metrics. Decide how you will confirm the twin tracks reality and which KPIs will show value. ISO/IEC 30173 includes verification and validation among its defined terms, and NIST AMS 400-2 lists benefits such as detecting anomalous equipment performance in real time using KPIs."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+<style>:root{color-scheme:light dark;--fg:#1d1d1f;--bg:#fff;--mut:#666;--line:#ddd;--acc:#0b5cad}
+@media(prefers-color-scheme:dark){:root{--fg:#e8e8e8;--bg:#141414;--mut:#a0a0a0;--line:#333;--acc:#6aa9ff}}
+*{box-sizing:border-box}body{margin:0;font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;color:var(--fg);background:var(--bg);word-break:keep-all;overflow-wrap:anywhere}
+main,header.site,footer{max-width:760px;margin:0 auto;padding:0 20px}header.site{padding-top:18px;font-size:15px;display:flex;justify-content:space-between;gap:12px}
+a{color:var(--acc)}h1{font-size:1.7em;line-height:1.35;margin:.8em 0 .4em}h2{font-size:1.3em;margin-top:2em}h3{font-size:1.1em;margin-top:1.6em}
+.meta{color:var(--mut);font-size:15px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:1.5em}.meta p{margin:.2em 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(127,127,127,.12)}
+figure{margin:1.5em 0}img{max-width:100%;height:auto;border-radius:6px}figcaption{color:var(--mut);font-size:14px;text-align:center}
+ul.posts{list-style:none;padding:0}ul.posts li{margin:0 0 1.1em}ul.posts time{color:var(--mut);font-size:14px;display:block}
+footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-11-06"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/manufacturing-digital-twin-checklist/" hreflang="ko">한국어</a></header><main><article><h1>A 10-Point Checklist Before You Build a Manufacturing Digital Twin (Based on ISO 23247 and NIST Guidance)</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-11-06">2026-11-06</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>한국어 원문: <a href="/ko/manufacturing-digital-twin-checklist/" hreflang="ko">제조 디지털 트윈 도입 체크리스트 10가지: 무엇부터 준비할까 (국제 표준 ISO 23247 기준 + FAQ 6문항)</a></p></div><p><em>Disclosure: I work at INTERX, a Korean manufacturing AI company. This is my personal summary of public sources (international standards, NIST publications, and Korean government documents) and does not represent my employer's official position.</em></p>
+<p>"Let's build a digital twin" is an easy sentence to say in a planning meeting and a hard one to act on. The standards community has spent the last few years making the term more precise, and that precision turns out to be the most useful planning tool available.</p>
+<h2>Start with the definition</h2>
+<p>ISO/IEC 30173:2023, the cross-industry standard on digital twin concepts and terminology, defines a digital twin as a digital representation of a target entity with data connections that enable convergence between the physical and digital states at an appropriate rate of synchronization. The manufacturing-specific framework, ISO 23247, describes it as a <em>fit for purpose</em> digital representation of an observable manufacturing element, synchronized with that element. According to NIST's explanation of the framework, an observable manufacturing element can be personnel, equipment, material, a process, a facility, the environment, a product, or a supporting document.</p>
+<p>Two words carry most of the weight: <strong>purpose</strong> and <strong>synchronization</strong>. Everything in the checklist below follows from them.</p>
+<figure><img src="/assets/manufacturing-digital-twin-checklist.jpg" alt="Cartoon of a small factory and its translucent digital twin connected by dotted data lines, with a robot holding a checklist." width="1280" height="720" loading="lazy"><figcaption>What connects a real factory to its digital twin is data and synchronization. Start with the checklist.</figcaption></figure>
+
+<h2>The checklist, in three phases</h2>
+<h3>Planning: what and why</h3>
+<ol>
+<li><strong>One use case.</strong> NIST's <em>Use Case Scenarios for Digital Twin Implementation Based on ISO 23247</em> (NIST AMS 400-2, May 2021) states plainly that no single digital twin can provide all the solutions for a manufacturing system. It lists typical applications (analytics, real-time control, equipment health, scheduling and routing, virtual commissioning, predictive maintenance, product twins) and works through three of them in detail: machine health, scheduling and routing, and virtual commissioning. Pick one.</li>
+<li><strong>The target.</strong> Decide which element you are twinning. ISO/IEC 30173 distinguishes component, asset, system, and process twins, and the right choice depends on the use case.</li>
+<li><strong>Fidelity.</strong> "Fit for purpose" means as detailed as the use case needs, and no more. A machine-health twin may not need geometry at all; a virtual commissioning twin may need a lot.</li>
+</ol>
+<h3>Data: how it stays connected</h3>
+<ol start="4">
+<li><strong>Data collection.</strong> The first step in NIST's procedure for applying ISO 23247 is selecting data standards, sensor interfaces, and processing tools for collecting data from the shop floor.</li>
+<li><strong>Synchronization rate.</strong> ISO/IEC 30173 speaks of an "appropriate" rate, and NIST describes it as a rate defined by the application. Real-time, per-cycle, and daily are all legitimate answers, depending on the decision the twin supports.</li>
+<li><strong>Read-only or control.</strong> The ISO 23247 reference architecture has a dedicated data collection and device control domain, and ISO/IEC 30173 defines the control loop in which the digital entity sends data back to modify the physical entity's behavior. Decide early whether your twin only observes or also acts.</li>
+<li><strong>Representation and identifiers.</strong> Per NIST's summary of ISO 23247-3, existing standards should be used to represent manufacturing elements whenever possible, and each element should use an enterprise-unique identifier if possible. For asset data, the Asset Administration Shell structure is now an IEC standard (IEC 63278-1, published December 2023).</li>
+</ol>
+<h3>Operation: how you trust it</h3>
+<ol start="8">
+<li><strong>Integration with existing systems.</strong> In the ISO 23247 reference architecture, the user domain includes not just people but enterprise applications such as MES and ERP, and other digital twins. Plan the interfaces up front.</li>
+<li><strong>Security and trust.</strong> NIST IR 8356, <em>Security and Trust Considerations for Digital Twin Technology</em> (February 14, 2025), identifies five features that need special cybersecurity attention: massive instrumentation of objects (usually via IoT), centralization of measurements, visualization of object operation, remote control of objects, and standards that allow universal access and control. If you answered "control" in item 6, this item gets heavier.</li>
+<li><strong>Verification and metrics.</strong> Decide how you will confirm the twin tracks reality and which KPIs will show value. ISO/IEC 30173 includes verification and validation among its defined terms, and NIST AMS 400-2 lists benefits such as detecting anomalous equipment performance in real time using KPIs.</li>
+</ol>
+<h2>The architecture behind the checklist</h2>
+<p>NIST's report summarizes the ISO 23247-2 reference architecture as four domains:</p>
+<ul>
+<li><strong>Observable manufacturing domain</strong>: the real equipment, materials, and processes, outside the twin itself.</li>
+<li><strong>Data collection and device control domain</strong>: links those elements to their twins by collecting sensor data and, where needed, actuating devices.</li>
+<li><strong>Core domain</strong>: operates and manages the twin and hosts analytics, simulation, and optimization services.</li>
+<li><strong>User domain</strong>: people, enterprise applications, and other twins that use the results.</li>
+</ul>
+<p>Items 4 to 7 fill in the middle two domains. Items 8 to 10 govern how the whole stack is used.</p>
+<h2>When one twin becomes many</h2>
+<p>Most plants will eventually have several twins built by different teams or suppliers. ISO 23247-6, published in July 2026, addresses exactly this. It defines three kinds of composition (integrated, unified, and federated) and gives step-by-step guidance for making twins from different parties interoperate. It is a good reason to design a first, small twin with identifiers and interfaces that can be joined later.</p>
+<h2>Korea's policy context</h2>
+<p>South Korea's Ministry of Science and ICT announced a Digital Twin Activation Strategy in 2021, which included applying digital twins to major industries to improve production and operational efficiency. On January 22, 2025, the Ministry of Trade, Industry and Energy published ten priority tasks for industrial AI, including developing AI agents linked with digital twins as part of its autonomous manufacturing lead projects. Korea's smart factory level framework, run by the Ministry of SMEs and Startups, describes Level 4 (optimization) as the stage where advance response through process operation simulation becomes possible, and lists AR/VR and cyber-physical systems as main tools at Level 5.</p>
+<p>For a small or mid-sized manufacturer, the practical reading is that the twin sits on top of basic data collection and monitoring. NIST AMS 400-2 notes that SMEs in particular struggle because definitions vary, terminology is inconsistent, and there are no standardized procedures, which is the gap the standards above try to close.</p>
+<h2>The short version</h2>
+<ul>
+<li>Pick one use case and one target.</li>
+<li>Decide fidelity, synchronization rate, and whether the twin may control anything.</li>
+<li>Use existing data standards and unique identifiers.</li>
+<li>Plan MES and ERP integration, security, and verification before the first screen is designed.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>ISO/IEC 30173:2023, Digital twin — Concepts and terminology (Edition 1.0, 2023-11): <a href="https://www.iso.org/standard/81442.html">https://www.iso.org/standard/81442.html</a></li>
+<li>ISO 23247-1:2021, Digital twin framework for manufacturing — Part 1 (2021-10): <a href="https://www.iso.org/standard/75066.html">https://www.iso.org/standard/75066.html</a></li>
+<li>ISO 23247-6:2026, Digital twin framework for manufacturing — Part 6: Digital twin composition (2026-07): <a href="https://www.iso.org/standard/87426.html">https://www.iso.org/standard/87426.html</a></li>
+<li>Shao G., <em>Use Case Scenarios for Digital Twin Implementation Based on ISO 23247</em>, NIST AMS 400-2 (May 2021): <a href="https://doi.org/10.6028/NIST.AMS.400-2">https://doi.org/10.6028/NIST.AMS.400-2</a></li>
+<li>NIST IR 8356, <em>Security and Trust Considerations for Digital Twin Technology</em> (2025-02-14): <a href="https://www.nist.gov/news-events/news/2025/02/security-and-trust-considerations-digital-twin-technology-nist-releases-ir">https://www.nist.gov/news-events/news/2025/02/security-and-trust-considerations-digital-twin-technology-nist-releases-ir</a></li>
+<li>IEC 63278-1:2023, Asset Administration Shell for industrial applications — Part 1 (2023-12): <a href="https://webstore.iec.ch/en/publication/65628">https://webstore.iec.ch/en/publication/65628</a></li>
+<li>Ministry of SMEs and Startups, Smart Factory program, "Introduction of Support Project": <a href="https://www.smart-factory.kr/eng/smartFactory.do?menuId=03">https://www.smart-factory.kr/eng/smartFactory.do?menuId=03</a></li>
+<li>Ministry of Science and ICT, Digital Twin Activation Strategy summary, Korea Policy Briefing (2021-10-15, Korean): <a href="https://www.korea.kr/news/policyFocusView.do?newsId=148894352">https://www.korea.kr/news/policyFocusView.do?newsId=148894352</a></li>
+<li>Ministry of Trade, Industry and Energy, ten priority tasks for industrial AI (2025-01-22, Korean): <a href="https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/170072/view">https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/170072/view</a></li>
+</ul>
+<p><em>I work at INTERX, a Korean manufacturing AI company. Views are my own.</em></p></article></main><footer><p>A personal manufacturing-AI knowledge archive run by an individual, 성시원 (sianism). Not a company site or a news outlet. Each post is kept here in Korean and English.</p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>
