@@ -27,6 +27,15 @@ PERSON = {
                "https://brunch.co.kr/@sianism", "https://medium.com/@sangza40", "https://github.com/Sungsiwon"],
 }
 POSTS = [  # newest first
+    {"slug": "welding-quality-ai-data", "date": "2026-11-13",
+     "ko": {"title": "용접 품질 AI는 무엇을 보고 판단할까? 전류·전압·소리·빛·영상 데이터별 정리 (비교표 + FAQ 6문항)",
+            "desc": "용접 품질 AI는 용접 후 이미지로 결함을 찾는 사후 검사와, 용접 중 전류·전압·소리·빛 신호로 결함을 미리 잡는 실시간 모니터링 두 시점에서 쓰입니다. 데이터 5가지별 용도·강점·한계 비교표와 FAQ 6문항.",
+            "summary": "용접 품질 AI가 쓰는 데이터 5가지(전류·전압, 음향, 광 신호, 카메라, NDT 이미지) 비교표와 FAQ 6문항. Madhvacharyula 외 2022(Welding in the World), Lee 외 2024(대한용접·접합학회지), ISO 5817·KS B ISO 5817 기준."},
+     "en": {"title": "What Does Welding Quality AI Actually Look At? Current, Voltage, Sound, Light, and Cameras Explained",
+            "desc": "Post-weld inspection tells you a joint failed. In-process monitoring tries to tell you while there is still time to act.",
+            "summary": "What weld quality AI reads: current and voltage, acoustic, optical, camera, and NDT image data, with typical models (LSTM, CNN on STFT/wavelet images), explainability (SHAP, Grad-CAM), and ISO 5817 quality levels for labels, based on Madhvacharyula 2022 and Lee 2024."},
+     "keywords": ["용접", "용접품질", "용접결함", "제조AI", "용접모니터링", "비파괴검사", "뿌리산업", "ISO5817", "welding quality AI", "weld monitoring"],
+     "channels": {}},
     {"slug": "ai-vision-inspection-criteria", "date": "2026-11-10",
      "ko": {"title": "AI 비전 검사 솔루션, 무엇을 기준으로 고를까? 지표·검증·현장 조건 7가지 기준 (비교표 템플릿 + FAQ 6문항)",
             "desc": "AI 비전 품질검사 솔루션을 고를 때는 정확도 몇 %보다 우리 라인 데이터로, 학습에 쓰지 않은 이미지로, 불량 놓침(미검)과 과검을 따로 확인하는 것이 먼저입니다. 공개 연구 기준 7가지 비교표 템플릿과 FAQ 6문항.",
