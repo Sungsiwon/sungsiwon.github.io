@@ -72,7 +72,10 @@
    },
    "translationOfWork": {
     "@id": "https://sungsiwon.github.io/ko/welding-quality-ai-data/#article"
-   }
+   },
+   "sameAs": [
+    "https://medium.com/@sangza40/what-does-welding-quality-ai-actually-look-at-a1147cbcb48e"
+   ]
   }
  ]
 }</script>
@@ -85,7 +88,7 @@ a{color:var(--acc)}h1{font-size:1.7em;line-height:1.35;margin:.8em 0 .4em}h2{fon
 .tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(127,127,127,.12)}
 figure{margin:1.5em 0}img{max-width:100%;height:auto;border-radius:6px}figcaption{color:var(--mut);font-size:14px;text-align:center}
 ul.posts{list-style:none;padding:0}ul.posts li{margin:0 0 1.1em}ul.posts time{color:var(--mut);font-size:14px;display:block}
-footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-11-13"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/welding-quality-ai-data/" hreflang="ko">한국어</a></header><main><article><h1>What Does Welding Quality AI Actually Look At? Current, Voltage, Sound, Light, and Cameras Explained</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-11-13">2026-11-13</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>한국어 원문: <a href="/ko/welding-quality-ai-data/" hreflang="ko">용접 품질 AI는 무엇을 보고 판단할까? 전류·전압·소리·빛·영상 데이터별 정리 (비교표 + FAQ 6문항)</a></p></div><p><em>Disclosure: I work at INTERX, a Korean manufacturing AI company (founded 2020). This article is my personal summary of public review papers and international standards; it does not represent my employer's official position.</em></p>
+footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-11-13"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/welding-quality-ai-data/" hreflang="ko">한국어</a></header><main><article><h1>What Does Welding Quality AI Actually Look At? Current, Voltage, Sound, Light, and Cameras Explained</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-11-13">2026-11-13</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>Also on: <a href="https://blog.naver.com/sangza40/224475151836" rel="noopener">Naver Blog</a> · <a href="https://www.linkedin.com/feed/update/urn:li:activity:7526753157318660096/" rel="noopener">LinkedIn</a> · <a href="https://medium.com/@sangza40/what-does-welding-quality-ai-actually-look-at-a1147cbcb48e" rel="noopener">Medium</a></p><p>한국어 원문: <a href="/ko/welding-quality-ai-data/" hreflang="ko">용접 품질 AI는 무엇을 보고 판단할까? 전류·전압·소리·빛·영상 데이터별 정리 (비교표 + FAQ 6문항)</a></p></div><p><em>Disclosure: I work at INTERX, a Korean manufacturing AI company (founded 2020). This article is my personal summary of public review papers and international standards; it does not represent my employer's official position.</em></p>
 <p>AI for weld quality works at two points in time. <strong>After welding,</strong> models read photos or radiographic images to find defects. <strong>During welding,</strong> models read sensor signals such as current, voltage, sound, and light to catch defects as they form. Most recent research focuses on the second, because a defect found during the weld can still be corrected, or the weld can be stopped.</p>
 <p>A short map of what each signal is mainly used for in the literature:</p>
 <ul>
