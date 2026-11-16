@@ -35,7 +35,7 @@ POSTS = [  # newest first
             "desc": "A data space does not pool your data. It lets companies share it on their own terms, using common rules.",
             "summary": "What a manufacturing data space is (data sovereignty, common rules and connectors) and how Gaia-X, Catena-X, Manufacturing-X, and Korean Manufacturing-X differ, with use cases (traceability, PCF, digital product passport), the EU Data Act, and Korea's 2026-2029 program. Disclosure: the author's employer, INTERX, participates in Korea's Manufacturing-X program."},
      "keywords": ["데이터스페이스", "제조데이터스페이스", "ManufacturingX", "한국형ManufacturingX", "CatenaX", "GaiaX", "데이터주권", "EU데이터법", "제조AI", "manufacturing data space"],
-     "channels": {}},  # channel URLs added after Naver etc. go live
+     "channels": {"naver": "https://blog.naver.com/sangza40/224479615638"}},  # other channels added after 11/17 posts
     {"slug": "welding-quality-ai-data", "date": "2026-11-13",
      "ko": {"title": "용접 품질 AI는 무엇을 보고 판단할까? 전류·전압·소리·빛·영상 데이터별 정리 (비교표 + FAQ 6문항)",
             "desc": "용접 품질 AI는 용접 후 이미지로 결함을 찾는 사후 검사와, 용접 중 전류·전압·소리·빛 신호로 결함을 미리 잡는 실시간 모니터링 두 시점에서 쓰입니다. 데이터 5가지별 용도·강점·한계 비교표와 FAQ 6문항.",
