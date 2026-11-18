@@ -44,7 +44,7 @@
    "description": "AI가 사출성형 불량의 원인을 찾는 방법은 공정 조건과 품질 결과의 관계를 학습하는 품질 예측 모델, 금형 내 압력 같은 센서 신호의 이상 탐지, 카메라 이미지로 불량을 찾는 비전 검사 세 갈래입니다. 원인 분석에 가까워지려면 설명 가능한 AI(XAI)와 현장 검증이 함께 필요합니다.",
    "inLanguage": "ko",
    "datePublished": "2026-11-03",
-   "dateModified": "2026-11-03",
+   "dateModified": "2026-11-18",
    "author": {
     "@id": "https://sungsiwon.github.io/#person"
    },
@@ -71,7 +71,10 @@
    },
    "workTranslation": {
     "@id": "https://sungsiwon.github.io/en/injection-molding-defect-ai/#article"
-   }
+   },
+   "sameAs": [
+    "https://blog.naver.com/sangza40/224463052595"
+   ]
   },
   {
    "@type": "FAQPage",
@@ -139,7 +142,9 @@ a{color:var(--acc)}h1{font-size:1.7em;line-height:1.35;margin:.8em 0 .4em}h2{fon
 .tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(127,127,127,.12)}
 figure{margin:1.5em 0}img{max-width:100%;height:auto;border-radius:6px}figcaption{color:var(--mut);font-size:14px;text-align:center}
 ul.posts{list-style:none;padding:0}ul.posts li{margin:0 0 1.1em}ul.posts time{color:var(--mut);font-size:14px;display:block}
-footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-11-03"></head><body><header class="site"><a href="/">홈 · 성시원 제조 AI 아카이브</a><a href="/en/injection-molding-defect-ai/" hreflang="en">English</a></header><main><article><h1>사출성형 불량, AI는 어떻게 원인을 찾을까? 공정 데이터·센서·비전 3가지 접근 정리 (비교표 + FAQ 6문항)</h1><div class="meta"><p>글쓴이 <span>성시원 (sianism)</span> · 게시일 <time datetime="2026-11-03">2026-11-03</time></p><p>저는 제조 AI 기업 인터엑스에서 일하고 있고, 이 글은 개인 정리입니다.</p><p>English version: <a href="/en/injection-molding-defect-ai/" hreflang="en">How AI Finds the Root Cause of Injection Molding Defects: Three Data Approaches and One Warning</a></p></div><p>저는 2020년 설립된 제조 AI 기업 인터엑스(INTERX)에서 일하고 있습니다. 이 글은 공개된 논문과 정부 자료를 바탕으로 개인적으로 정리한 내용이며, 회사 공식 입장과는 다를 수 있습니다.</p>
+.related{margin:2.4em 0 0;padding-top:1.2em;border-top:1px solid var(--line)}.related h2{margin-top:0;font-size:1.2em}.related ul{padding-left:1.2em}
+.clusters h3{font-size:1.05em;margin-top:1.4em}
+footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-11-03"><meta property="article:modified_time" content="2026-11-18"></head><body><header class="site"><a href="/">홈 · 성시원 제조 AI 아카이브</a><a href="/en/injection-molding-defect-ai/" hreflang="en">English</a></header><main><article><h1>사출성형 불량, AI는 어떻게 원인을 찾을까? 공정 데이터·센서·비전 3가지 접근 정리 (비교표 + FAQ 6문항)</h1><div class="meta"><p>글쓴이 <span>성시원 (sianism)</span> · 게시일 <time datetime="2026-11-03">2026-11-03</time> · 수정일 <time datetime="2026-11-18">2026-11-18</time></p><p>저는 제조 AI 기업 인터엑스에서 일하고 있고, 이 글은 개인 정리입니다.</p><p>다른 채널에서 보기: <a href="https://blog.naver.com/sangza40/224463052595" rel="noopener">네이버 블로그</a> · <a href="https://www.linkedin.com/feed/update/urn:li:activity:7523157275268513792/" rel="noopener">LinkedIn</a> · <a href="https://sianism.tistory.com/entry/사출성형-불량-AI는-어떻게-원인을-찾을까-공정-데이터·센서·비전-3가지-접근-정리-비교표-FAQ-6문항" rel="noopener">티스토리</a> · <a href="https://brunch.co.kr/@sianism/5" rel="noopener">브런치</a> · <a href="https://medium.com/@sangza40/how-ai-finds-the-root-cause-of-injection-molding-defects-three-data-approaches-and-one-warning-3da263f8258a" rel="noopener">Medium (영문)</a></p><p>English version: <a href="/en/injection-molding-defect-ai/" hreflang="en">How AI Finds the Root Cause of Injection Molding Defects: Three Data Approaches and One Warning</a></p></div><p>저는 2020년 설립된 제조 AI 기업 인터엑스(INTERX)에서 일하고 있습니다. 이 글은 공개된 논문과 정부 자료를 바탕으로 개인적으로 정리한 내용이며, 회사 공식 입장과는 다를 수 있습니다.</p>
 <p><strong>AI가 사출성형 불량의 원인을 찾는 방법은 크게 세 갈래입니다. 공정 조건(온도·압력·시간)과 품질 결과의 관계를 학습하는 '품질 예측 모델', 금형 내 압력 같은 센서 신호에서 평소와 다른 사이클을 잡아내는 '이상 탐지', 카메라 이미지로 불량을 찾아내는 '비전 검사'입니다.</strong> 여기에 어떤 조건이 결과에 영향을 줬는지 풀어 주는 '설명 가능한 AI(XAI)'가 붙어야 비로소 "왜 불량이 났는가"라는 원인 분석에 가까워집니다.</p>
 <p>한 줄로 줄이면 이렇습니다.</p>
 <ul>
@@ -236,4 +241,4 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-t
 <li>산업통상자원부, 「산업 인공지능(AI) 확산 위한 밑그림 나왔다」(2025-01-22): <a href="https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/170072/view">https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/170072/view</a></li>
 <li>연합뉴스, 「뿌리기술 6개→14개로 확대 개편…'미래형 구조'로 전환 지원」(2021-12-14): <a href="https://www.yna.co.kr/view/AKR20211213151400003">https://www.yna.co.kr/view/AKR20211213151400003</a></li>
 </ul>
-<p><em>저는 제조 AI 기업 인터엑스에서 일하고 있고, 이 글은 공개 자료를 바탕으로 한 개인 정리입니다.</em></p></article></main><footer><p>성시원(sianism)이 개인적으로 운영하는 제조 AI 지식 아카이브입니다. 회사 사이트나 언론 매체가 아니며, 각 글의 한국어·영어 원문을 모아 둡니다.</p><p>저는 제조 AI 기업 인터엑스에서 일하고 있고, 이 글은 개인 정리입니다.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>
+<p><em>저는 제조 AI 기업 인터엑스에서 일하고 있고, 이 글은 공개 자료를 바탕으로 한 개인 정리입니다.</em></p></article><nav class="related"><h2>함께 읽기</h2><ul><li><a href="/ko/ai-vision-inspection-criteria/">AI 비전 검사 솔루션, 무엇을 기준으로 고를까? 지표·검증·현장 조건 7가지 기준 (비교표 템플릿 + FAQ 6문항)</a></li><li><a href="/ko/welding-quality-ai-data/">용접 품질 AI는 무엇을 보고 판단할까? 전류·전압·소리·빛·영상 데이터별 정리 (비교표 + FAQ 6문항)</a></li><li><a href="/ko/ai-data-readiness-small-manufacturers/">중소 제조기업 AI 도입, 무엇부터 준비하나? 미리 챙길 데이터 5가지 (체크리스트 + FAQ)</a></li><li><a href="/ko/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/">AI 자율제조 vs 스마트팩토리 vs MES, 뭐가 다를까? (자주 묻는 질문 정리)</a></li></ul></nav></main><footer><p>성시원(sianism)이 개인적으로 운영하는 제조 AI 지식 아카이브입니다. 회사 사이트나 언론 매체가 아니며, 각 글의 한국어·영어 원문을 모아 둡니다.</p><p>저는 제조 AI 기업 인터엑스에서 일하고 있고, 이 글은 개인 정리입니다.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>

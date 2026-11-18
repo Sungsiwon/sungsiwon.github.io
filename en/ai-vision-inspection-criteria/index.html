@@ -44,7 +44,7 @@
    "description": "When defects are rare, accuracy hides the misses. Ask for miss rates, false-reject rates, and proof on your own line.",
    "inLanguage": "en",
    "datePublished": "2026-11-10",
-   "dateModified": "2026-11-10",
+   "dateModified": "2026-11-18",
    "author": {
     "@id": "https://sungsiwon.github.io/#person"
    },
@@ -75,6 +75,61 @@
    "sameAs": [
     "https://medium.com/@sangza40/how-to-choose-an-ai-visual-inspection-system-for-manufacturing-7-criteria-that-matter-more-than-c7c2191cada6"
    ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://sungsiwon.github.io/en/ai-vision-inspection-criteria/#faq",
+   "inLanguage": "en",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Which metrics matter most for AI defect detection besides accuracy?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ask for the four cells of a confusion matrix — good or defective, versus the system's call — and look at the miss rate (defects passed as good, the false-negative rate) and the false-reject rate (good parts called defective, the false-positive rate) separately. A single accuracy figure is a poor description when defects are rare. If 1% of parts are defective, a system that calls everything \"good\" scores 99%. Which error matters more depends on the process. For a safety-critical part, one escaped defect can be very costly. Where every false reject goes to manual re-inspection, false rejects drive labor cost. Hütten et al. (2024) list this choice between false positives and false negatives as a requirement that differs from one application to the next. Carvalho et al. (2023) also note that summary metrics such as AUROC describe a whole family of decision thresholds, while a real line runs on one threshold. Ask for the numbers at the threshold you will actually use."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What data should you use to validate the system?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Validation should use images from your own line that were never used in training. Carvalho et al. (2023) recommend separating training, validation, and test data — they give roughly 50–70%, 15–30%, and 15–30% as an example split — and evaluating on real-world data where possible. In procurement terms, ask three things: where the test images came from, whether any of them were used in training, and over what period they were collected. Public benchmark scores are a starting point, not evidence for your line. Liu et al. (2023) observe that most public industrial anomaly-detection datasets create anomalies on defect-free products instead of collecting defects from actual production lines. A demo that looks excellent on such data may behave differently under your lighting and on your parts."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can you use AI inspection when you have few defect images?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, but the method you choose has different weaknesses. Liu et al. (2023) survey unsupervised anomaly detection methods that train on normal images only and flag anything that looks different. This suits lines where defects are rare and hard to collect. The trade-off is that \"different from normal\" is not the same as \"a scratch\" or \"a dent,\" so classifying defect types needs a separate design. The same survey notes that many public datasets insert synthetic defects into good parts, which is one reason demo performance and shop-floor performance can diverge. According to Hütten et al. (2024), 97% of the papers they analyzed used supervised learning, which needs labeled examples of defects. If a vendor's approach is supervised, ask how many defect images it needs per defect type and who will label them."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why check lighting and product-variant changes separately?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Because the same product can look different when lighting, camera angle, or background changes, and performance can drop. Hütten et al. (2024) list real-time processing, hardware constraints, scarce labeled data, consistent labels, generalization to changing conditions such as lighting, and explainability among the requirements industrial users raise most often. For each candidate, ask what has to be redone when you add a product variant or move a camera, and how long it takes, and put the answer in criterion 6 of the comparison table. That is where long-term operating cost shows up."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How does AI inspection compare with human inspection?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Human inspection is not perfect either, so it is more realistic to ask which defects each is better at catching than to treat the choice as \"AI versus people.\" Citing earlier studies, Hütten et al. (2024) note that human error rates in complex visual inspection can reach 20–30%. They also estimate that methods take about three years on average to move from research to industrial use. A practical first phase is to run AI decisions and human decisions side by side and collect the cases where they disagree."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How should a manufacturer evaluate an AI visual inspection system before buying?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Start with two assets that make every comparison fair, then put the same seven questions to every vendor and fill the table with evidence, not slogans. Prepare a defect definition sheet — photos of each defect type and the limit where a part is still acceptable — and a held-out image set from your own line, kept away from any training. Then ask, in the same words, about defect definitions, miss and false-reject rates, held-out validation on your images, data burden, takt time, change handling, and whether operators can see why a part was flagged and feed wrong calls back into the model. In Korea, quality is one of the main reasons factories invest in smart manufacturing. In the Ministry of SMEs and Startups' 2024 smart manufacturing survey (released 28 April 2025), 37.1% of adopters named improving quality control as a goal, second only to production efficiency (56.5%)."
+     }
+    }
+   ]
   }
  ]
 }</script>
@@ -87,7 +142,9 @@ a{color:var(--acc)}h1{font-size:1.7em;line-height:1.35;margin:.8em 0 .4em}h2{fon
 .tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(127,127,127,.12)}
 figure{margin:1.5em 0}img{max-width:100%;height:auto;border-radius:6px}figcaption{color:var(--mut);font-size:14px;text-align:center}
 ul.posts{list-style:none;padding:0}ul.posts li{margin:0 0 1.1em}ul.posts time{color:var(--mut);font-size:14px;display:block}
-footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-11-10"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/ai-vision-inspection-criteria/" hreflang="ko">한국어</a></header><main><article><h1>How to Choose an AI Visual Inspection System for Manufacturing: 7 Criteria That Matter More Than &quot;99% Accuracy&quot;</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-11-10">2026-11-10</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>Also on: <a href="https://blog.naver.com/sangza40/224471114283" rel="noopener">Naver Blog</a> · <a href="https://www.linkedin.com/feed/update/urn:li:activity:7525669435840446464/" rel="noopener">LinkedIn</a> · <a href="https://sianism.tistory.com/entry/AI-%EB%B9%84%EC%A0%84-%EA%B2%80%EC%82%AC-%EC%86%94%EB%A3%A8%EC%85%98-%EC%84%A0%ED%83%9D-%EA%B8%B0%EC%A4%80-7%EA%B0%80%EC%A7%80-%EC%A0%95%ED%99%95%EB%8F%84-%EB%8C%80%EC%8B%A0-%EB%AF%B8%EA%B2%80%EB%A5%A0%C2%B7%EA%B3%BC%EA%B2%80%EB%A5%A0-%EA%B2%80%EC%A6%9D-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%98%84%EC%9E%A5-%EC%A1%B0%EA%B1%B4%EA%B9%8C%EC%A7%80-%EB%B9%84%EA%B5%90%ED%91%9C-%ED%85%9C%ED%94%8C%EB%A6%BF%EC%9C%BC%EB%A1%9C-%EC%A0%95%EB%A6%AC-2026" rel="noopener">Tistory</a> · <a href="https://careerly.co.kr/community?post=127780" rel="noopener">Careerly</a> · <a href="https://brunch.co.kr/@sianism/7" rel="noopener">Brunch</a> · <a href="https://medium.com/@sangza40/how-to-choose-an-ai-visual-inspection-system-for-manufacturing-7-criteria-that-matter-more-than-c7c2191cada6" rel="noopener">Medium</a></p><p>한국어 원문: <a href="/ko/ai-vision-inspection-criteria/" hreflang="ko">AI 비전 검사 솔루션, 무엇을 기준으로 고를까? 지표·검증·현장 조건 7가지 기준 (비교표 템플릿 + FAQ 6문항)</a></p></div><p><em>Disclosure: I work at INTERX, a Korean manufacturing AI company (founded 2020). This article is my personal summary of public research papers and a Korean government survey; it does not represent my employer's official position, and it does not recommend or compare any specific product.</em></p>
+.related{margin:2.4em 0 0;padding-top:1.2em;border-top:1px solid var(--line)}.related h2{margin-top:0;font-size:1.2em}.related ul{padding-left:1.2em}
+.clusters h3{font-size:1.05em;margin-top:1.4em}
+footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-11-10"><meta property="article:modified_time" content="2026-11-18"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/ai-vision-inspection-criteria/" hreflang="ko">한국어</a></header><main><article><h1>How to Choose an AI Visual Inspection System for Manufacturing: 7 Criteria That Matter More Than &quot;99% Accuracy&quot;</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-11-10">2026-11-10</time> · Updated <time datetime="2026-11-18">2026-11-18</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>Also on: <a href="https://blog.naver.com/sangza40/224471114283" rel="noopener">Naver Blog</a> · <a href="https://www.linkedin.com/feed/update/urn:li:activity:7525669435840446464/" rel="noopener">LinkedIn</a> · <a href="https://sianism.tistory.com/entry/AI-%EB%B9%84%EC%A0%84-%EA%B2%80%EC%82%AC-%EC%86%94%EB%A3%A8%EC%85%98-%EC%84%A0%ED%83%9D-%EA%B8%B0%EC%A4%80-7%EA%B0%80%EC%A7%80-%EC%A0%95%ED%99%95%EB%8F%84-%EB%8C%80%EC%8B%A0-%EB%AF%B8%EA%B2%80%EB%A5%A0%C2%B7%EA%B3%BC%EA%B2%80%EB%A5%A0-%EA%B2%80%EC%A6%9D-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%98%84%EC%9E%A5-%EC%A1%B0%EA%B1%B4%EA%B9%8C%EC%A7%80-%EB%B9%84%EA%B5%90%ED%91%9C-%ED%85%9C%ED%94%8C%EB%A6%BF%EC%9C%BC%EB%A1%9C-%EC%A0%95%EB%A6%AC-2026" rel="noopener">Tistory</a> · <a href="https://careerly.co.kr/community?post=127780" rel="noopener">Careerly</a> · <a href="https://brunch.co.kr/@sianism/7" rel="noopener">Brunch</a> · <a href="https://medium.com/@sangza40/how-to-choose-an-ai-visual-inspection-system-for-manufacturing-7-criteria-that-matter-more-than-c7c2191cada6" rel="noopener">Medium</a></p><p>한국어 원문: <a href="/ko/ai-vision-inspection-criteria/" hreflang="ko">AI 비전 검사 솔루션, 무엇을 기준으로 고를까? 지표·검증·현장 조건 7가지 기준 (비교표 템플릿 + FAQ 6문항)</a></p></div><p><em>Disclosure: I work at INTERX, a Korean manufacturing AI company (founded 2020). This article is my personal summary of public research papers and a Korean government survey; it does not represent my employer's official position, and it does not recommend or compare any specific product.</em></p>
 <p>When you evaluate an AI visual inspection system, the most useful question is not "How accurate is it?" It is <strong>"How many real defects does it miss, and how many good parts does it reject, on images from our own line that it has never seen?"</strong> Research on industrial inspection keeps returning to the same point: on factory data where defects are rare, a single accuracy figure says very little.</p>
 <p>Here is a short list of seven criteria you can put to every vendor in the same words:</p>
 <ul>
@@ -105,6 +162,79 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-t
 <p>A January 2024 survey in <em>Applied System Innovation</em>, "Deep Learning for Automated Visual Inspection in Manufacturing and Maintenance: A Survey of Open-Access Papers" (Hütten et al.), reviewed 196 open-access papers. Accuracy was the most commonly reported metric, yet the authors note that it describes performance poorly when classes are imbalanced. That is the normal situation on a production line. If 1% of parts are defective, a system that calls everything "good" scores 99%.</p>
 <p>A 2023 review of visual defect detection benchmarks (Carvalho et al., arXiv:2305.13261) makes the same argument and recommends looking at the <strong>false negative rate</strong> (defects passed as good) and the <strong>false positive rate</strong> (good parts rejected) instead. It adds a subtler warning. Summary metrics such as AUROC describe a whole family of decision thresholds, while a real line runs on one threshold. Ask for the numbers at the threshold you will actually use.</p>
 <p>Which error matters more depends on the process. For a safety-critical part, a single escaped defect can be very costly. Where every false reject sends a part to manual re-inspection, false rejects drive labor cost. Hütten et al. list this choice between false positives and false negatives as a requirement that differs from one application to the next.</p>
+<h2>Comparison template: put the same questions to every candidate</h2>
+<p>Copy the table below and fill the last three columns with <strong>evidence</strong>, not slogans, for each candidate.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Question to ask</th>
+<th>Evidence to request</th>
+<th>Candidate A</th>
+<th>Candidate B</th>
+<th>Candidate C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Defect definition</td>
+<td>Can it use our defect types and acceptance limits as they are?</td>
+<td>Defect-type list, photos of the acceptance limit</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2. Metrics</td>
+<td>Are miss rate and false-reject rate reported separately?</td>
+<td>Confusion matrix (good/defective × the system's call)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3. Validation</td>
+<td>Was it measured on our images, held out from training?</td>
+<td>Source, period, and count of the test images</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4. Data burden</td>
+<td>How many defect images are needed, and who labels them?</td>
+<td>Required data volume and labeling scope</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5. Speed</td>
+<td>How many seconds per part, and does that fit takt time?</td>
+<td>Measured processing time under shop-floor conditions</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6. Change handling</td>
+<td>What happens if lighting, product variant, or camera changes?</td>
+<td>Retraining procedure and lead time</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7. Operations</td>
+<td>Does it show why it flagged a part, and can wrong calls be fed back?</td>
+<td>Screen examples, retraining cycle</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><em>The seven criteria are my own arrangement of requirements summarized in the papers cited in the post (Hütten et al. 2024, Carvalho et al. 2023, Liu et al. 2023).</em></p>
 <h2>Validation: whose images, and were they held out?</h2>
 <p>Carvalho et al. recommend separating training, validation, and test data, giving roughly 50–70%, 15–30%, and 15–30% as an example split, and evaluating on real-world data where possible. In procurement terms, ask three things. Where did the test images come from? Were any of them used in training? Over what period were they collected?</p>
 <p>Public benchmark scores are a starting point, not evidence for your line. A 2023 survey of industrial image anomaly detection (Liu et al., arXiv:2301.11514) observes that most public datasets create anomalies on defect-free products instead of collecting defects from actual production lines. A demo that looks excellent on such data may behave differently under your lighting and on your parts.</p>
@@ -126,7 +256,25 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-t
 <li><strong>A held-out image set from your own line,</strong> kept away from any training, so every candidate is tested the same way.</li>
 </ul>
 <p>In Korea, quality is one of the main reasons factories invest in smart manufacturing. In the Ministry of SMEs and Startups' 2024 smart manufacturing survey (released 28 April 2025), 37.1% of adopters named improving quality control as a goal, second only to production efficiency (56.5%).</p>
-<p>The full comparison template, with a column for each candidate, is in the original Korean post: <a href="https://sungsiwon.github.io/ko/ai-vision-inspection-criteria/">sungsiwon.github.io/ko/ai-vision-inspection-criteria/</a></p>
+<h2>Frequently asked questions (FAQ)</h2>
+<h3>Q1. Which metrics matter most for AI defect detection besides accuracy?</h3>
+<p><strong>Ask for the four cells of a confusion matrix — good or defective, versus the system's call — and look at the miss rate (defects passed as good, the false-negative rate) and the false-reject rate (good parts called defective, the false-positive rate) separately.</strong> A single accuracy figure is a poor description when defects are rare. If 1% of parts are defective, a system that calls everything "good" scores 99%.</p>
+<p>Which error matters more depends on the process. For a safety-critical part, one escaped defect can be very costly. Where every false reject goes to manual re-inspection, false rejects drive labor cost. Hütten et al. (2024) list this choice between false positives and false negatives as a requirement that differs from one application to the next.</p>
+<p>Carvalho et al. (2023) also note that summary metrics such as AUROC describe a whole family of decision thresholds, while a real line runs on one threshold. Ask for the numbers at the threshold you will actually use.</p>
+<h3>Q2. What data should you use to validate the system?</h3>
+<p><strong>Validation should use images from your own line that were never used in training.</strong> Carvalho et al. (2023) recommend separating training, validation, and test data — they give roughly 50–70%, 15–30%, and 15–30% as an example split — and evaluating on real-world data where possible. In procurement terms, ask three things: where the test images came from, whether any of them were used in training, and over what period they were collected.</p>
+<p>Public benchmark scores are a starting point, not evidence for your line. Liu et al. (2023) observe that most public industrial anomaly-detection datasets create anomalies on defect-free products instead of collecting defects from actual production lines. A demo that looks excellent on such data may behave differently under your lighting and on your parts.</p>
+<h3>Q3. Can you use AI inspection when you have few defect images?</h3>
+<p><strong>Yes, but the method you choose has different weaknesses.</strong> Liu et al. (2023) survey unsupervised anomaly detection methods that train on normal images only and flag anything that looks different. This suits lines where defects are rare and hard to collect. The trade-off is that "different from normal" is not the same as "a scratch" or "a dent," so classifying defect types needs a separate design. The same survey notes that many public datasets insert synthetic defects into good parts, which is one reason demo performance and shop-floor performance can diverge.</p>
+<p>According to Hütten et al. (2024), 97% of the papers they analyzed used supervised learning, which needs labeled examples of defects. If a vendor's approach is supervised, ask how many defect images it needs per defect type and who will label them.</p>
+<h3>Q4. Why check lighting and product-variant changes separately?</h3>
+<p><strong>Because the same product can look different when lighting, camera angle, or background changes, and performance can drop.</strong> Hütten et al. (2024) list real-time processing, hardware constraints, scarce labeled data, consistent labels, generalization to changing conditions such as lighting, and explainability among the requirements industrial users raise most often. For each candidate, ask what has to be redone when you add a product variant or move a camera, and how long it takes, and put the answer in criterion 6 of the comparison table. That is where long-term operating cost shows up.</p>
+<h3>Q5. How does AI inspection compare with human inspection?</h3>
+<p><strong>Human inspection is not perfect either, so it is more realistic to ask which defects each is better at catching than to treat the choice as "AI versus people."</strong> Citing earlier studies, Hütten et al. (2024) note that human error rates in complex visual inspection can reach 20–30%. They also estimate that methods take about three years on average to move from research to industrial use. A practical first phase is to run AI decisions and human decisions side by side and collect the cases where they disagree.</p>
+<h3>Q6. How should a manufacturer evaluate an AI visual inspection system before buying?</h3>
+<p><strong>Start with two assets that make every comparison fair, then put the same seven questions to every vendor and fill the table with evidence, not slogans.</strong></p>
+<p>Prepare a defect definition sheet — photos of each defect type and the limit where a part is still acceptable — and a held-out image set from your own line, kept away from any training. Then ask, in the same words, about defect definitions, miss and false-reject rates, held-out validation on your images, data burden, takt time, change handling, and whether operators can see why a part was flagged and feed wrong calls back into the model.</p>
+<p>In Korea, quality is one of the main reasons factories invest in smart manufacturing. In the Ministry of SMEs and Startups' 2024 smart manufacturing survey (released 28 April 2025), 37.1% of adopters named improving quality control as a goal, second only to production efficiency (56.5%).</p>
 <h2>Sources</h2>
 <ul>
 <li>Hütten et al., "Deep Learning for Automated Visual Inspection in Manufacturing and Maintenance: A Survey of Open-Access Papers," <em>Applied System Innovation</em> 7(1):11 (2024): <a href="https://www.mdpi.com/2571-5577/7/1/11">https://www.mdpi.com/2571-5577/7/1/11</a></li>
@@ -134,4 +282,4 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-t
 <li>Liu et al., "Deep Industrial Image Anomaly Detection: A Survey," arXiv:2301.11514 (2023): <a href="https://arxiv.org/abs/2301.11514">https://arxiv.org/abs/2301.11514</a></li>
 <li>Ministry of SMEs and Startups, "2024 Smart Manufacturing Innovation Survey results" (2025-04-28, Korean): <a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156686561">https://www.korea.kr/briefing/pressReleaseView.do?newsId=156686561</a></li>
 </ul>
-<p><em>I work at INTERX, a Korean manufacturing AI company (founded 2020). Views are my own.</em></p></article></main><footer><p>A personal manufacturing-AI knowledge archive run by an individual, 성시원 (sianism). Not a company site or a news outlet. Each post is kept here in Korean and English.</p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>
+<p><em>I work at INTERX, a Korean manufacturing AI company (founded 2020). Views are my own.</em></p></article><nav class="related"><h2>Related</h2><ul><li><a href="/en/injection-molding-defect-ai/">How AI Finds the Root Cause of Injection Molding Defects: Three Data Approaches and One Warning</a></li><li><a href="/en/welding-quality-ai-data/">What Does Welding Quality AI Actually Look At? Current, Voltage, Sound, Light, and Cameras Explained</a></li><li><a href="/en/ai-data-readiness-small-manufacturers/">Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare (with Korea&#x27;s Policy Context)</a></li></ul></nav></main><footer><p>A personal manufacturing-AI knowledge archive run by an individual, 성시원 (sianism). Not a company site or a news outlet. Each post is kept here in Korean and English.</p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>

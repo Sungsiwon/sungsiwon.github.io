@@ -19,6 +19,17 @@ Inside a single factory, the factory's own data is often enough for AI. A growin
 
 Regulation is moving in the same direction. The EU Data Act has applied since 12 September 2025. According to the European Commission, it gives business users in industries such as manufacturing access to data about the performance of their industrial equipment.
 
+## Comparison table: four names around data spaces
+
+| | Gaia-X | Catena-X | Manufacturing-X | Korean Manufacturing-X |
+|---|---|---|---|---|
+| What it is | A framework of principles for data sharing | An industry data space | A joint industry–government–academia initiative | A government R&D and pilot program |
+| Scope | Europe, across sectors | The automotive value chain | Manufacturing as a whole | Major industries in Korea |
+| Led by | The Gaia-X Association (AISBL) | The Catena-X Association | Supported by Germany's Federal Ministry for Economic Affairs and Energy; Plattform Industrie 4.0 | Korea's Ministry of Trade, Industry and Resources (planned 2026–2029, about KRW 30 billion) |
+| Core idea | Data sovereignty and trust | Supply-chain data exchange, including traceability and carbon footprint | The "X" stands for exchange; built on Gaia-X | A standard model for industrial data spaces |
+
+*This table is my personal summary of public materials from each organization.*
+
 ## What "sovereignty" means in practice
 
 Plattform Industrie 4.0's Manufacturing-X FAQ defines data sovereignty as companies deciding for themselves who may access their data, when, and how. It also explains the name: the "X" stands for exchange, and Manufacturing-X builds on Gaia-X. In other words, the shared layer is the rules and the connectors. The data itself is not shared by default.
@@ -48,7 +59,41 @@ Korea's Ministry of Trade, Industry and Resources has set out a timeline:
 
 You do not need to wait for the standard model to be finished. Make a list of the data you already exchange with customers and suppliers by spreadsheet or email: carbon figures, lot histories, inspection results. Then check whether the format, meaning the field names and units, differs from one partner to the next. That list is where any data space connection will start, and the format differences are exactly what common standards are meant to remove.
 
-A side-by-side comparison table of the four names is in the original Korean post: [sungsiwon.github.io/ko/manufacturing-data-space/](https://sungsiwon.github.io/ko/manufacturing-data-space/)
+## Frequently asked questions (FAQ)
+
+### Q1. What is a manufacturing data space, and how does Manufacturing-X work?
+
+**A manufacturing data space is a shared ecosystem in which companies exchange manufacturing and product data through common standards while each keeps control of its own data.** It is not a central platform that collects everyone's data in one place. The data stays with its owner, and the owner decides who may use it, when, and how. People call this data sovereignty.
+
+Manufacturing-X is the German initiative that applies this idea to manufacturing as a whole. Plattform Industrie 4.0's Manufacturing-X FAQ explains that the "X" stands for exchange, and that Manufacturing-X builds on Gaia-X. The shared layer is the rules and the connectors; the data itself is not shared by default. Germany's Federal Ministry for Economic Affairs and Energy reports that, as of October 2025, 124 companies and research institutions were involved and 12 industries were connected.
+
+### Q2. How is Catena-X related to Gaia-X?
+
+**They sit at different layers.** Gaia-X is a European framework of shared principles for trusted, sovereign data sharing, run by an association. Catena-X is a data ecosystem for the automotive value chain that applies those ideas in one industry. Manufacturing-X extends the same approach to manufacturing as a whole, also building on Gaia-X. In short, Gaia-X supplies the common principles; Catena-X is the automotive data space; Manufacturing-X is the broader manufacturing initiative.
+
+### Q3. How is a data space different from a data platform?
+
+**The data is not collected in one place.** Plattform Industrie 4.0's Manufacturing-X FAQ defines data sovereignty as companies deciding for themselves who may access their data, when, and how. The data stays at each company. What is shared are the common rules and the way of connecting.
+
+### Q4. What becomes possible when data is shared this way?
+
+**Work that needs a view of the whole supply chain becomes possible.** The use cases both Plattform Industrie 4.0 and the German ministry highlight include traceability of materials and products, product carbon footprint and ESG reporting, the digital product passport, circular economy, capacity management, complex quality assurance, and collaborative engineering. These are questions no single company's data can answer alone.
+
+### Q5. What is Korea doing?
+
+**Korea's Ministry of Trade, Industry and Resources is developing a standard model for industrial data spaces under the name Korean Manufacturing-X.**
+
+- 3 September 2025: at the first Industrial AI Expo, associations from ten major industries signed an MOU on voluntary sharing of manufacturing data between companies.
+- 23 October 2025: the ministry co-hosted the second Korea–Germany Industrial Data Cooperation Forum with Germany's economy ministry. The 2026 budget proposal included building a standard model for industrial data spaces, the "Korean Manufacturing-X" platform, planned at about KRW 30 billion over 2026–2029.
+- 10 April 2026: the ministry issued a call for new R&D projects to develop and pilot the Korean Manufacturing-X platform standard model.
+
+Disclosure: the author's company, INTERX, participates in Korea's Manufacturing-X program.
+
+### Q6. Can smaller manufacturers take part, and what should a company prepare now?
+
+**The German program states SME participation as an explicit goal.** The Federal Ministry for Economic Affairs and Energy says companies of every size, especially SMEs and startups, should be able to join easily and share the benefits, and it also runs separate work to help SMEs take part. How small manufacturers will join the Korean program will depend on the official calls and project results.
+
+You do not need to wait for the standard model to be finished. Make a list of the data you already exchange with customers and suppliers by spreadsheet or email: carbon figures, lot histories, inspection results. Then check whether the format — the field names and units — differs from one partner to the next. That list is where any data space connection will start, and the format differences are exactly what common standards are meant to remove.
 
 ## Sources
 - Ministry of Trade, Industry and Resources, "Korea–Germany industrial data cooperation for industrial AX" (2025-10-23, Korean): https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/171103/view

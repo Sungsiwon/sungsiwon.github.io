@@ -16,6 +16,16 @@ AI approaches to injection molding defects fall into three groups, defined by th
 
 None of these, on its own, tells you *why*. Getting closer to a cause requires an interpretation layer, usually called explainable AI (XAI), and then a confirmation step on the machine.
 
+## Comparison table: three AI approaches to molding-defect causes
+
+| | Process-to-quality prediction | Sensor time-series anomaly detection | Vision (image) inspection |
+|---|---|---|---|
+| Input data | Machine settings and measured values (temperature, pressure, speed, time, and so on) plus pass/fail, weight, or dimensions | Cycle-by-cycle sensor curves such as cavity pressure or melt cushion | Photos of the molded part |
+| Question it answers | With these settings, what quality will we get? | Is this cycle different from the usual pattern? | Where is the defect, and what does it look like? |
+| Link to root-cause analysis | Explainable AI (XAI) interprets which settings matter most | Tracks when and which signal started to drift | Locates and types the defect; the cause still has to be linked to process data |
+| Public research example | Comparison of XAI methods for cause attribution on 1,540 cycles with six settings (2025) | LSTM autoencoder plus a control chart for melt-cushion anomalies (2024) | Pixel-level segmentation of flash defects, with a public dataset (2024) |
+| Watch-out | Easy to mistake correlation for causation | False alarms if the "normal" baseline drifts | Does not, by itself, name a cause |
+
 ## Approach 1: Process-to-quality models, plus explainability
 
 The idea is to collect, for each cycle, the settings and actual values from the machine together with a quality result (pass/fail, weight, dimensions), then train a model that maps one to the other.
@@ -66,7 +76,51 @@ That combination, a foundational process plus a stated policy interest in explai
 - Check how your explanation method handles interactions between settings.
 - Confirm on the machine before you change the standard recipe.
 
-*The original Korean FAQ (six questions, with a comparison table): [sungsiwon.github.io/ko/injection-molding-defect-ai](https://sungsiwon.github.io/ko/injection-molding-defect-ai/)*
+## Frequently asked questions (FAQ)
+
+### Q1. How can AI find the root cause of injection molding defects?
+
+**AI is better understood as a tool that narrows candidate causes than as a system that names the cause on its own.** Process-to-quality models, sensor anomaly detection, and vision inspection each answer a different question: will this setting produce a good part, is this shot unusual, and where is the defect. Getting closer to a cause requires an interpretation layer, usually called explainable AI (XAI), and then a confirmation step on the machine.
+
+A 2025 study in the *Journal of Manufacturing Processes*, "Explainable AI for Correct Root Cause Analysis of Product Quality in Injection Moulding" (Muaz et al.), tests that interpretation step directly. The researchers varied six settings across 77 combinations, repeating each 20 times for 1,540 cycles. The settings interacted, and the choice of explanation method changed the "root cause." One method (ICE) pointed to packing time as the main cause no matter which setting had actually been changed. Another (SHAP) pointed to the setting that had really been changed.
+
+### Q2. What data do you need to predict quality from process conditions?
+
+**For each cycle, or shot, the process conditions at the time and the quality result for that part need to be joined by the same identifier.** The 2025 study above joined machine data and part weights using cycle numbers marked on the parts.
+
+Check not only the machine's setpoints but the measured values (actual temperature, actual pressure), and whether pass/fail, weight, or dimensional results are recorded on the same basis.
+
+### Q3. How is sensor time-series anomaly detection used?
+
+**The method learns the signal pattern of a normal cycle and flags cycles that leave that pattern.**
+
+- A 2022 paper in *Sensors*, "Machine Learning in Injection Molding: An Industry 4.0 Method of Quality Prediction" (Párizs et al.), classified part quality using features extracted from in-mold pressure curves. A decision tree classifier reached average accuracy above 90 percent even with only one to three training samples per class. It was one mold under controlled settings, so the result should not be generalized carelessly, but it shows how informative cavity pressure can be.
+- A 2024 paper in *IEEE Access* (Tayalati et al.) combined an LSTM autoencoder with a statistical process control chart to monitor melt cushion. The autoencoder's reconstruction error set extra thresholds alongside the usual control limits, so the system could flag not only values outside the limits but also gradual upward and downward trends that classic control-chart rules can miss.
+
+Anomaly detection does not name a cause, but it tells you when something started drifting and which signal moved, which is where most root-cause investigations begin.
+
+### Q4. Does vision inspection AI also explain the cause?
+
+**No. Vision inspection is strong at finding where a defect is and what it looks like. Cause analysis still has to be linked to process data.**
+
+A 2024 study in *The International Journal of Advanced Manufacturing Technology* (Yu et al.) proposed a semi-supervised method to segment flash defects on molded parts at the pixel level, reporting 89.40 percent mIoU and 94.95 percent recall. It used defect-free samples to reduce the need for labeled data and released an open dataset of flash defects. The authors frame the output as decision support for adjusting molding-machine parameters — precise about what and where, silent about why unless it is joined to process data.
+
+### Q5. Where should a small molding plant start?
+
+**Pick the defect that is most frequent or most expensive, then link the process data and the quality results for that defect by cycle.**
+
+1. Define the target defect and metric (for example, the flash, short-shot, or warpage rate on one product).
+2. Check whether process conditions, sensor values, and inspection results for each cycle share the same identifier.
+3. Run a small test: learn the normal pattern (anomaly detection) or a settings-to-quality model.
+4. Confirm the candidate causes the AI ranks by changing the suspected setting on the machine, then expand if the effect holds.
+
+### Q6. Are there real case studies, and should you trust the cause an AI points to?
+
+**Treat the output as a ranked list of candidate causes, not a verdict, and confirm it with a shop-floor experiment.** As the 2025 study in Q1 shows, different explanation methods can point to different causes, and feature importance shows association, not causation.
+
+This article draws on peer-reviewed experiments, not named-factory success stories with a claimed reduction in defect rate. The public examples above — 1,540 experimental cycles with six settings (Muaz et al., 2025), cavity-pressure classification on one mold (Párizs et al., 2022), and flash-defect segmentation with a public dataset (Yu et al., 2024) — show how the methods work. They are not a substitute for a confirmed result on your machine.
+
+Korea's Ministry of Trade, Industry and Energy, in its 22 January 2025 announcement of ten priority tasks for industrial AI, listed data quality and integration difficulties as problems in predictive maintenance and quality management, and named explainable AI among the technologies expected to develop.
 
 ## Sources
 

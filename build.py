@@ -77,7 +77,11 @@ POSTS = [  # newest first
             "desc": "A digital twin is not a 3D picture of a factory. It is a purpose-built digital representation kept in sync with reality.",
             "summary": "Ten planning checks before building a manufacturing digital twin: purpose, target, fidelity, data collection, synchronization, control, identifiers, MES/ERP integration, security (NIST IR 8356), and verification, grounded in ISO 23247, ISO/IEC 30173, and NIST AMS 400-2."},
      "keywords": ["디지털트윈", "제조디지털트윈", "디지털트윈도입", "ISO23247", "스마트팩토리", "제조AI", "자율제조", "digital twin", "manufacturing digital twin"],
-     "channels": {}},  # channel URLs added after Naver etc. go live
+     "channels": {"naver": "https://blog.naver.com/sangza40/224466960587",
+                  "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7524295094057754624/",
+                  "tistory": "https://sianism.tistory.com/entry/제조-디지털-트윈-도입-방법과-준비-체크리스트-10가지-ISO-23247·ISOIEC-30173·NIST-자료로-정리한-기획·데이터·운영-3단계-점검표",
+                  "brunch": "https://brunch.co.kr/@sianism/6",
+                  "medium": "https://medium.com/@sangza40/a-10-point-checklist-before-you-build-a-manufacturing-digital-twin-based-on-iso-23247-and-nist-3b0a5710b7ed"}},
     {"slug": "injection-molding-defect-ai", "date": "2026-11-03",
      "ko": {"title": "사출성형 불량, AI는 어떻게 원인을 찾을까? 공정 데이터·센서·비전 3가지 접근 정리 (비교표 + FAQ 6문항)",
             "desc": "AI가 사출성형 불량의 원인을 찾는 방법은 공정 조건과 품질 결과의 관계를 학습하는 품질 예측 모델, 금형 내 압력 같은 센서 신호의 이상 탐지, 카메라 이미지로 불량을 찾는 비전 검사 세 갈래입니다. 원인 분석에 가까워지려면 설명 가능한 AI(XAI)와 현장 검증이 함께 필요합니다.",
@@ -86,7 +90,11 @@ POSTS = [  # newest first
             "desc": "Process-to-quality models, sensor anomaly detection, and vision inspection each answer a different question. Explainable AI connects them to a cause, but not without a check on the shop floor.",
             "summary": "How AI approaches injection molding defect root cause analysis: process-to-quality models with explainable AI (SHAP vs ICE), anomaly detection on cavity pressure and melt cushion, vision inspection of flash defects, and Korea's root-technology and industrial AI policy context."},
      "keywords": ["사출성형", "사출불량", "제조AI", "불량원인분석", "품질예측", "이상탐지", "비전검사", "설명가능한AI", "injection molding AI"],
-     "channels": {}},  # channel URLs added after Naver etc. go live
+     "channels": {"naver": "https://blog.naver.com/sangza40/224463052595",
+                  "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7523157275268513792/",
+                  "tistory": "https://sianism.tistory.com/entry/사출성형-불량-AI는-어떻게-원인을-찾을까-공정-데이터·센서·비전-3가지-접근-정리-비교표-FAQ-6문항",
+                  "brunch": "https://brunch.co.kr/@sianism/5",
+                  "medium": "https://medium.com/@sangza40/how-ai-finds-the-root-cause-of-injection-molding-defects-three-data-approaches-and-one-warning-3da263f8258a"}},
     {"slug": "manufacturing-llm-vs-general-llm", "date": "2026-10-30",
      "ko": {"title": "제조 특화 LLM이란? 범용 LLM과 무엇이 다른가 (비교표 + FAQ, 국내 공공 사례)",
             "desc": "제조 특화 LLM은 범용 LLM에 제조 문서·용어·공정 지식을 더 학습시키거나, 사내 문서를 찾아보고 답하도록(RAG) 연결해 제조 업무에 맞춘 언어 모델입니다. 센서·이미지를 학습하는 제조 파운데이션 모델(MFM)과는 구분됩니다.",
@@ -113,7 +121,8 @@ POSTS = [  # newest first
                   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7519262087043342336/",
                   "tistory": "https://sianism.tistory.com/entry/중소-제조기업-AI-도입-준비-꼭-챙길-데이터-5가지와-품질-점검-기준-체크리스트-표-FAQ-정리-2026",
                   "careerly": "https://careerly.co.kr/community?post=127650",
-                  "brunch": "https://brunch.co.kr/@sianism/3"}},
+                  "brunch": "https://brunch.co.kr/@sianism/3",
+                  "medium": "https://medium.com/@sangza40/before-ai-get-your-data-ready-5-datasets-small-manufacturers-should-prepare-with-koreas-policy-90b8c4da1b0e"}},
     {"slug": "ai-autonomous-manufacturing-vs-smart-factory-vs-mes", "date": "2026-10-21",
      "ko": {"title": "AI 자율제조 vs 스마트팩토리 vs MES, 뭐가 다를까? (자주 묻는 질문 정리)",
             "desc": "세 가지는 서로 대체하는 개념이 아니라 층위가 다른 개념입니다. MES는 '기록하고 관리하는 시스템', 스마트팩토리는 '연결하고 보여주는 공장', AI 자율제조는 'AI가 판단하고 제어까지 하는 공장'입니다.",
@@ -130,6 +139,64 @@ POSTS = [  # newest first
                   "medium": "https://medium.com/@sangza40/ai-autonomous-manufacturing-vs-smart-factory-vs-mes-an-faq-with-koreas-policy-context-c66c1abf3ba8"}},
 ]
 
+
+# Visible content on every post and the home page was updated 2026-11-18
+# (channel URL backfill, topic-cluster related links, and EN FAQ/tables on 05·03·06·07).
+CONTENT_UPDATED = "2026-11-18"
+for _p in POSTS:
+    _p.setdefault("modified", CONTENT_UPDATED)
+
+RELATED = {
+    "ai-autonomous-manufacturing-vs-smart-factory-vs-mes": [
+        "ai-data-readiness-small-manufacturers", "manufacturing-llm-vs-general-llm",
+        "manufacturing-digital-twin-checklist", "manufacturing-data-space"],
+    "ai-data-readiness-small-manufacturers": [
+        "ai-autonomous-manufacturing-vs-smart-factory-vs-mes", "manufacturing-llm-vs-general-llm",
+        "manufacturing-digital-twin-checklist", "manufacturing-data-space"],
+    "manufacturing-llm-vs-general-llm": [
+        "ai-autonomous-manufacturing-vs-smart-factory-vs-mes", "ai-data-readiness-small-manufacturers",
+        "manufacturing-data-space", "manufacturing-digital-twin-checklist"],
+    "injection-molding-defect-ai": [
+        "ai-vision-inspection-criteria", "welding-quality-ai-data",
+        "ai-data-readiness-small-manufacturers", "ai-autonomous-manufacturing-vs-smart-factory-vs-mes"],
+    "manufacturing-digital-twin-checklist": [
+        "ai-autonomous-manufacturing-vs-smart-factory-vs-mes", "ai-data-readiness-small-manufacturers",
+        "manufacturing-data-space", "manufacturing-llm-vs-general-llm"],
+    "ai-vision-inspection-criteria": [
+        "injection-molding-defect-ai", "welding-quality-ai-data",
+        "ai-data-readiness-small-manufacturers"],
+    "welding-quality-ai-data": [
+        "injection-molding-defect-ai", "ai-vision-inspection-criteria",
+        "ai-data-readiness-small-manufacturers"],
+    "manufacturing-data-space": [
+        "manufacturing-digital-twin-checklist", "ai-data-readiness-small-manufacturers",
+        "ai-autonomous-manufacturing-vs-smart-factory-vs-mes", "manufacturing-llm-vs-general-llm"],
+}
+CLUSTERS = [
+    {"ko": "개념과 준비", "en": "Concepts and readiness",
+     "slugs": ["ai-autonomous-manufacturing-vs-smart-factory-vs-mes", "ai-data-readiness-small-manufacturers", "manufacturing-llm-vs-general-llm"]},
+    {"ko": "품질과 검사", "en": "Quality and inspection",
+     "slugs": ["injection-molding-defect-ai", "ai-vision-inspection-criteria", "welding-quality-ai-data"]},
+    {"ko": "연결과 인프라", "en": "Connection and infrastructure",
+     "slugs": ["manufacturing-digital-twin-checklist", "manufacturing-data-space"]},
+]
+BY_SLUG = {p["slug"]: p for p in POSTS}
+
+def modified(p):
+    return p.get("modified") or p["date"]
+
+def related_nav(p, lang):
+    slugs = RELATED.get(p["slug"]) or []
+    if not slugs:
+        return ""
+    heading = "함께 읽기" if lang == "ko" else "Related"
+    items = []
+    for s in slugs:
+        q = BY_SLUG[s]
+        items.append(f'<li><a href="/{lang}/{s}/">{esc(q[lang]["title"])}</a></li>')
+    return f'<nav class="related"><h2>{heading}</h2><ul>{"".join(items)}</ul></nav>'
+
+
 CSS = """:root{color-scheme:light dark;--fg:#1d1d1f;--bg:#fff;--mut:#666;--line:#ddd;--acc:#0b5cad}
 @media(prefers-color-scheme:dark){:root{--fg:#e8e8e8;--bg:#141414;--mut:#a0a0a0;--line:#333;--acc:#6aa9ff}}
 *{box-sizing:border-box}body{margin:0;font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;color:var(--fg);background:var(--bg);word-break:keep-all;overflow-wrap:anywhere}
@@ -139,6 +206,8 @@ a{color:var(--acc)}h1{font-size:1.7em;line-height:1.35;margin:.8em 0 .4em}h2{fon
 .tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(127,127,127,.12)}
 figure{margin:1.5em 0}img{max-width:100%;height:auto;border-radius:6px}figcaption{color:var(--mut);font-size:14px;text-align:center}
 ul.posts{list-style:none;padding:0}ul.posts li{margin:0 0 1.1em}ul.posts time{color:var(--mut);font-size:14px;display:block}
+.related{margin:2.4em 0 0;padding-top:1.2em;border-top:1px solid var(--line)}.related h2{margin-top:0;font-size:1.2em}.related ul{padding-left:1.2em}
+.clusters h3{font-size:1.05em;margin-top:1.4em}
 footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}"""
 
 def esc(s): return html.escape(s, quote=True)
@@ -208,7 +277,7 @@ def build_post(p, lang):
     text = open(f"content/{slug}/{lang}.md", encoding="utf-8").read()
     img = f"{SITE}/assets/{slug}.jpg"
     art = {"@type": "Article", "@id": url(lang, slug) + "#article", "headline": m["title"], "description": m["desc"],
-           "inLanguage": lang, "datePublished": p["date"], "dateModified": p["date"], "author": {"@id": SITE + "/#person"},
+           "inLanguage": lang, "datePublished": p["date"], "dateModified": modified(p), "author": {"@id": SITE + "/#person"},
            "publisher": {"@id": SITE + "/#person"}, "image": img, "mainEntityOfPage": url(lang, slug), "keywords": p["keywords"],
            "isPartOf": {"@type": "WebSite", "name": "성시원 제조 AI 아카이브", "url": SITE + "/"},
            "workTranslation" if lang == "ko" else "translationOfWork": {"@id": url(other, slug) + "#article"},
@@ -220,18 +289,25 @@ def build_post(p, lang):
     if qs: graph.append({"@type": "FAQPage", "@id": url(lang, slug) + "#faq", "inLanguage": lang, "mainEntity": qs})
     alts = {lang: url(lang, slug), other: url(other, slug), "x-default": url("ko", slug)}
     s = head(lang, m["title"], m["desc"], url(lang, slug), alts, "article", img, {"@context": "https://schema.org", "@graph": graph},
-             f'<meta property="article:published_time" content="{p["date"]}">')
+             f'<meta property="article:published_time" content="{p["date"]}"><meta property="article:modified_time" content="{modified(p)}">')
     s += top(lang, (other, f"/{other}/{slug}/"))
     s += f'<article><h1>{esc(m["title"])}</h1><div class="meta">'
+    pub, mod = p["date"], modified(p)
     if lang == "ko":
-        s += f'<p>글쓴이 <span>{esc(AUTHOR_KO)}</span> · 게시일 <time datetime="{p["date"]}">{p["date"]}</time></p>'
+        s += f'<p>글쓴이 <span>{esc(AUTHOR_KO)}</span> · 게시일 <time datetime="{pub}">{pub}</time>'
+        if mod != pub:
+            s += f' · 수정일 <time datetime="{mod}">{mod}</time>'
+        s += '</p>'
     else:
-        s += f'<p>By <span>{esc(AUTHOR_KO)}</span> · Published <time datetime="{p["date"]}">{p["date"]}</time></p>'
+        s += f'<p>By <span>{esc(AUTHOR_KO)}</span> · Published <time datetime="{pub}">{pub}</time>'
+        if mod != pub:
+            s += f' · Updated <time datetime="{mod}">{mod}</time>'
+        s += '</p>'
     s += f'<p>{esc(DISC[lang])}</p>'
     links = " · ".join(f'<a href="{esc(u)}" rel="noopener">{CH_LABEL[k][0 if lang=="ko" else 1]}</a>' for k, u in p["channels"].items())
     if links: s += f'<p>{"다른 채널에서 보기" if lang=="ko" else "Also on"}: {links}</p>'
     s += f'<p>{"English version" if lang=="ko" else "한국어 원문"}: <a href="/{other}/{slug}/" hreflang="{other}">{esc(p[other]["title"])}</a></p></div>'
-    s += md_to_html(text) + "</article>" + foot(lang)
+    s += md_to_html(text) + "</article>" + related_nav(p, lang) + foot(lang)
     write(f"{lang}/{slug}/index.html", s)
 
 def build_home():
@@ -240,7 +316,19 @@ def build_home():
     s = head("ko", "성시원 제조 AI 아카이브 · sianism manufacturing-AI archive", ABOUT["ko"] + " " + ABOUT["en"], SITE + "/",
              jsonld={"@context": "https://schema.org", "@graph": [PERSON, site]}, image=f"{SITE}/assets/{POSTS[0]['slug']}.jpg")
     s += top("ko") + f'<h1>성시원 제조 AI 아카이브</h1><p>{esc(ABOUT["ko"])}</p><p lang="en">{esc(ABOUT["en"])}</p><p>{esc(DISC["ko"])}<br><span lang="en">{esc(DISC["en"])}</span></p>'
-    for lang, h in (("ko", "글 목록 (한국어)"), ("en", "Posts (English)")):
+    s += '<div class="clusters">'
+    s += '<h2>주제별로 모아 보기</h2><p lang="en">Topics by theme</p>'
+    for c in CLUSTERS:
+        s += f'<h3>{esc(c["ko"])} <span lang="en">/ {esc(c["en"])}</span></h3>'
+        s += '<ul class="posts">'
+        for slug in c["slugs"]:
+            q = BY_SLUG[slug]
+            s += (f'<li><time datetime="{q["date"]}">{q["date"]}</time>'
+                  f'<a href="/ko/{slug}/">{esc(q["ko"]["title"])}</a>'
+                  f' · <a href="/en/{slug}/" hreflang="en" lang="en">{esc(q["en"]["title"])}</a></li>')
+        s += '</ul>'
+    s += '</div>'
+    for lang, h in (("ko", "글 목록 (날짜순, 한국어)"), ("en", "Posts by date (English)")):
         s += f'<h2 lang="{lang}">{h}</h2><ul class="posts" lang="{lang}">'
         for p in POSTS:
             s += f'<li><time datetime="{p["date"]}">{p["date"]}</time><a href="/{lang}/{p["slug"]}/">{esc(p[lang]["title"])}</a></li>'
@@ -252,10 +340,10 @@ def build_home():
 def build_meta():
     now = datetime.now().astimezone().isoformat(timespec="seconds")
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
-          f'<url><loc>{SITE}/</loc><lastmod>{POSTS[0]["date"]}</lastmod></url>']
+          f'<url><loc>{SITE}/</loc><lastmod>{CONTENT_UPDATED}</lastmod></url>']
     for p in POSTS:
         for lang in ("ko", "en"):
-            sm.append(f'<url><loc>{url(lang,p["slug"])}</loc><lastmod>{p["date"]}</lastmod>'
+            sm.append(f'<url><loc>{url(lang,p["slug"])}</loc><lastmod>{modified(p)}</lastmod>'
                       f'<xhtml:link rel="alternate" hreflang="ko" href="{url("ko",p["slug"])}"/>'
                       f'<xhtml:link rel="alternate" hreflang="en" href="{url("en",p["slug"])}"/></url>')
     write("sitemap.xml", "\n".join(sm + ["</urlset>"]) + "\n")
@@ -276,11 +364,11 @@ def build_meta():
     F = ['<?xml version="1.0" encoding="utf-8"?>', '<feed xmlns="http://www.w3.org/2005/Atom">',
          '<title>성시원 제조 AI 아카이브 (sianism archive)</title>', f'<subtitle>{esc(ABOUT["en"])}</subtitle>',
          f'<link href="{SITE}/feed.xml" rel="self"/>', f'<link href="{SITE}/"/>', f'<id>{SITE}/</id>',
-         f'<updated>{POSTS[0]["date"]}T00:00:00+09:00</updated>', f'<author><name>{esc(AUTHOR_KO)}</name><uri>{SITE}/</uri></author>']
+         f'<updated>{CONTENT_UPDATED}T00:00:00+09:00</updated>', f'<author><name>{esc(AUTHOR_KO)}</name><uri>{SITE}/</uri></author>']
     for p in POSTS:
         for lang in ("ko", "en"):
             F.append(f'<entry xml:lang="{lang}"><title>{esc(p[lang]["title"])}</title><link href="{url(lang,p["slug"])}"/><id>{url(lang,p["slug"])}</id>'
-                     f'<published>{p["date"]}T00:00:00+09:00</published><updated>{p["date"]}T00:00:00+09:00</updated><summary>{esc(p[lang]["desc"])}</summary></entry>')
+                     f'<published>{p["date"]}T00:00:00+09:00</published><updated>{modified(p)}T00:00:00+09:00</updated><summary>{esc(p[lang]["desc"])}</summary></entry>')
     write("feed.xml", "\n".join(F + ["</feed>"]) + "\n")
     write(".nojekyll", "")
 
