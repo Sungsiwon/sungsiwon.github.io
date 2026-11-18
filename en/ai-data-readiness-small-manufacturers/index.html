@@ -100,7 +100,7 @@
      "name": "How do we judge whether our data is good enough?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The international standard ISO/IEC 25012 offers a ready-made checklist. It defines data quality through 15 characteristics. Five of them describe the data itself: accuracy, completeness, consistency, credibility, and currentness. On a shop floor these translate into plain questions: - Are the values correct? - Are there missing fields? - Do machines use the same units and formats? - Can we trust where the value came from? - Is it the value from the right moment?"
+      "text": "The international standard ISO/IEC 25012 offers a ready-made checklist. It defines data quality through 15 characteristics. Five of them describe the data itself: accuracy, completeness, consistency, credibility, and currentness. On a shop floor these translate into plain questions: | Criterion | Source | Shop-floor question | |---|---|---| | Accuracy | ISO/IEC 25012 | Do the recorded values match what actually happened? | | Completeness | ISO/IEC 25012 | Are fields or lots missing? | | Consistency | ISO/IEC 25012 | Do lines and machines use the same units and formats? | | Credibility | ISO/IEC 25012 | Can we trust where the value came from? | | Currentness | ISO/IEC 25012 | Is this the value from the right moment, or a stale one? | | Connectivity (linking) | A shop-floor check, not an ISO/IEC 25012 characteristic name | Can one defective part be linked to the conditions under which it was made? | If the data will be used for analytics or machine learning, a later series builds on ISO/IEC 25012: ISO/IEC 5259. Part 1 was published in July 2024 and Part 2 in November 2024. They address how to define and measure data quality for analytics and ML. The official number is ISO/IEC 5259 (not a look-alike number sometimes seen in secondary summaries)."
      }
     },
     {
@@ -108,7 +108,7 @@
      "name": "Is there data we can practice on before ours is ready?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. KAMP offers free manufacturing AI datasets for small manufacturers. A list published on Korea's public data portal by the Korea Technology and Information Promotion Agency for SMEs (TIPA) shows 50 datasets as of December 31, 2024, organized by industry, purpose, and process. Even if you never train on them, they are useful templates for how to structure your own variables."
+      "text": "Yes. KAMP offers free manufacturing AI datasets for small manufacturers. A list published on Korea's public data portal by the Korea Technology and Information Promotion Agency for SMEs (TIPA) shows 50 datasets as of December 31, 2024, organized by industry, purpose, and process. As of this draft (18 November 2026, Asia/Seoul), that \"as-of\" date on the public list has not been updated. Even if you never train on them, they are useful templates for how to structure your own variables."
      }
     },
     {
@@ -118,8 +118,49 @@
       "@type": "Answer",
       "text": "Small: one line, one problem, one metric. Define the problem and target, check the five kinds of data for that problem, run a small proof of concept, and expand only if the effect holds. Record the baseline before you start, or you will not be able to show the effect later."
      }
+    },
+    {
+     "@type": "Question",
+     "name": "We only have Excel files and paper logs. Can we still start?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, provided you can list where each record lives and join process conditions to quality outcomes for the same product. If a lot number or a timestamp ties a defect to the conditions under which it was made, you already have the seed of a small proof of concept. Buying new sensors can wait until you know which records are missing. The public machining dataset above also mixes automatic collection with operator-entered events."
+     }
     }
    ]
+  },
+  {
+   "@type": "HowTo",
+   "@id": "https://sungsiwon.github.io/en/ai-data-readiness-small-manufacturers/#howto",
+   "name": "A five-step check on the shop floor",
+   "step": [
+    {
+     "@type": "HowToStep",
+     "position": 1,
+     "name": "Write down one problem and its baseline number, with a date range."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 2,
+     "name": "Note where each process condition is recorded, and how often."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 3,
+     "name": "Confirm that the quality outcome is written down, not just remembered."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 4,
+     "name": "Pick one defective part and try to retrieve the process conditions under which it was made."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 5,
+     "name": "Keep a variable dictionary and shop-floor event records (tool or mold changes) next to the dataset."
+    }
+   ],
+   "inLanguage": "en"
   }
  ]
 }</script>
@@ -134,7 +175,7 @@ figure{margin:1.5em 0}img{max-width:100%;height:auto;border-radius:6px}figcaptio
 ul.posts{list-style:none;padding:0}ul.posts li{margin:0 0 1.1em}ul.posts time{color:var(--mut);font-size:14px;display:block}
 .related{margin:2.4em 0 0;padding-top:1.2em;border-top:1px solid var(--line)}.related h2{margin-top:0;font-size:1.2em}.related ul{padding-left:1.2em}
 .clusters h3{font-size:1.05em;margin-top:1.4em}
-footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-10-23"><meta property="article:modified_time" content="2026-11-18"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/ai-data-readiness-small-manufacturers/" hreflang="ko">한국어</a></header><main><article><h1>Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare (with Korea&#x27;s Policy Context)</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-10-23">2026-10-23</time> · Updated <time datetime="2026-11-18">2026-11-18</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>Also on: <a href="https://blog.naver.com/sangza40/224451245938" rel="noopener">Naver Blog</a> · <a href="https://www.linkedin.com/feed/update/urn:li:activity:7519262087043342336/" rel="noopener">LinkedIn</a> · <a href="https://sianism.tistory.com/entry/중소-제조기업-AI-도입-준비-꼭-챙길-데이터-5가지와-품질-점검-기준-체크리스트-표-FAQ-정리-2026" rel="noopener">Tistory</a> · <a href="https://careerly.co.kr/community?post=127650" rel="noopener">Careerly</a> · <a href="https://brunch.co.kr/@sianism/3" rel="noopener">Brunch</a> · <a href="https://medium.com/@sangza40/before-ai-get-your-data-ready-5-datasets-small-manufacturers-should-prepare-with-koreas-policy-90b8c4da1b0e" rel="noopener">Medium</a></p><p>한국어 원문: <a href="/ko/ai-data-readiness-small-manufacturers/" hreflang="ko">중소 제조기업 AI 도입, 무엇부터 준비하나? 미리 챙길 데이터 5가지 (체크리스트 + FAQ)</a></p></div><p><em>Disclosure: I work at INTERX, a Korean manufacturing AI company (founded 2020). This article is my personal summary based on public sources such as Korean government surveys and international standards; it does not represent my employer's official position.</em></p>
+footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-10-23"><meta property="article:modified_time" content="2026-11-18"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/ai-data-readiness-small-manufacturers/" hreflang="ko">한국어</a></header><main><article><h1>Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare (with Korea&#x27;s Policy Context)</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-10-23">2026-10-23</time> · Updated <time datetime="2026-11-18">2026-11-18</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>Also on: <a href="https://blog.naver.com/sangza40/224451245938" rel="noopener">Naver Blog</a> · <a href="https://www.linkedin.com/feed/update/urn:li:activity:7519262087043342336/" rel="noopener">LinkedIn</a> · <a href="https://sianism.tistory.com/entry/중소-제조기업-AI-도입-준비-꼭-챙길-데이터-5가지와-품질-점검-기준-체크리스트-표-FAQ-정리-2026" rel="noopener">Tistory</a> · <a href="https://careerly.co.kr/community?post=127650" rel="noopener">Careerly</a> · <a href="https://brunch.co.kr/@sianism/3" rel="noopener">Brunch</a> · <a href="https://medium.com/@sangza40/before-ai-get-your-data-ready-5-datasets-small-manufacturers-should-prepare-with-koreas-policy-90b8c4da1b0e" rel="noopener">Medium</a></p><p>한국어 원문: <a href="/ko/ai-data-readiness-small-manufacturers/" hreflang="ko">중소 제조기업 AI 도입, 무엇부터 준비하나? 미리 챙길 데이터 5가지 (체크리스트 + FAQ)</a></p></div><p><em>Disclosure: I work as a principal researcher (service planning) at INTERX, a Korean manufacturing AI company founded in 2020. This article is my personal summary based on public sources such as Korean government surveys and international standards; it does not represent my employer's official position.</em></p>
 <p>If you run or support a small or mid-sized manufacturer and someone asks, "How do we start with AI?", the most useful answer is not a model name. It is this: <strong>pick one problem, then check whether five kinds of data exist for it and can be linked to the same product.</strong> Buying new sensors or software can come later.</p>
 <p>Here are the five:</p>
 <ul>
@@ -146,6 +187,15 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-t
 </ul>
 <figure><img src="/assets/ai-data-readiness-small-manufacturers.jpg" alt="A worker arranges five boxes of data on a shelf while an AI helper picks them up and links them." width="1200" height="675" loading="lazy"><figcaption>Five kinds of data to prepare before AI: problem &amp; baseline, process conditions, quality outcomes, linking keys, definitions &amp; shop-floor records</figcaption></figure>
 
+<h2>A five-step check on the shop floor</h2>
+<ol>
+<li>Write down one problem and its baseline number, with a date range.</li>
+<li>Note where each process condition is recorded, and how often.</li>
+<li>Confirm that the quality outcome is written down, not just remembered.</li>
+<li>Pick one defective part and try to retrieve the process conditions under which it was made.</li>
+<li>Keep a variable dictionary and shop-floor event records (tool or mold changes) next to the dataset.</li>
+</ol>
+<p>If step 4 breaks, fix the linking key before you pick a model.</p>
 <h2>Why data, and why now</h2>
 <p>Korea offers an unusually clear snapshot of the gap. In April 2025, the Ministry of SMEs and Startups (MSS) published its first Smart Manufacturing Innovation Survey. It covered small, medium, and mid-sized manufacturers that own a factory, using a sample of 5,000 firms interviewed in person between October 2024 and January 2025. Among the findings:</p>
 <ul>
@@ -169,19 +219,57 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-t
 <p>The same document lists each variable with its unit, valid range, and the OK/NG rule used for pass/fail, which is a good model for the "definitions" item above.</p>
 <h3>"How do we judge whether our data is good enough?"</h3>
 <p>The international standard <strong>ISO/IEC 25012</strong> offers a ready-made checklist. It defines data quality through 15 characteristics. Five of them describe the data itself: accuracy, completeness, consistency, credibility, and currentness. On a shop floor these translate into plain questions:</p>
-<ul>
-<li>Are the values correct?</li>
-<li>Are there missing fields?</li>
-<li>Do machines use the same units and formats?</li>
-<li>Can we trust where the value came from?</li>
-<li>Is it the value from the right moment?</li>
-</ul>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Source</th>
+<th>Shop-floor question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accuracy</td>
+<td>ISO/IEC 25012</td>
+<td>Do the recorded values match what actually happened?</td>
+</tr>
+<tr>
+<td>Completeness</td>
+<td>ISO/IEC 25012</td>
+<td>Are fields or lots missing?</td>
+</tr>
+<tr>
+<td>Consistency</td>
+<td>ISO/IEC 25012</td>
+<td>Do lines and machines use the same units and formats?</td>
+</tr>
+<tr>
+<td>Credibility</td>
+<td>ISO/IEC 25012</td>
+<td>Can we trust where the value came from?</td>
+</tr>
+<tr>
+<td>Currentness</td>
+<td>ISO/IEC 25012</td>
+<td>Is this the value from the right moment, or a stale one?</td>
+</tr>
+<tr>
+<td>Connectivity (linking)</td>
+<td>A shop-floor check, not an ISO/IEC 25012 characteristic name</td>
+<td>Can one defective part be linked to the conditions under which it was made?</td>
+</tr>
+</tbody>
+</table></div>
+<p>If the data will be used for analytics or machine learning, a later series builds on ISO/IEC 25012: <strong>ISO/IEC 5259</strong>. Part 1 was published in July 2024 and Part 2 in November 2024. They address how to define and measure data quality for analytics and ML. The official number is ISO/IEC 5259 (not a look-alike number sometimes seen in secondary summaries).</p>
 <h3>"Is there data we can practice on before ours is ready?"</h3>
-<p>Yes. KAMP offers free manufacturing AI datasets for small manufacturers. A list published on Korea's public data portal by the Korea Technology and Information Promotion Agency for SMEs (TIPA) shows 50 datasets as of December 31, 2024, organized by industry, purpose, and process. Even if you never train on them, they are useful templates for how to structure your own variables.</p>
+<p>Yes. KAMP offers free manufacturing AI datasets for small manufacturers. A list published on Korea's public data portal by the Korea Technology and Information Promotion Agency for SMEs (TIPA) shows 50 datasets as of December 31, 2024, organized by industry, purpose, and process. As of this draft (18 November 2026, Asia/Seoul), that "as-of" date on the public list has not been updated. Even if you never train on them, they are useful templates for how to structure your own variables.</p>
 <h3>"How big should the first project be?"</h3>
 <p>Small: one line, one problem, one metric. Define the problem and target, check the five kinds of data for that problem, run a small proof of concept, and expand only if the effect holds. Record the baseline before you start, or you will not be able to show the effect later.</p>
+<h3>"We only have Excel files and paper logs. Can we still start?"</h3>
+<p>Yes, provided you can list where each record lives and join process conditions to quality outcomes for the same product. If a lot number or a timestamp ties a defect to the conditions under which it was made, you already have the seed of a small proof of concept. Buying new sensors can wait until you know which records are missing. The public machining dataset above also mixes automatic collection with operator-entered events.</p>
 <h2>Korea's policy context</h2>
 <p>On October 24, 2025, MSS announced its <strong>AI-based Smart Manufacturing Innovation 3.0 Strategy</strong>. According to the ministry's briefing, the targets for 2030 include deploying 12,000 AI-centered smart factories and raising AI adoption among small manufacturers to 10%. Two of the listed tasks are directly about data: standardizing manufacturing data based on international standards, and securing 1,000 high-quality manufacturing datasets generated during smart factory projects. The ministry also plans a consolidated one-stop support platform called "Manufacturing AI 24."</p>
+<p>In 2026 that work moved from plan to execution. In April 2026 MSS invited organizations to develop reference models for its manufacturing-data standardization program. At a 1 July 2026 kickoff briefing, MSS and TIPA said they had selected five consortia (17 organizations) to develop Asset Administration Shell (AAS) reference models, with a goal of 500 models by year-end. In a 20 February 2026 press explanation, MSS also said it would complete an information-strategy plan (ISP) in 2026 to upgrade KAMP into "Manufacturing AI 24," with actual build-out planned for 2027.</p>
 <p>For readers outside Korea, the takeaway is that the policy debate has moved from "deploy more smart factories" to "make factory data usable for AI." That shift matches what the survey numbers suggest.</p>
 <h2>A five-line checklist to keep</h2>
 <ol>
@@ -191,15 +279,21 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-t
 <li>Can one defective part be linked to its process conditions?</li>
 <li>Could a newcomer read our variable list and understand every column?</li>
 </ol>
-<p><em>The original post (in Korean), with a checklist table and six FAQs, is on my blog: <a href="https://blog.naver.com/sangza40/224451245938">https://blog.naver.com/sangza40/224451245938</a></em></p>
+<p><em>The original post (in Korean), with a checklist table and FAQs, is on my blog: <a href="https://blog.naver.com/sangza40/224451245938">https://blog.naver.com/sangza40/224451245938</a></em></p>
+<p>Related: <a href="/ko/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/">AI Autonomous Manufacturing vs Smart Factory vs MES</a> (Korean FAQ; <a href="/en/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/">English version</a>).</p>
 <h2>Sources</h2>
 <ul>
 <li>Ministry of SMEs and Startups, "Results of the 2024 Smart Manufacturing Innovation Survey" (2025-04-28), Korea Policy Briefing (Korean): <a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156686561">https://www.korea.kr/briefing/pressReleaseView.do?newsId=156686561</a></li>
 <li>Ministry of SMEs and Startups, "AI-based Smart Manufacturing Innovation 3.0 Strategy" briefing (2025-10-24), Korea Policy Briefing (Korean): <a href="https://www.korea.kr/news/policyNewsView.do?newsId=156722205">https://www.korea.kr/news/policyNewsView.do?newsId=156722205</a></li>
+<li>Ministry of SMEs and Startups, press explanation on upgrading KAMP to Manufacturing AI 24 (2026-02-20, Korean): <a href="https://www.mss.go.kr/site/smba/ex/bbs/View.do?bcIdx=1065703&amp;cbIdx=87">https://www.mss.go.kr/site/smba/ex/bbs/View.do?bcIdx=1065703&amp;cbIdx=87</a></li>
+<li>Ministry of SMEs and Startups, 2026 call for manufacturing-data standardization reference-model developers (2026-04-06, Korean): <a href="https://www.mss.go.kr/site/smba/ex/bbs/View.do?bcIdx=1067009&amp;cbIdx=310">https://www.mss.go.kr/site/smba/ex/bbs/View.do?bcIdx=1067009&amp;cbIdx=310</a></li>
+<li>Yonhap News, kickoff of the AAS reference-model program (2026-07-01, Korean): <a href="https://www.yna.co.kr/view/AKR20260701154400030">https://www.yna.co.kr/view/AKR20260701154400030</a></li>
 <li>TIPA, "Manufacturing AI datasets (50)" (as of 2024-12-31), Public Data Portal (Korean): <a href="https://www.data.go.kr/data/15089213/fileData.do">https://www.data.go.kr/data/15089213/fileData.do</a></li>
 <li>KAMP, Korea AI Manufacturing Platform: <a href="https://www.kamp-ai.kr/">https://www.kamp-ai.kr/</a></li>
 <li>KAMP, MCT machining and inspection dataset description (PDF, Korean): <a href="https://aisquare.kamp-ai.kr/upload_data/mainImg/95d6c6ca-96ee-4dfb-ad98-dbe0c6676420.pdf">https://aisquare.kamp-ai.kr/upload_data/mainImg/95d6c6ca-96ee-4dfb-ad98-dbe0c6676420.pdf</a></li>
 <li>ISO/IEC 25012:2008, Data quality model: <a href="https://www.iso.org/standard/35736.html">https://www.iso.org/standard/35736.html</a></li>
 <li>ISO 25000 portal, ISO/IEC 25012 characteristics: <a href="https://iso25000.com/index.php/en/iso-25000-standards/iso-25012">https://iso25000.com/index.php/en/iso-25000-standards/iso-25012</a></li>
+<li>ISO/IEC 5259-1:2024: <a href="https://www.iso.org/standard/81088.html">https://www.iso.org/standard/81088.html</a></li>
+<li>ISO/IEC 5259-2:2024: <a href="https://www.iso.org/standard/81860.html">https://www.iso.org/standard/81860.html</a></li>
 </ul>
-<p><em>I work at INTERX, a Korean manufacturing AI company (founded 2020). Views are my own.</em></p></article><nav class="related"><h2>Related</h2><ul><li><a href="/en/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/">AI Autonomous Manufacturing vs Smart Factory vs MES: an FAQ (with Korea&#x27;s policy context)</a></li><li><a href="/en/manufacturing-llm-vs-general-llm/">What Is a Manufacturing-Specific LLM? How It Differs from a General-Purpose LLM (and What Korea Is Building)</a></li><li><a href="/en/manufacturing-digital-twin-checklist/">A 10-Point Checklist Before You Build a Manufacturing Digital Twin (Based on ISO 23247 and NIST Guidance)</a></li><li><a href="/en/manufacturing-data-space/">What Is a Manufacturing Data Space? Gaia-X, Catena-X, Manufacturing-X, and Korea&#x27;s Version Explained</a></li></ul></nav></main><footer><p>A personal manufacturing-AI knowledge archive run by an individual, 성시원 (sianism). Not a company site or a news outlet. Each post is kept here in Korean and English.</p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>
+<p><em>I work as a principal researcher (service planning) at INTERX, a Korean manufacturing AI company founded in 2020. Views are my own.</em></p></article><nav class="related"><h2>Related</h2><ul><li><a href="/en/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/">AI Autonomous Manufacturing vs Smart Factory vs MES: an FAQ (with Korea&#x27;s policy context)</a></li><li><a href="/en/manufacturing-llm-vs-general-llm/">What Is a Manufacturing-Specific LLM? How It Differs from a General-Purpose LLM (and What Korea Is Building)</a></li><li><a href="/en/manufacturing-digital-twin-checklist/">A 10-Point Checklist Before You Build a Manufacturing Digital Twin (Based on ISO 23247 and NIST Guidance)</a></li><li><a href="/en/manufacturing-data-space/">What Is a Manufacturing Data Space? Gaia-X, Catena-X, Manufacturing-X, and Korea&#x27;s Version Explained</a></li></ul></nav></main><footer><p>A personal manufacturing-AI knowledge archive run by an individual, 성시원 (sianism). Not a company site or a news outlet. Each post is kept here in Korean and English.</p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>

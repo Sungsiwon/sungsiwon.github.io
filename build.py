@@ -240,6 +240,55 @@ def faqs(text):
     if cur: out.append(cur)
     return [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": strip_md("\n".join(f["a"]))}} for f in out]
 
+def howtos(text, page_url):
+    """Emit HowTo JSON-LD for explicit start-order / shop-floor check lists."""
+    intro_re = re.compile(r'시작 순서는 아래와 같습니다\.?|The starting order is as follows\.?')
+    head_re = re.compile(r'현장에서 쓰는 점검 순서|A five-step check on the shop floor')
+    lines = text.split("\n")
+    out, i, n_ht = [], 0, 0
+    while i < len(lines):
+        raw = lines[i]
+        heading = re.match(r'^(#{2,3}) (.+)$', raw)
+        is_intro = bool(intro_re.search(raw.strip()))
+        is_head = bool(heading and head_re.search(heading.group(2)))
+        if is_intro or is_head:
+            name = heading.group(2).strip() if is_head else None
+            if name is None:
+                for k in range(i, -1, -1):
+                    hm = re.match(r'^(#{2,3}) (.+)$', lines[k])
+                    if hm:
+                        name = re.sub(r'^Q\d+\.\s*', '', hm.group(2)).strip().strip('"“”')
+                        break
+            if not name:
+                name = "Starting order" if "starting order" in raw.lower() else "시작 순서"
+            steps, j = [], i + 1
+            while j < len(lines):
+                sm = re.match(r'^(\d+)\.\s+(.+)$', lines[j].strip())
+                if sm:
+                    steps.append(sm.group(2).strip())
+                    j += 1
+                    continue
+                if not lines[j].strip():
+                    if steps and j + 1 < len(lines) and not re.match(r'^\d+\.\s+', lines[j+1].strip()):
+                        break
+                    j += 1
+                    continue
+                break
+            if len(steps) >= 3:
+                n_ht += 1
+                hid = page_url + ("#howto" if n_ht == 1 else f"#howto-{n_ht}")
+                out.append({
+                    "@type": "HowTo",
+                    "@id": hid,
+                    "name": name,
+                    "step": [{"@type": "HowToStep", "position": n, "name": s} for n, s in enumerate(steps, 1)],
+                })
+            i = j
+            continue
+        i += 1
+    return out
+
+
 def head(lang, title, desc, canonical, alts=None, og_type="website", image=None, jsonld=None, extra=""):
     h = [f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8">',
          GA4_SNIPPET,
@@ -287,6 +336,9 @@ def build_post(p, lang):
     graph = [PERSON, art]
     qs = faqs(text)
     if qs: graph.append({"@type": "FAQPage", "@id": url(lang, slug) + "#faq", "inLanguage": lang, "mainEntity": qs})
+    for ht in howtos(text, url(lang, slug)):
+        ht["inLanguage"] = lang
+        graph.append(ht)
     alts = {lang: url(lang, slug), other: url(other, slug), "x-default": url("ko", slug)}
     s = head(lang, m["title"], m["desc"], url(lang, slug), alts, "article", img, {"@context": "https://schema.org", "@graph": graph},
              f'<meta property="article:published_time" content="{p["date"]}"><meta property="article:modified_time" content="{modified(p)}">')

@@ -91,7 +91,7 @@
      "name": "How is that different from a smart factory?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The two overlap, but they are not the same thing. \"Smart factory\" is a broad concept: using ICT to connect a plant and make it visible. AI autonomous manufacturing is closer to a stage built on top of that, where AI takes on judgment and control. Korea's Ministry of SMEs and Startups describes smart factory maturity in four levels in its smart factory support program: Basic (checking and monitoring), Intermediate 1 (analysis and control), Intermediate 2 (optimization), and Advanced (autonomous operation). Seen through that lens, AI autonomous manufacturing is an effort to reach the \"Advanced\" end of the smart factory scale using AI."
+      "text": "The two overlap, but they are not the same thing. \"Smart factory\" is a broad concept: using ICT to connect a plant and make it visible. AI autonomous manufacturing is closer to a stage built on top of that, where AI takes on judgment and control. Korea's Ministry of SMEs and Startups describes smart factory maturity in four levels in its smart factory support program: Basic (checking and monitoring), Intermediate 1 (analysis and control), Intermediate 2 (optimization), and Advanced (autonomous operation). Seen through that lens, AI autonomous manufacturing is an effort to reach the \"Advanced\" end of the smart factory scale using AI. In one line, the difference is about who decides and which maturity stage you are closest to. In a smart factory, people decide after looking at connected data; in AI autonomous manufacturing, AI recommends or controls, and people supervise."
      }
     },
     {
@@ -107,7 +107,7 @@
      "name": "Do you need a full MES and smart factory before attempting AI autonomous manufacturing?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Not necessarily. What you do need is the data relevant to the problem you are trying to solve. For example, to reduce defects in injection molding, process conditions (temperature, pressure, time) need to be linked to the pass/fail results for each part."
+      "text": "Not necessarily. What you do need is the data relevant to the problem you are trying to solve. For example, to reduce defects in injection molding, process conditions (temperature, pressure, time) need to be linked to the pass/fail results for each part. I have a checklist of which data to prepare first in Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare."
      }
     },
     {
@@ -115,10 +115,62 @@
      "name": "Where should a small or mid-sized manufacturer start?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Pick one problem whose impact is easy to measure in numbers, such as the defect rate on a specific line or unplanned stops on a specific machine. Then: 1. Define the problem and the target metric. 2. Check whether the data you need exists, and whether collection frequency and standards are consistent. 3. Run a small proof of concept (PoC). 4. If the effect holds up, expand to other lines. In Korea, the government's smart factory level assessment is also a useful way to check where your plant stands before you begin."
+      "text": "Pick one problem whose impact is easy to measure in numbers, such as the defect rate on a specific line or unplanned stops on a specific machine. The starting order is as follows. 1. Define the problem and the target metric (write down the \"before\" number together with the time period). 2. Check whether the data you need exists, and whether collection frequency and standards are consistent. 3. Run a small proof of concept (PoC) and confirm the effect in numbers. 4. If the effect holds up, expand to other lines. In Korea, the government's smart factory level assessment is also a useful way to check where your plant stands before you begin."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do we have to upgrade the MES first, and only then start AI?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You do not have to wait until both are finished. What comes first is whether the data for the problem you want to solve is already linked. A fully upgraded MES is not a prerequisite for starting AI. If work orders, output, and lot history are already accumulating in the MES, that is a good starting point for training. Even if the MES is weak, you can still run a small test on one problem when process conditions and pass/fail results on a given line are tied to the same product unit. Whether to finish the whole system first or start with one problem depends on how the data is connected."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How can we tell what level our plant is at now?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A practical first step is the Ministry of SMEs and Startups smart-factory level assessment, which places a plant near Basic, Intermediate 1, Intermediate 2, or Advanced. The level names are checking and monitoring, analysis and control, optimization, and autonomous operation. AI autonomous manufacturing is closest to the Advanced (autonomous operation) end. The level name is not, by itself, the introduction sequence. Seeing which data you already have at your current level matters more than making a shopping list of the next system to install."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do MES, ERP, and a smart factory differ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ERP and MES are software layers. A smart factory is a way and level of running a plant. ISA-95 (IEC 62264) places ERP at Level 4 (business), MES at Level 3 (manufacturing operations management), and control systems such as PLCs and DCS at Level 2. A smart factory is the broader idea of tying these systems together so data can be connected and visualized; it does not refer to MES or ERP alone."
      }
     }
    ]
+  },
+  {
+   "@type": "HowTo",
+   "@id": "https://sungsiwon.github.io/en/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/#howto",
+   "name": "Where should a small or mid-sized manufacturer start?",
+   "step": [
+    {
+     "@type": "HowToStep",
+     "position": 1,
+     "name": "Define the problem and the target metric (write down the \"before\" number together with the time period)."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 2,
+     "name": "Check whether the data you need exists, and whether collection frequency and standards are consistent."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 3,
+     "name": "Run a small proof of concept (PoC) and confirm the effect in numbers."
+    },
+    {
+     "@type": "HowToStep",
+     "position": 4,
+     "name": "If the effect holds up, expand to other lines."
+    }
+   ],
+   "inLanguage": "en"
   }
  ]
 }</script>
@@ -133,7 +185,7 @@ figure{margin:1.5em 0}img{max-width:100%;height:auto;border-radius:6px}figcaptio
 ul.posts{list-style:none;padding:0}ul.posts li{margin:0 0 1.1em}ul.posts time{color:var(--mut);font-size:14px;display:block}
 .related{margin:2.4em 0 0;padding-top:1.2em;border-top:1px solid var(--line)}.related h2{margin-top:0;font-size:1.2em}.related ul{padding-left:1.2em}
 .clusters h3{font-size:1.05em;margin-top:1.4em}
-footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-10-21"><meta property="article:modified_time" content="2026-11-18"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/" hreflang="ko">한국어</a></header><main><article><h1>AI Autonomous Manufacturing vs Smart Factory vs MES: an FAQ (with Korea&#x27;s policy context)</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-10-21">2026-10-21</time> · Updated <time datetime="2026-11-18">2026-11-18</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>Also on: <a href="https://blog.naver.com/sangza40/224448962411" rel="noopener">Naver Blog</a> · <a href="https://www.linkedin.com/feed/update/urn:li:activity:7518543676696862720/" rel="noopener">LinkedIn</a> · <a href="https://sianism.tistory.com/entry/AI-자율제조란-MES·스마트팩토리와의-차이-정리-FAQ-6문항-비교표" rel="noopener">Tistory</a> · <a href="https://careerly.co.kr/community?post=127635" rel="noopener">Careerly</a> · <a href="https://brunch.co.kr/@sianism/2" rel="noopener">Brunch</a> · <a href="https://medium.com/@sangza40/ai-autonomous-manufacturing-vs-smart-factory-vs-mes-an-faq-with-koreas-policy-context-c66c1abf3ba8" rel="noopener">Medium</a></p><p>한국어 원문: <a href="/ko/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/" hreflang="ko">AI 자율제조 vs 스마트팩토리 vs MES, 뭐가 다를까? (자주 묻는 질문 정리)</a></p></div><p><em>Disclosure: I work at INTERX, a Korean manufacturing AI company (founded 2020). This article is my personal summary based on public sources such as Korean government documents and international standards; it does not represent my employer's official position.</em></p>
+footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-10-21"><meta property="article:modified_time" content="2026-11-18"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/" hreflang="ko">한국어</a></header><main><article><h1>AI Autonomous Manufacturing vs Smart Factory vs MES: an FAQ (with Korea&#x27;s policy context)</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-10-21">2026-10-21</time> · Updated <time datetime="2026-11-18">2026-11-18</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>Also on: <a href="https://blog.naver.com/sangza40/224448962411" rel="noopener">Naver Blog</a> · <a href="https://www.linkedin.com/feed/update/urn:li:activity:7518543676696862720/" rel="noopener">LinkedIn</a> · <a href="https://sianism.tistory.com/entry/AI-자율제조란-MES·스마트팩토리와의-차이-정리-FAQ-6문항-비교표" rel="noopener">Tistory</a> · <a href="https://careerly.co.kr/community?post=127635" rel="noopener">Careerly</a> · <a href="https://brunch.co.kr/@sianism/2" rel="noopener">Brunch</a> · <a href="https://medium.com/@sangza40/ai-autonomous-manufacturing-vs-smart-factory-vs-mes-an-faq-with-koreas-policy-context-c66c1abf3ba8" rel="noopener">Medium</a></p><p>한국어 원문: <a href="/ko/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/" hreflang="ko">AI 자율제조 vs 스마트팩토리 vs MES, 뭐가 다를까? (자주 묻는 질문 정리)</a></p></div><p><em>Disclosure: I work as a principal researcher (service planning) at INTERX, a Korean manufacturing AI company (founded 2020). This article is my personal summary based on public sources such as Korean government documents and international standards; it does not represent my employer's official position.</em></p>
 <p>If you follow manufacturing technology in Korea, you have probably noticed a new phrase showing up in policy papers and trade press: <strong>AI autonomous manufacturing</strong> (AI 자율제조). It often appears next to two older terms, <strong>smart factory</strong> and <strong>MES</strong> (Manufacturing Execution System), and the three are easy to blur together.</p>
 <p>They are not competing options, and none of them replaces the others. They describe different layers. The shortest way I can put it:</p>
 <ul>
@@ -179,6 +231,12 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-t
 <td>AI recommends or controls; people supervise</td>
 </tr>
 <tr>
+<td>Maturity stage</td>
+<td>A foundation that accumulates execution records</td>
+<td>Closer to Basic through Intermediate (checking, analysis, optimization)</td>
+<td>Closer to Advanced (autonomous operation)</td>
+</tr>
+<tr>
 <td>Example</td>
 <td>Lot tracking, issuing work orders</td>
 <td>Real-time monitoring dashboard</td>
@@ -186,6 +244,7 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-t
 </tr>
 </tbody>
 </table></div>
+<p><em>The "Maturity stage" row is my own reading of the Ministry of SMEs and Startups smart-factory levels (Basic, Intermediate 1, Intermediate 2, Advanced). It does not mean an MES has to be in place before the next stage is possible.</em></p>
 <h2>The questions people actually ask</h2>
 <h3>What is AI autonomous manufacturing?</h3>
 <p>It is a way of manufacturing in which AI reads process data, makes judgments, and, combined with robots and equipment, pushes production toward higher sophistication and autonomy.</p>
@@ -194,23 +253,35 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-t
 <h3>How is that different from a smart factory?</h3>
 <p>The two overlap, but they are not the same thing. "Smart factory" is a broad concept: using ICT to connect a plant and make it visible. AI autonomous manufacturing is closer to a stage built on top of that, where AI takes on judgment and control.</p>
 <p>Korea's Ministry of SMEs and Startups describes smart factory maturity in four levels in its smart factory support program: <strong>Basic</strong> (checking and monitoring), <strong>Intermediate 1</strong> (analysis and control), <strong>Intermediate 2</strong> (optimization), and <strong>Advanced</strong> (autonomous operation). Seen through that lens, AI autonomous manufacturing is an effort to reach the "Advanced" end of the smart factory scale using AI.</p>
+<p>In one line, the difference is about <em>who decides</em> and <em>which maturity stage</em> you are closest to. In a smart factory, people decide after looking at connected data; in AI autonomous manufacturing, AI recommends or controls, and people supervise.</p>
 <h3>If we already have an MES, do we still need AI?</h3>
 <p>Yes, because they answer different questions. An MES tells you <em>what happened</em>. AI deals with <em>what is likely to happen and what should change</em>.</p>
 <p>The international standard ISA-95 (IEC 62264) places MES at Level 3, manufacturing operations management, between business systems such as ERP (Level 4) and control layers such as PLCs and DCS (Level 2). The production and history data piling up in an MES is actually good training material for AI, which is why plants with a well-run MES tend to adopt AI faster. An MES is a starting point for AI, not a substitute.</p>
 <h3>Do you need a full MES and smart factory before attempting AI autonomous manufacturing?</h3>
-<p>Not necessarily. What you do need is the data relevant to the problem you are trying to solve. For example, to reduce defects in injection molding, process conditions (temperature, pressure, time) need to be linked to the pass/fail results for each part.</p>
+<p>Not necessarily. What you do need is the data relevant to the problem you are trying to solve. For example, to reduce defects in injection molding, process conditions (temperature, pressure, time) need to be linked to the pass/fail results for each part. I have a checklist of which data to prepare first in <a href="/en/ai-data-readiness-small-manufacturers/">Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare</a>.</p>
 <h3>Where should a small or mid-sized manufacturer start?</h3>
-<p>Pick one problem whose impact is easy to measure in numbers, such as the defect rate on a specific line or unplanned stops on a specific machine. Then:</p>
+<p>Pick one problem whose impact is easy to measure in numbers, such as the defect rate on a specific line or unplanned stops on a specific machine.</p>
+<p>The starting order is as follows.</p>
 <ol>
-<li>Define the problem and the target metric.</li>
+<li>Define the problem and the target metric (write down the "before" number together with the time period).</li>
 <li>Check whether the data you need exists, and whether collection frequency and standards are consistent.</li>
-<li>Run a small proof of concept (PoC).</li>
+<li>Run a small proof of concept (PoC) and confirm the effect in numbers.</li>
 <li>If the effect holds up, expand to other lines.</li>
 </ol>
 <p>In Korea, the government's smart factory level assessment is also a useful way to check where your plant stands before you begin.</p>
 <h2>Korea's policy context</h2>
 <p>In May 2024, MOTIE announced its <strong>AI Autonomous Manufacturing Strategy 1.0</strong>, and in July 2024 it launched the <strong>AI Autonomous Manufacturing Alliance</strong>, stating a plan to pursue 200 leading projects by 2028. The alliance started with 153 companies and institutions across 12 industries. In May 2025, the ministry added the <strong>Industrial Complex AX Caravan</strong>, a program in which AI companies visit manufacturers in industrial complexes to provide consulting on AI transformation.</p>
+<p>The policy frame later widened to manufacturing AI transformation, or <strong>M.AX</strong> (Manufacturing AI Transformation). In a 4 August 2026 work report, MOTIE said the M.AX Alliance had grown to about 1,500 participating organizations, with a goal of 500 AI factories by 2030. In the same briefing it said it had supported about 170 workplaces in AI-factory leading projects, and that a review of 42 workplaces where results had begun to appear showed average productivity up 30.1% and average defect rates down 15.5%. On 3 November 2026, in its <em>AI Factory Expansion Strategy</em>, the ministry updated the support tally to 245 companies nationwide and said 38 outstanding cases confirmed the same 30.1% productivity gain and 15.5% defect-rate reduction. The two counts use different denominators, so they should not be mixed. The detailed support terms need to be checked in each year's official call.</p>
 <p>For readers outside Korea, the point is that "AI autonomous manufacturing" is not just a marketing label there. It is a named policy category with a government definition, which is one reason the term now appears so often in Korean industry discussions.</p>
+<h3>Do we have to upgrade the MES first, and only then start AI?</h3>
+<p><strong>You do not have to wait until both are finished. What comes first is whether the data for the problem you want to solve is already linked.</strong></p>
+<p>A fully upgraded MES is not a prerequisite for starting AI. If work orders, output, and lot history are already accumulating in the MES, that is a good starting point for training. Even if the MES is weak, you can still run a small test on one problem when process conditions and pass/fail results on a given line are tied to the same product unit. Whether to finish the whole system first or start with one problem depends on how the data is connected.</p>
+<h3>How can we tell what level our plant is at now?</h3>
+<p><strong>A practical first step is the Ministry of SMEs and Startups smart-factory level assessment, which places a plant near Basic, Intermediate 1, Intermediate 2, or Advanced.</strong></p>
+<p>The level names are checking and monitoring, analysis and control, optimization, and autonomous operation. AI autonomous manufacturing is closest to the Advanced (autonomous operation) end. The level name is not, by itself, the introduction sequence. Seeing which data you already have at your current level matters more than making a shopping list of the next system to install.</p>
+<h3>How do MES, ERP, and a smart factory differ?</h3>
+<p><strong>ERP and MES are software layers. A smart factory is a way and level of running a plant.</strong></p>
+<p>ISA-95 (IEC 62264) places ERP at Level 4 (business), MES at Level 3 (manufacturing operations management), and control systems such as PLCs and DCS at Level 2. A smart factory is the broader idea of tying these systems together so data can be connected and visualized; it does not refer to MES or ERP alone.</p>
 <h2>Three differences to remember</h2>
 <ol>
 <li><strong>What it is.</strong> MES is a system (software). Smart factory and AI autonomous manufacturing describe how, and how far, a factory is run.</li>
@@ -218,12 +289,18 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-t
 <li><strong>Who makes the call.</strong> With MES and a smart factory, people decide based on data. In AI autonomous manufacturing, AI recommends or directly controls process conditions, and people supervise.</li>
 </ol>
 <p><em>The original, longer FAQ (in Korean) is on my blog: <a href="https://blog.naver.com/sangza40/224448962411">AI 자율제조 vs 스마트팩토리 vs MES, 뭐가 다를까?</a></em></p>
+<h2>Related</h2>
+<ul>
+<li><a href="/en/ai-data-readiness-small-manufacturers/">Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare</a> (<a href="/ko/ai-data-readiness-small-manufacturers/">Korean version</a>)</li>
+</ul>
 <h2>Sources</h2>
 <ul>
 <li>MOTIE, "Drawing the path for Korean industry in the AI era" (AI Autonomous Manufacturing Strategy 1.0, 2024-05-08), Korea Policy Briefing (Korean): <a href="https://m.korea.kr/briefing/pressReleaseView.do?newsId=156629475">https://m.korea.kr/briefing/pressReleaseView.do?newsId=156629475</a></li>
 <li>MOTIE, "Manufacturing AI adoption to expand to 40%; 200 leading projects" (launch of the AI Autonomous Manufacturing Alliance, 2024-07-22), Korea Policy Briefing (Korean): <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148931737">https://www.korea.kr/news/policyNewsView.do?newsId=148931737</a></li>
 <li>MOTIE, "On-site AI transformation support: Industrial Complex AX Caravan launched" (2025-05-20, Korean): <a href="https://www.motie.go.kr/kor/article/ATCL8764a1224/155118874/view">https://www.motie.go.kr/kor/article/ATCL8764a1224/155118874/view</a></li>
+<li>MOTIE, "Manufacturing AI transformation: productivity up 30%, defect rates down 15%" (2026-08-04), Korea Policy Briefing (Korean): <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148969347">https://www.korea.kr/news/policyNewsView.do?newsId=148969347</a></li>
+<li>MOTIE, "Korea to overhaul manufacturing with a four-stage manufacturing-AI expansion strategy" (2026-11-03), Korea Policy Briefing (Korean): <a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156787789">https://www.korea.kr/briefing/pressReleaseView.do?newsId=156787789</a></li>
 <li>Ministry of SMEs and Startups, Smart Factory program, "Introduction of Support Project" (definition and levels): <a href="https://www.smart-factory.kr/eng/smartFactory.do?menuId=03">https://www.smart-factory.kr/eng/smartFactory.do?menuId=03</a></li>
 <li>ISA, ISA-95 Standard: Enterprise-Control System Integration: <a href="https://www.isa.org/standards-and-publications/isa-standards/isa-95-standard">https://www.isa.org/standards-and-publications/isa-standards/isa-95-standard</a></li>
 </ul>
-<p><em>I work at INTERX, a Korean manufacturing AI company (founded 2020). Views are my own.</em></p></article><nav class="related"><h2>Related</h2><ul><li><a href="/en/ai-data-readiness-small-manufacturers/">Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare (with Korea&#x27;s Policy Context)</a></li><li><a href="/en/manufacturing-llm-vs-general-llm/">What Is a Manufacturing-Specific LLM? How It Differs from a General-Purpose LLM (and What Korea Is Building)</a></li><li><a href="/en/manufacturing-digital-twin-checklist/">A 10-Point Checklist Before You Build a Manufacturing Digital Twin (Based on ISO 23247 and NIST Guidance)</a></li><li><a href="/en/manufacturing-data-space/">What Is a Manufacturing Data Space? Gaia-X, Catena-X, Manufacturing-X, and Korea&#x27;s Version Explained</a></li></ul></nav></main><footer><p>A personal manufacturing-AI knowledge archive run by an individual, 성시원 (sianism). Not a company site or a news outlet. Each post is kept here in Korean and English.</p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>
+<p><em>I work as a principal researcher (service planning) at INTERX, a Korean manufacturing AI company (founded 2020). Views are my own.</em></p></article><nav class="related"><h2>Related</h2><ul><li><a href="/en/ai-data-readiness-small-manufacturers/">Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare (with Korea&#x27;s Policy Context)</a></li><li><a href="/en/manufacturing-llm-vs-general-llm/">What Is a Manufacturing-Specific LLM? How It Differs from a General-Purpose LLM (and What Korea Is Building)</a></li><li><a href="/en/manufacturing-digital-twin-checklist/">A 10-Point Checklist Before You Build a Manufacturing Digital Twin (Based on ISO 23247 and NIST Guidance)</a></li><li><a href="/en/manufacturing-data-space/">What Is a Manufacturing Data Space? Gaia-X, Catena-X, Manufacturing-X, and Korea&#x27;s Version Explained</a></li></ul></nav></main><footer><p>A personal manufacturing-AI knowledge archive run by an individual, 성시원 (sianism). Not a company site or a news outlet. Each post is kept here in Korean and English.</p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>
