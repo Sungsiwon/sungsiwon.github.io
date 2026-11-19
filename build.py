@@ -27,6 +27,15 @@ PERSON = {
                "https://brunch.co.kr/@sianism", "https://medium.com/@sangza40", "https://github.com/Sungsiwon"],
 }
 POSTS = [  # newest first
+    {"slug": "manufacturing-ai-kpi-oee", "date": "2026-11-19",
+     "ko": {"title": "제조 AI 도입 효과, 어떤 지표로 재야 할까? OEE·불량률 등 ISO 22400 기준 KPI와 측정 순서 (계산 예시 + FAQ 6문항)",
+            "desc": "제조 AI 도입 효과는 도입 전에 같은 정의로 재 둔 기준선과 비교해야 보입니다. ISO 22400 KPI 중 AI가 직접 바꾸는 지표(불량률·재작업률 등)와 종합 지표(OEE)를 짝짓는 법, OEE 계산 예시, FAQ 6문항.",
+            "summary": "ISO 22400-2 기준 OEE(가용률×효율×품질률) 계산 예시(가상 수치), KPI 3단계 구조(Kang 외 2016, NIST), AI 종류별 KPI 짝표, 기준선·비교 대상 설정법, FAQ 6문항. 중기부 2019 성과 조사·2024 스마트제조혁신 실태조사 기준."},
+     "en": {"title": "How to Measure the Impact of Manufacturing AI: OEE and ISO 22400 KPIs, With a Worked Example",
+            "desc": "\"Defects down 30%\" means little without a baseline measured the same way, the right supporting KPIs, and a fair comparison.",
+            "summary": "ISO 22400-2 OEE formula with a worked example, the three-layer KPI structure (Kang et al. 2016, NIST), pairing direct KPIs such as scrap and rework ratio with OEE or NEE, setting baselines and comparisons, and where Korean manufacturers stand."},
+     "keywords": ["OEE", "설비종합효율", "ISO22400", "제조AI", "KPI", "불량률", "도입효과", "성과측정", "manufacturing AI KPI", "overall equipment effectiveness"],
+     "channels": {}},
     {"slug": "manufacturing-data-space", "date": "2026-11-16",
      "ko": {"title": "제조 데이터 스페이스란? Catena-X·Manufacturing-X와 한국형 Manufacturing-X 한 번에 정리 (비교표 + FAQ 6문항)",
             "desc": "제조 데이터 스페이스는 여러 기업이 제조·제품 데이터를 각자 통제권을 가진 채 표준 방식으로 주고받는 공동의 데이터 생태계입니다. Gaia-X·Catena-X·Manufacturing-X·한국형 Manufacturing-X 비교표와 FAQ 6문항.",
@@ -147,6 +156,9 @@ for _p in POSTS:
     _p.setdefault("modified", CONTENT_UPDATED)
 
 RELATED = {
+    "manufacturing-ai-kpi-oee": [
+        "ai-data-readiness-small-manufacturers", "ai-vision-inspection-criteria",
+        "injection-molding-defect-ai", "ai-autonomous-manufacturing-vs-smart-factory-vs-mes"],
     "ai-autonomous-manufacturing-vs-smart-factory-vs-mes": [
         "ai-data-readiness-small-manufacturers", "manufacturing-llm-vs-general-llm",
         "manufacturing-digital-twin-checklist", "manufacturing-data-space"],
@@ -174,7 +186,7 @@ RELATED = {
 }
 CLUSTERS = [
     {"ko": "개념과 준비", "en": "Concepts and readiness",
-     "slugs": ["ai-autonomous-manufacturing-vs-smart-factory-vs-mes", "ai-data-readiness-small-manufacturers", "manufacturing-llm-vs-general-llm"]},
+     "slugs": ["ai-autonomous-manufacturing-vs-smart-factory-vs-mes", "ai-data-readiness-small-manufacturers", "manufacturing-llm-vs-general-llm", "manufacturing-ai-kpi-oee"]},
     {"ko": "품질과 검사", "en": "Quality and inspection",
      "slugs": ["injection-molding-defect-ai", "ai-vision-inspection-criteria", "welding-quality-ai-data"]},
     {"ko": "연결과 인프라", "en": "Connection and infrastructure",

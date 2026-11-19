@@ -1,0 +1,146 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XH4D791WR7"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XH4D791WR7');</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Measure the Impact of Manufacturing AI: OEE and ISO 22400 KPIs, With a Worked Example</title><meta name="description" content="&quot;Defects down 30%&quot; means little without a baseline measured the same way, the right supporting KPIs, and a fair comparison.">
+<meta name="author" content="성시원 (sianism)"><link rel="canonical" href="https://sungsiwon.github.io/en/manufacturing-ai-kpi-oee/">
+<link rel="alternate" hreflang="en" href="https://sungsiwon.github.io/en/manufacturing-ai-kpi-oee/">
+<link rel="alternate" hreflang="ko" href="https://sungsiwon.github.io/ko/manufacturing-ai-kpi-oee/">
+<link rel="alternate" hreflang="x-default" href="https://sungsiwon.github.io/ko/manufacturing-ai-kpi-oee/">
+<meta property="og:type" content="article"><meta property="og:title" content="How to Measure the Impact of Manufacturing AI: OEE and ISO 22400 KPIs, With a Worked Example">
+<meta property="og:description" content="&quot;Defects down 30%&quot; means little without a baseline measured the same way, the right supporting KPIs, and a fair comparison."><meta property="og:url" content="https://sungsiwon.github.io/en/manufacturing-ai-kpi-oee/">
+<meta property="og:site_name" content="성시원 제조 AI 아카이브 · sianism archive">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://sungsiwon.github.io/assets/manufacturing-ai-kpi-oee.jpg"><meta name="twitter:image" content="https://sungsiwon.github.io/assets/manufacturing-ai-kpi-oee.jpg">
+<link rel="alternate" type="application/atom+xml" title="sianism archive" href="https://sungsiwon.github.io/feed.xml">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://sungsiwon.github.io/#person",
+   "name": "성시원",
+   "alternateName": "sianism",
+   "url": "https://sungsiwon.github.io/",
+   "jobTitle": "책임연구원 (서비스기획)",
+   "worksFor": {
+    "@type": "Organization",
+    "name": "INTERX (인터엑스)",
+    "url": "https://interxlab.com"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/siwon-sung-518329140",
+    "https://blog.naver.com/sangza40",
+    "https://sianism.tistory.com",
+    "https://brunch.co.kr/@sianism",
+    "https://medium.com/@sangza40",
+    "https://github.com/Sungsiwon"
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://sungsiwon.github.io/en/manufacturing-ai-kpi-oee/#article",
+   "headline": "How to Measure the Impact of Manufacturing AI: OEE and ISO 22400 KPIs, With a Worked Example",
+   "description": "\"Defects down 30%\" means little without a baseline measured the same way, the right supporting KPIs, and a fair comparison.",
+   "inLanguage": "en",
+   "datePublished": "2026-11-19",
+   "dateModified": "2026-11-18",
+   "author": {
+    "@id": "https://sungsiwon.github.io/#person"
+   },
+   "publisher": {
+    "@id": "https://sungsiwon.github.io/#person"
+   },
+   "image": "https://sungsiwon.github.io/assets/manufacturing-ai-kpi-oee.jpg",
+   "mainEntityOfPage": "https://sungsiwon.github.io/en/manufacturing-ai-kpi-oee/",
+   "keywords": [
+    "OEE",
+    "설비종합효율",
+    "ISO22400",
+    "제조AI",
+    "KPI",
+    "불량률",
+    "도입효과",
+    "성과측정",
+    "manufacturing AI KPI",
+    "overall equipment effectiveness"
+   ],
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "성시원 제조 AI 아카이브",
+    "url": "https://sungsiwon.github.io/"
+   },
+   "translationOfWork": {
+    "@id": "https://sungsiwon.github.io/ko/manufacturing-ai-kpi-oee/#article"
+   }
+  }
+ ]
+}</script>
+<style>:root{color-scheme:light dark;--fg:#1d1d1f;--bg:#fff;--mut:#666;--line:#ddd;--acc:#0b5cad}
+@media(prefers-color-scheme:dark){:root{--fg:#e8e8e8;--bg:#141414;--mut:#a0a0a0;--line:#333;--acc:#6aa9ff}}
+*{box-sizing:border-box}body{margin:0;font:17px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;color:var(--fg);background:var(--bg);word-break:keep-all;overflow-wrap:anywhere}
+main,header.site,footer{max-width:760px;margin:0 auto;padding:0 20px}header.site{padding-top:18px;font-size:15px;display:flex;justify-content:space-between;gap:12px}
+a{color:var(--acc)}h1{font-size:1.7em;line-height:1.35;margin:.8em 0 .4em}h2{font-size:1.3em;margin-top:2em}h3{font-size:1.1em;margin-top:1.6em}
+.meta{color:var(--mut);font-size:15px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:1.5em}.meta p{margin:.2em 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(127,127,127,.12)}
+figure{margin:1.5em 0}img{max-width:100%;height:auto;border-radius:6px}figcaption{color:var(--mut);font-size:14px;text-align:center}
+ul.posts{list-style:none;padding:0}ul.posts li{margin:0 0 1.1em}ul.posts time{color:var(--mut);font-size:14px;display:block}
+.related{margin:2.4em 0 0;padding-top:1.2em;border-top:1px solid var(--line)}.related h2{margin-top:0;font-size:1.2em}.related ul{padding-left:1.2em}
+.clusters h3{font-size:1.05em;margin-top:1.4em}
+footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:3em;padding:16px 20px 40px}</style><meta property="article:published_time" content="2026-11-19"><meta property="article:modified_time" content="2026-11-18"></head><body><header class="site"><a href="/">Home · 성시원 제조 AI 아카이브</a><a href="/ko/manufacturing-ai-kpi-oee/" hreflang="ko">한국어</a></header><main><article><h1>How to Measure the Impact of Manufacturing AI: OEE and ISO 22400 KPIs, With a Worked Example</h1><div class="meta"><p>By <span>성시원 (sianism)</span> · Published <time datetime="2026-11-19">2026-11-19</time> · Updated <time datetime="2026-11-18">2026-11-18</time></p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p>한국어 원문: <a href="/ko/manufacturing-ai-kpi-oee/" hreflang="ko">제조 AI 도입 효과, 어떤 지표로 재야 할까? OEE·불량률 등 ISO 22400 기준 KPI와 측정 순서 (계산 예시 + FAQ 6문항)</a></p></div><p><em>Disclosure: I work at INTERX, a Korean manufacturing AI company (founded 2020). This article is my personal summary of an international standard, a NIST-affiliated paper, and Korean government surveys; it does not represent my employer's official position.</em></p>
+<p>You can only see the impact of manufacturing AI <strong>against a baseline measured before deployment, using the same definitions</strong>. Choose the metrics from ISO 22400, the international standard that defines KPIs for manufacturing operations management. A practical pattern is to pair one or two KPIs that the AI acts on directly with one composite KPI that shows the whole picture.</p>
+<p>Three things to know first:</p>
+<ul>
+<li><strong>ISO 22400-2</strong> defines 34 KPIs at the manufacturing operations management level (roughly, the MES level), each with a formula, unit, and intended audience.</li>
+<li><strong>OEE</strong> (overall equipment effectiveness) = Availability × Effectiveness × Quality ratio.</li>
+<li><strong>A baseline</strong> is the same KPI, defined the same way, recorded before the AI goes live. Without it, there is no "impact" to report.</li>
+</ul>
+<figure><img src="/assets/manufacturing-ai-kpi-oee.jpg" alt="A small robot in a factory pointing at three gauges of different colors, with a tape measure and a stopwatch nearby" width="1280" height="720" loading="lazy"><figcaption>Impact is not a single "after" number. It is the difference measured with the same ruler before and after</figcaption></figure>
+
+<h2>The OEE formula, as the standard defines it</h2>
+<p>ISO 22400-2:2014 defines the OEE index as Availability × Effectiveness × Quality ratio, where:</p>
+<ul>
+<li><strong>Availability</strong> = actual production time (APT) ÷ planned busy time (PBT)</li>
+<li><strong>Effectiveness</strong> = planned run time per item (PRI) × produced quantity (PQ) ÷ APT</li>
+<li><strong>Quality ratio</strong> = good quantity (GQ) ÷ PQ</li>
+</ul>
+<p>A worked example, using illustrative numbers for one shift:</p>
+<ul>
+<li>Planned busy time 480 min, actual production time 400 min → Availability <strong>83.3%</strong></li>
+<li>Planned run time 0.5 min per item, 720 items produced → Effectiveness 0.5 × 720 ÷ 400 = <strong>90.0%</strong></li>
+<li>698 good items → Quality ratio <strong>96.9%</strong></li>
+<li>OEE ≈ 0.833 × 0.900 × 0.969 ≈ <strong>72.7%</strong></li>
+</ul>
+<p>Now suppose a quality AI raises good items to 712 with nothing else changed. The quality ratio becomes 98.9% and OEE about 74.2%. That is a modest 1.5-point rise, yet scrap and rework fell from 22 items to 8. The composite KPI understates what changed, which is why you need the direct KPIs alongside it.</p>
+<p>The standard adds a warning that is easy to skip. Before benchmarking with OEE, check that the work units being compared are actually comparable.</p>
+<h2>Why one composite KPI is not enough</h2>
+<p>A 2016 paper in the <em>International Journal of Production Research</em> (Kang et al., with NIST co-authorship) organizes the 34 ISO 22400 KPIs into three layers. At the bottom are supporting elements, such as times and quantities. Above them are basic KPIs, such as availability, effectiveness, quality ratio, scrap ratio, and rework ratio. At the top are comprehensive KPIs, such as OEE and NEE. NEE, net equipment effectiveness, is similar to OEE but folds setup time into availability. The paper's point is that KPIs share elements and depend on each other, so you can read a change in a composite KPI only by looking at the basic KPIs underneath.</p>
+<p>A practical pairing, using the standard's KPI names (my own mapping):</p>
+<ul>
+<li><strong>Quality inspection or root-cause AI:</strong> scrap ratio, rework ratio, and quality ratio, with OEE</li>
+<li><strong>Process-parameter optimization:</strong> effectiveness and quality ratio, with OEE</li>
+<li><strong>Scheduling or dispatch support:</strong> availability and throughput rate, with OEE or NEE</li>
+</ul>
+<h2>Where the data comes from</h2>
+<p>ISO 22400-2 places these KPIs at Level 3 of the IEC 62264 hierarchy, manufacturing operations management. It notes they may need parameters from Levels 1 and 2, the control and equipment layers. In practice, that means MES and machine logs. The first job is to collect the time elements (planned busy time, actual production time, downtime) and the quantity elements (produced, good, scrap, rework) in the same units, against the same clock.</p>
+<h2>Measuring "impact" fairly</h2>
+<p>Three habits make an impact claim credible:</p>
+<ol>
+<li><strong>Baseline:</strong> record the KPIs for several weeks or more before go-live, using the final definitions.</li>
+<li><strong>Like for like:</strong> do not compare periods with very different product mix, shifts, or volumes.</li>
+<li><strong>A comparison:</strong> where possible, track a line or period without the AI alongside the one with it.</li>
+</ol>
+<p>Public evaluations show why this matters. In March 2019, Korea's Ministry of SMEs and Startups reported that a survey of 5,003 companies that had adopted smart factories found productivity up 30%, defect rates down 43.5%, costs down 15.9%, and delivery times down 15.5%. The announcement was also a response to a newspaper report that most adopters felt the program had no effect. The same program can be judged very differently depending on what is measured and how.</p>
+<h2>Where Korean manufacturers stand</h2>
+<p>Korea's 2024 Smart Manufacturing Innovation Survey, released on 28 April 2025, covered 163,273 small and mid-sized companies that own factories. It found that 0.1% had adopted manufacturing AI and 1.6% planned to. Among smart-factory adopters, 5.2% had adopted or planned to adopt it. As adoption grows, agreeing on how to measure results before a project starts will matter more.</p>
+<h2>Where to start</h2>
+<p>Pick one process where AI will be applied. Start logging the three OEE components and the scrap ratio daily, using one fixed method. Then write down, in numbers, what change would count as success. If you choose the metric after deployment, it is tempting to pick whichever number looks best.</p>
+<p>The full KPI pairing table and FAQ are in the <a href="/ko/manufacturing-ai-kpi-oee/">Korean version of this post</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li>ISO 22400-2:2014, KPIs for manufacturing operations management, Part 2: Definitions and descriptions (overview and sample pages): <a href="https://standards.iteh.ai/catalog/standards/iso/8a9efc01-6c74-42a2-ad8f-ec19e84b48f0/iso-22400-2-2014">https://standards.iteh.ai/catalog/standards/iso/8a9efc01-6c74-42a2-ad8f-ec19e84b48f0/iso-22400-2-2014</a></li>
+<li>Kang, Zhao, Li, Horst, "A Hierarchical structure of key performance indicators for operation management and continuous improvement in production systems," <em>Int J Prod Res</em> 54(21) (2016), author manuscript: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5795624/">https://pmc.ncbi.nlm.nih.gov/articles/PMC5795624/</a></li>
+<li>Ministry of SMEs and Startups, "SMEs adopting smart factories see productivity gains" (2019-03-08, Korean): <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148858991">https://www.korea.kr/news/policyNewsView.do?newsId=148858991</a></li>
+<li>Ministry of SMEs and Startups, 2024 Smart Manufacturing Innovation Survey (summary via KDI, Korean): <a href="https://eiec.kdi.re.kr/policy/materialView.do?num=266057">https://eiec.kdi.re.kr/policy/materialView.do?num=266057</a></li>
+</ul>
+<p><em>I work at INTERX, a Korean manufacturing AI company (founded 2020). Views are my own.</em></p></article><nav class="related"><h2>Related</h2><ul><li><a href="/en/ai-data-readiness-small-manufacturers/">Before AI, Get Your Data Ready: 5 Datasets Small Manufacturers Should Prepare (with Korea&#x27;s Policy Context)</a></li><li><a href="/en/ai-vision-inspection-criteria/">How to Choose an AI Visual Inspection System for Manufacturing: 7 Criteria That Matter More Than &quot;99% Accuracy&quot;</a></li><li><a href="/en/injection-molding-defect-ai/">How AI Finds the Root Cause of Injection Molding Defects: Three Data Approaches and One Warning</a></li><li><a href="/en/ai-autonomous-manufacturing-vs-smart-factory-vs-mes/">AI Autonomous Manufacturing vs Smart Factory vs MES: an FAQ (with Korea&#x27;s policy context)</a></li></ul></nav></main><footer><p>A personal manufacturing-AI knowledge archive run by an individual, 성시원 (sianism). Not a company site or a news outlet. Each post is kept here in Korean and English.</p><p>I work at INTERX, a manufacturing AI company, and this post is my personal summary.</p><p><a href="/feed.xml">Atom feed</a> · <a href="/llms.txt">llms.txt</a> · <a href="https://github.com/Sungsiwon">GitHub</a></p></footer></body></html>
