@@ -35,7 +35,7 @@ POSTS = [  # newest first
             "desc": "\"Defects down 30%\" means little without a baseline measured the same way, the right supporting KPIs, and a fair comparison.",
             "summary": "ISO 22400-2 OEE formula with a worked example, the three-layer KPI structure (Kang et al. 2016, NIST), pairing direct KPIs such as scrap and rework ratio with OEE or NEE, setting baselines and comparisons, and where Korean manufacturers stand."},
      "keywords": ["OEE", "설비종합효율", "ISO22400", "제조AI", "KPI", "불량률", "도입효과", "성과측정", "manufacturing AI KPI", "overall equipment effectiveness"],
-     "channels": {}},
+     "channels": {"naver": "https://blog.naver.com/sangza40/224483722521"}},
     {"slug": "manufacturing-data-space", "date": "2026-11-16",
      "ko": {"title": "제조 데이터 스페이스란? Catena-X·Manufacturing-X와 한국형 Manufacturing-X 한 번에 정리 (비교표 + FAQ 6문항)",
             "desc": "제조 데이터 스페이스는 여러 기업이 제조·제품 데이터를 각자 통제권을 가진 채 표준 방식으로 주고받는 공동의 데이터 생태계입니다. Gaia-X·Catena-X·Manufacturing-X·한국형 Manufacturing-X 비교표와 FAQ 6문항.",
